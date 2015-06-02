@@ -1,14 +1,18 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: PhoneGap
+description: "Easily create apps using the web technologies you know and love: HTML, CSS, and JavaScript."
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://phonegap.com" # the base hostname & protocol for your site
+twitter_username: phonegap
+github_username:  phonegap
 
 # Build settings
 markdown: kramdown
+
+permalink: /:categories/:title/
+highlighter: pygments
+excerpt_separator: <!--more-->
+exclude: [vendor]
+sass:
+  sass_dir: _sass
+  style: compressed
