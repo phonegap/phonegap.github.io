@@ -1,0 +1,67 @@
+.site-header
+  height: 60px
+  width: 100%
+  background: rgba(255,255,255,0.95)
+  display: block
+  margin-bottom: 0
+  .bounds
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    padding: 0 20px 0 10px
+  a
+    color: #999
+    &:hover
+      text-decoration: none
+.site-header__logo
+  h1
+    font-size: 1.0625rem
+    margin: 0
+    padding: 0
+    font-weight: normal
+  img, svg
+    vertical-align: middle
+    margin-right: 0.125rem
+    width: 1.25rem
+    height: auto
+  path
+    fill: currentColor
+  span
+    position: relative
+    top: .125rem
+.site-header__nav
+  display: block
+  ul
+    margin: 0
+    padding: 0
+    display: flex
+    flex-direction: column
+    list-style: none
+
+@media (min-width: 820px)
+  .site-header
+    color: white
+    background: $header-bg
+    height: 72px
+    margin-bottom: 50px
+    a
+      color: #fff
+    .bounds
+      justify-content: flex-start
+  .site-header__nav
+    display: block
+    ul
+      flex-direction: row
+      li
+        padding: 10px
+        margin: 0 4px
+  .site-header__logo
+    margin-right: 40px
+    h1
+      font-size: 1.6875rem
+      font-weight: $light-weight
+    span
+      top: .125rem
+    img, svg
+      margin-right: .75rem
