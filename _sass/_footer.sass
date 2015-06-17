@@ -16,10 +16,21 @@
     background: #001835
     margin: 43px 0
 .site-footer__lists
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
   display: flex
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
   flex-wrap: wrap
   max-width: 520px
+  -webkit-box-pack: justify
+  -webkit-justify-content: space-between
+  -ms-flex-pack: justify
   justify-content: space-between
+  -webkit-box-flex: 1
+  -webkit-flex-grow: 1
+  -ms-flex-positive: 1
   flex-grow: 1
 .site-footer__list
   display: block
@@ -30,11 +41,22 @@
     margin: 0
     padding: 0
 .site-footer__top
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
   display: flex
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
   flex-wrap: wrap
+  -webkit-box-pack: justify
+  -webkit-justify-content: space-between
+  -ms-flex-pack: justify
   justify-content: space-between
 .site-footer__messages
   max-width: 400px
+  -webkit-box-ordinal-group: 1
+  -webkit-order: 0
+  -ms-flex-order: 0
   order: 0
   h2
     font-weight: normal
@@ -52,6 +74,7 @@
         width: 1.5rem
         height: 1.125rem
         margin-right: .5rem
+        -webkit-transition: left .2s ease
         transition: left .2s ease
       &:hover
         color: #27a1c5
@@ -61,28 +84,48 @@
 .site-footer__message
   margin-bottom: 3rem
 .subscribe
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
   display: flex
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
   flex-wrap: wrap
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
   align-items: center
   h2
     width: 100%
 .subscribe__description
+  -webkit-box-flex: 1
+  -webkit-flex-grow: 1
+  -ms-flex-positive: 1
   flex-grow: 1
   max-width: 556px
 .subscribe__form
+  -webkit-box-flex: 1
+  -webkit-flex-grow: 1
+  -ms-flex-positive: 1
   flex-grow: 1
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
   display: flex
 .subscribe__form__text-input
   background: #64889B
   border: none
   height: 2.75rem
   box-sizing: border-box
-  padding: .875rem 1rem
   border-radius: 4px
   vertical-align: top
+  -webkit-box-flex: 1
+  -webkit-flex-grow: 1
+  -ms-flex-positive: 1
   flex-grow: 1
   margin-right: 10px
-  &::placeholder
+  padding: .875rem 1rem
+  &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::placeholder
     color: #003351
 .subscribe__form__submit
   text-transform: uppercase
@@ -108,6 +151,9 @@
   .site-footer__list
     margin: 0 0 2.5rem
   .site-footer__messages
+    -webkit-box-ordinal-group: 3
+    -webkit-order: 2
+    -ms-flex-order: 2
     order: 2
     h2
       margin-bottom: 1.25rem
