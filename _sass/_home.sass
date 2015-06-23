@@ -1,0 +1,48 @@
+.bounds
+  max-width: 1200px
+.home-header
+  position: fixed
+  width: 100%
+  height: 140px
+  a
+    color: white
+  .bounds
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -webkit-justify-content: space-between
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-box-align: center
+    -webkit-align-items: center
+    -ms-flex-align: center
+    align-items: center
+    height: 100%
+    padding: 0 20px 0 10px
+.home-hero
+  height: 820px
+  background: #27a1c5
+  box-sizing: border-box
+  padding-top: 265px
+  .bounds
+    height: 100%
+    &:before
+      content: ''
+      display: block
+      width: 620px
+      height: 720px
+      background: url('../images/phone_robit.svg') no-repeat center
+      background-size: contain
+      position: absolute
+      bottom: -60px
+      right: 0
+      z-index: 1
+  h1
+    font-weight: $light-weight
+    color: #003252
+    font-size: 3.125rem
+    line-height: 3.125rem
+    z-index: 2
+    position: relative
