@@ -158,12 +158,12 @@ desc "Serve and watch the site (with post limit or drafts)"
 task :watch, :option do |t, args|
   option = args[:option]
   if option.nil? or option.empty?
-    execute("jekyll serve --watch --baseurl ''")
+    execute("jekyll serve --watch --baseurl '' --config _config_dev.yml")
   else
     if option == "drafts"
-      execute("jekyll serve --watch --drafts --baseurl ''")
+      execute("jekyll serve --watch --drafts --baseurl '' --config _config_dev.yml")
     else
-      execute("jekyll serve --watch --baseurl '' --limit_posts #{option}")
+      execute("jekyll serve --watch --baseurl '' --limit_posts #{option} --config _config_dev.yml")
     end
   end
 end
