@@ -1,9 +1,23 @@
 .bounds
-  max-width: 1200px
+  max-width: 1240px
+
+.site-header__logo
+  margin-right: 40px
+  h1
+    font-size: 1.6875rem
+    font-weight: $light-weight
+  span
+    top: .125rem
+  img, svg
+    margin-right: .75rem
+
 .home-header
   position: fixed
   width: 100%
   height: 140px
+  z-index: 10
+  box-sizing: border-box
+  padding-top: 95px
   a
     color: white
   .bounds
@@ -19,14 +33,31 @@
     -webkit-align-items: center
     -ms-flex-align: center
     align-items: center
-    height: 100%
-    padding: 0 20px 0 10px
+    padding: 0 20px 0 20px
+.home-header__logo
+  margin-right: 40px
+  h1
+    font-size: 1.0625rem
+    margin: 0
+    padding: 0
+    font-weight: normal
+  img, svg
+    vertical-align: middle
+    margin-right: 0.125rem
+    width: 2.5rem
+    height: auto
+  path
+    fill: currentColor
+  span
+    position: relative
+    top: .125rem
 .home-hero
-  height: 820px
+  height: 825px
   background: #27a1c5
   box-sizing: border-box
-  padding-top: 265px
-  .bounds
+  padding-top: 195px
+  position: relative
+  .bounds--header
     height: 100%
     &:before
       content: ''
@@ -36,8 +67,8 @@
       background: url('../images/phone_robit.svg') no-repeat center
       background-size: contain
       position: absolute
-      bottom: -60px
-      right: 0
+      bottom: -16px
+      right: 48px
       z-index: 1
   h1
     font-weight: $light-weight
@@ -46,3 +77,89 @@
     line-height: 3.125rem
     z-index: 2
     position: relative
+    margin-bottom: 48px
+  .button--cta
+    margin-right: 26px
+  footer
+    position: absolute
+    bottom: 0
+    background: rgba(22,146,178,0.9)
+    width: 100%
+    z-index: 2
+    padding: 20px 0
+    box-sizing: border-box
+    height: 264px
+    .bounds
+      height: 100%
+      display: -webkit-box
+      display: -webkit-flex
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-pack: justify
+      -webkit-justify-content: space-between
+      -ms-flex-pack: justify
+      justify-content: space-between
+      -webkit-box-align: center
+      -webkit-align-items: center
+      -ms-flex-align: center
+      align-items: center
+    .vr
+      position: relative
+      width: 1px
+      background: #3fadcf
+      height: 100%
+  .button--pill--next
+    margin-top: 7px
+.link--learn-more
+  text-transform: uppercase
+  text-decoration: none
+  border-bottom: 1px solid white
+  color: white
+  font-size: 1.0625rem
+  padding-bottom: 3px
+  &:hover
+    text-decoration: none
+.hero-footer__section
+  color: white
+  text-align: center
+  max-width: 525px
+  padding-bottom: 14px
+  h2
+    font-size: 30px
+    font-weight: bold
+    text-transform: none
+    margin-bottom: 1rem
+    margin-top: 0rem
+
+@media (min-width: 820px)
+  .home-header
+    color: white
+    background: $header-bg
+    height: 72px
+    margin-bottom: 50px
+    a
+      text-decoration: none
+      &:hover span
+        text-decoration: none
+        border-bottom: 1px solid white
+        padding-bottom: 10px
+  .home-header__logo
+    margin-right: 40px
+    h1
+      font-size: 2.1875rem
+      font-weight: $light-weight
+    span
+      top: .125rem
+    img, svg
+      margin-right: .75rem
+  .adobe-logo
+    position: absolute
+    right: 9px
+    top: -75px
+    width: 70px
+    height: 16px
+    display: inline-block
+    opacity: 0.7
+  a.adobe-logo:hover
+    opacity: 1
+    border-bottom: none
