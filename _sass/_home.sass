@@ -4,6 +4,7 @@
   position: fixed
   width: 100%
   height: 140px
+  z-index: 10
   a
     color: white
   .bounds
@@ -26,7 +27,8 @@
   background: #27a1c5
   box-sizing: border-box
   padding-top: 265px
-  .bounds
+  position: relative
+  .bounds--header
     height: 100%
     &:before
       content: ''
@@ -49,6 +51,26 @@
     margin-bottom: 12px
   .button--cta
     margin-right: 30px
+  footer
+    position: absolute
+    bottom: 0
+    background: rgba(22,146,178,0.9)
+    width: 100%
+    z-index: 2
+    padding: 20px 0
+    .bounds
+      display: -webkit-box
+      display: -webkit-flex
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-pack: justify
+      -webkit-justify-content: space-between
+      -ms-flex-pack: justify
+      justify-content: space-between
+    .vr
+      position: relative
+      width: 1px
+      background: #3fadcf
 .link--learn-more
   text-transform: uppercase
   text-decoration: none
@@ -56,3 +78,11 @@
   color: white
   font-size: 1.0625rem
   padding-bottom: 3px
+.hero-footer__section
+  color: white
+  text-align: center
+  max-width: 525px
+  h2
+    font-size: 30px
+    font-weight: bold
+    text-transform: none
