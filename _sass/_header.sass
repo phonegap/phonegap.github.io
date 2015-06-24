@@ -70,6 +70,7 @@
       justify-content: flex-start
   .site-header__nav
     display: block
+    position: relative
     ul
       -webkit-box-orient: horizontal
       -webkit-box-direction: normal
@@ -77,8 +78,16 @@
       -ms-flex-direction: row
       flex-direction: row
       li
-        padding: 10px
+        padding: 10px 8px
         margin: 0 4px
+        &:last-child
+          padding-right: 5px
+    a
+      text-decoration: none
+      padding-bottom: 10px
+      &:hover
+        text-decoration: none
+        border-bottom: 1px solid white
   .site-header__logo
     margin-right: 40px
     h1

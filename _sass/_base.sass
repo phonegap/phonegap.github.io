@@ -23,7 +23,52 @@ h2
   margin: 0 0 1rem
   font-size: 1.125rem
   font-weight: $light-weight
-
+.button--cta
+  border-radius: 4px
+  background: #f4b504
+  color: white
+  text-transform: uppercase
+  border: none
+  font-size: 1.0625rem
+  font-weight: normal
+  padding: 8px 27px 10px
+  text-decoration: none
+  display: inline-block
+  &:hover
+    text-decoration: none
+    background: #f2a700
+.button--pill
+  color: #033351
+  border-radius: 18px
+  background: white
+  text-transform: uppercase
+  border: none
+  text-decoration: none
+  display: inline-block
+  height: 36px
+  box-sizing: border-box
+  padding-top: 3px
+  padding-right: 15px
+  padding-bottom: 2px
+  padding-left: 15px
+  font-size: 1.125rem
+  &:hover
+    text-decoration: none
+    background: #f2a700
+.button--pill--next
+  @extend .button--pill
+  position: relative
+  padding-right: 31px
+  &:after
+    background-image: url('/images/chevron-right.svg')
+    background-repeat: no-repeat
+    background-position: center
+    content: ''
+    position: absolute
+    right: 15px
+    top: 0
+    height: 100%
+    width: 7px
 @media (min-width: 820px)
   h2
     margin: 0 0 1.5rem
