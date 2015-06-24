@@ -117,6 +117,8 @@
   color: white
   font-size: 1.0625rem
   padding-bottom: 3px
+  &:hover
+    text-decoration: none
 .hero-footer__section
   color: white
   text-align: center
@@ -136,7 +138,11 @@
     height: 72px
     margin-bottom: 50px
     a
-      color: #fff
+      text-decoration: none
+      &:hover span
+        text-decoration: none
+        border-bottom: 1px solid white
+        padding-bottom: 10px
   .home-header__logo
     margin-right: 40px
     h1
@@ -146,3 +152,14 @@
       top: .125rem
     img, svg
       margin-right: .75rem
+  .adobe-logo
+    position: absolute
+    right: 9px
+    top: -75px
+    width: 70px
+    height: 16px
+    display: inline-block
+    opacity: 0.7
+  a.adobe-logo:hover
+    opacity: 1
+    border-bottom: none
