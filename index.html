@@ -7,7 +7,6 @@ layout: compress
   {% include head.html %}
 
   <body>
-
     <header class="home-header">
       <div class="bounds">
         <div class="site-header__logo">
@@ -34,12 +33,26 @@ layout: compress
       </div>
     </header>
     <div class="home-hero">
-      <div class="bounds">
+      <div class="bounds bounds--header">
         <h1>Build amazing mobile apps<br/>powered by open web tech.</h1>
         <button class="button--cta">Start Now</button>
         <a class="link--learn-more">Learn more</a>
-        {{ site.production }}
       </div>
+      <footer>
+        <div class="bounds">
+          <section class="hero-footer__section">
+            <h2>Create your app with PhoneGap</h2>
+            <p>Reuse existing web development skills to quickly make hybrid applications built with HTML, CSS and JavaScript. Create experiences for multiple platforms with a single codebase so you can reach your audience no matter their device.</p>
+            <a class="button--pill--next">Guides &amp; Docs</a>
+          </section>
+          <div class="vr">&nbsp;</div>
+          <section class="hero-footer__section">
+            <h2>For businesses: PhoneGap Enterprise</h2>
+            <p>Get the power and versatility of PhoneGap plus rich analytics to help you understand and engage users, one intuitive view to easily create and manage app experiences across all channels, and world-class support and training.</p>
+            <a class="button--pill--next">See all the features</a>
+          </section>
+        </div>
+      </footer>
     </div>
 
     <div class="page-content">
@@ -51,5 +64,4 @@ layout: compress
     {% include footer.html %}
 
   </body>
-
 </html>
