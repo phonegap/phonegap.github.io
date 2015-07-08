@@ -57,6 +57,7 @@
   box-sizing: border-box
   padding-top: 195px
   position: relative
+  margin-bottom: 64px
   .bounds--header
     height: 100%
     &:before
@@ -130,7 +131,146 @@
     text-transform: none
     margin-bottom: 1rem
     margin-top: 0rem
-
+section h2
+  font-size: 1.875rem
+  text-transform: none
+  margin-bottom: 20px
+  text-align: center
+.benefits
+  text-align: center
+  font-size: 1.25rem
+  margin-bottom: 35px
+  p
+    max-width: 948px
+    margin: 0 auto
+.tools ul
+  list-style: none
+  margin: 0
+  padding: 0
+  position: relative
+  margin-bottom: 70px
+.home-gid__item
+  width: 318px
+  text-align: center
+  margin: 23px 0
+  & > a
+    color: #003351
+    text-decoration: none
+    display: block
+    width: 100%
+    height: 100%
+    padding: 0 10px 18px
+    box-sizing: border-box
+    &:hover
+      box-shadow: 0px 0px 0px 1px #c4c4c4, 0px 1px 8px 1px rgba(153,153,153,0.35)
+      border-radius: 4px
+      h3, footer
+        text-decoration: underline
+  h3
+    letter-spacing: .03125rem
+    color: #1c92b2
+    text-transform: uppercase
+    font-size: 1.125rem
+    font-weight: normal
+    margin: 0
+  p
+    margin: 0 0 2px
+    line-height: 1.625rem
+  footer
+    color: #1c92b2
+    font-size: .875rem
+    text-transform: uppercase
+.home-gid__item__icon
+  height: 56px
+  padding: 10px 0 16px
+  svg
+    height: 100%
+    fill: #c4c4c4
+.app-showcase
+  text-align: center
+  font-size: 1.25rem
+  margin-bottom: 80px
+  p
+    max-width: 948px
+    margin: 0 auto
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: center
+    -webkit-justify-content: center
+    -ms-flex-pack: center
+    justify-content: center
+  li
+    width: 100%
+    max-width: 345px
+    margin: 0 70px
+    &:first-child
+      text-align: right
+      .app-showcase__img
+        float: right
+        margin-left: 23px
+    &:last-child
+      text-align: left
+      .app-showcase__img
+        float: left
+        margin-right: 23px
+  a:hover
+    text-decoration: none
+    .app-showcase__title
+      border-bottom: 1px solid #27a1c5
+.app-showcase__box
+  box-shadow: 0px 0px 0px 1px #c4c4c4
+  border-radius: 4px
+  max-width: 970px
+  margin: 0 auto
+  box-sizing: border-box
+  padding: 20px 0 24px 0
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    height: 116px
+    width: 1px
+    background: #c4c4c4
+    left: 50%
+    top: 63px
+  & > div
+    text-transform: uppercase
+    font-size: 1.125rem
+    margin-bottom: 25px
+.app-showcase__img
+  width: 100px
+  height: 100px
+  background-size: cover
+  border-radius: 22px
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.35), inset 0px 0px 1px 1px rgba(0,0,0,0.15)
+.app-showcase__title
+  font-size: 1.875rem
+  font-weight: 300
+  margin-top: 20px
+  display: inline-block
+.app-showcase__developer
+  font-size: 1rem
+  color: #003351
+.app-showcase__platforms
+  font-size: .875rem
+  text-transform: uppercase
+  color: #999
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #c4c4c4
+  margin: 0 0 40px
+  padding: 0
 @media (min-width: 820px)
   .home-header
     color: white
@@ -163,3 +303,28 @@
   a.adobe-logo:hover
     opacity: 1
     border-bottom: none
+  .tools ul
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: space-between
+    -webkit-justify-content: space-between
+    -ms-flex-pack: space-between
+    justify-content: space-between
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      margin: -22px 0 0 -22px
+      height: 44px
+      width: 44px
+      background: url(/images/cross-hairs.svg) no-repeat
+      background-size: contain
+    &:before
+      left: 33.3%
+    &:after
+      left: 66.6%
