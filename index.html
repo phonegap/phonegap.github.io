@@ -169,6 +169,31 @@ layout: compress
         <hr/>
         <section class="latest-blog">
           <h2>The latest from our blog</h2>
+          <ul>
+            {% assign counter = 0 %}
+            {% for post in site.posts %}
+              {% if counter < 2 %}
+                {% assign counter=counter | plus:1 %}
+                <li class="latest-blog__post" itemprop="itemListElement">
+                  <time class="latest-blog__date" datetime="{{ post.date | date: '%Y-%m-%dT%H:%M:%SZ'}}">
+                    <span class="latest-blog__month">{{ post.date | date: "%b" }}</span>
+                    <span class="latest-blog__day">{{ post.date | date: "%d" }}</span>
+                    <span class="latest-blog__year">{{ post.date | date: "%Y" }}</span>
+                  </time>
+                  <div>
+                    <h3 class="latest-blog__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <p class="latest-blog__description">
+                      {% if post.format == 'html' %}
+                        {{ post.content | strip_html | truncatewords: 20 }}
+                      {% else %}
+                        {{ post.content | markdown | strip_html | truncatewords: 20 }}
+                      {% endif %} <a href="{{ post.url }}" class="latest-blog__read-more">READ MORE</a>
+                    </p>
+                  </div>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </section>
       </div>
     </div>
