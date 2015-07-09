@@ -10,7 +10,7 @@ github_username:  phonegap
 # Build settings
 markdown: kramdown
 
-permalink: /:categories/:title/
+permalink: /:categories/:year/:month/:day/:title/
 highlighter: pygments
 excerpt_separator: <!--more-->
 exclude: [vendor]

@@ -271,6 +271,64 @@ hr
   border-top: 1px solid #c4c4c4
   margin: 0 0 40px
   padding: 0
+.latest-blog
+  position: relative
+  h2
+    margin-bottom: 52px
+  &:before
+    content: ""
+    position: absolute
+    height: 170px
+    width: 1px
+    background: #c4c4c4
+    left: 50%
+    top: 70px
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: center
+    -webkit-justify-content: center
+    -ms-flex-pack: center
+    justify-content: center
+.latest-blog__post
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  max-width: 480px
+  margin: 0 20px
+.latest-blog__date
+  text-align: right
+  line-height: 1.25rem
+  font-size: 1.25rem
+  margin: 3px 32px 0 20px
+  -webkit-flex-shrink: 0
+  -ms-flex-negative: 0
+  flex-shrink: 0
+.latest-blog__month
+  display: block
+.latest-blog__day
+  display: block
+  line-height: 2.5rem
+  font-size: 2.5rem
+.latest-blog__year
+  display: block
+.latest-blog__title
+  font-size: 1.25rem
+  font-weight: normal
+  margin: 0
+.latest-blog__description
+  margin-top: .6rem
+.latest-blog__read-more
+  font-size: .875rem
 @media (min-width: 820px)
   .home-header
     color: white
