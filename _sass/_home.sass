@@ -344,12 +344,35 @@ hr
     background: $header-bg
     height: 72px
     margin-bottom: 50px
+    -webkit-transition: all 0.5s
+    transition: all 0.5s
     a
+      -webkit-transition: all 0.5s
+      transition: all 0.5s
       text-decoration: none
       &:hover span
         text-decoration: none
         border-bottom: 1px solid white
         padding-bottom: 10px
+    &.scroll
+      background: rgba(255,255,255,0.95)
+      height: 90px
+      padding-top: 24px
+      box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15)
+      a
+        color: #1d93b2
+      .home-header__logo
+        position: relative
+        top: -3px
+        h1
+          font-size: 1.6875rem
+        a
+          color: #999
+          &:hover span
+            border-bottom: 1px solid #999
+        svg, img
+          width: 2rem
+          margin-right: .25rem
   .home-header__logo
     margin-right: 40px
     h1
