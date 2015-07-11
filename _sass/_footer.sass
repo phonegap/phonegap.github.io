@@ -23,7 +23,7 @@
   -webkit-flex-wrap: wrap
   -ms-flex-wrap: wrap
   flex-wrap: wrap
-  max-width: 520px
+  max-width: 616px
   -webkit-box-pack: justify
   -webkit-justify-content: space-between
   -ms-flex-pack: justify
@@ -53,11 +53,12 @@
   -ms-flex-pack: justify
   justify-content: space-between
 .site-footer__messages
-  max-width: 400px
+  max-width: 420px
   -webkit-box-ordinal-group: 1
   -webkit-order: 0
   -ms-flex-order: 0
   order: 0
+  color: #94b7cb
   h2
     font-weight: normal
     font-size: 1.5rem
@@ -82,7 +83,7 @@
         &:before
           left: .3rem
 .site-footer__message
-  margin-bottom: 3rem
+  margin-bottom: 2.375rem
 .subscribe
   display: -webkit-box
   display: -webkit-flex
@@ -112,6 +113,8 @@
   display: -webkit-flex
   display: -ms-flexbox
   display: flex
+  padding-top: 26px
+  padding-right: 10px
 .subscribe__form__text-input
   background: #64889B
   border: none
@@ -124,15 +127,21 @@
   -ms-flex-positive: 1
   flex-grow: 1
   margin-right: 10px
-  padding: .875rem 1rem
-  &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::placeholder
+  padding: .75rem 1rem .8125rem
+  &::-webkit-input-placeholder
+    color: #003351
+  &::-moz-placeholder
+    color: #003351
+  &:-ms-input-placeholder
+    color: #003351
+  &::placeholder
     color: #003351
 .subscribe__form__submit
   text-transform: uppercase
   font-size: 1.0625rem
   height: 2.75rem
   box-sizing: border-box
-  padding: .875rem 1rem
+  padding: .625rem 1.5625rem .6875rem
   border-radius: 4px
   background: #1BA1C7
   border: none
@@ -146,8 +155,10 @@
 @media (min-width: 820px)
   .site-footer
     .bounds
-      padding-top: 70px
+      padding-top: 67px
       padding-bottom: 30px
+    h2
+      margin-bottom: 0.625rem
   .site-footer__list
     margin: 0 0 2.5rem
   .site-footer__messages
@@ -155,5 +166,5 @@
     -webkit-order: 2
     -ms-flex-order: 2
     order: 2
-    h2
-      margin-bottom: 1.25rem
+  .subscribe h2
+    margin-bottom: 0.125rem
