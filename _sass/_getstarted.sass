@@ -1,0 +1,48 @@
+.gs-steps
+  list-style: none
+  counter-reset: gs-step
+  margin: 0
+  padding: 0
+  font-size: 1.25rem
+.gs-step
+  padding: 10px 0 0 111px
+  position: relative
+  box-sizing: border-box
+  max-width: 640px
+  margin-bottom: 76px
+  &:before
+    counter-increment: gs-step
+    content: counter(gs-step)
+    position: absolute
+    display: block
+    left: 30px
+    top: 0
+    width: 50px
+    height: 50px
+    border: 1px solid #003351
+    box-sizing: border-box
+    font-size: 1.875rem
+    font-weight: $light-weight
+    text-align: center
+    padding: 9px 0 0 2px
+    border-radius: 6px
+.gs-step__title
+  font-size: 1.875rem
+  text-transform: none
+  margin: 0 0 1rem
+.gs-step__note
+  font-size: 1rem
+  padding-left: 30px
+  box-sizing: border-box
+  position: relative
+  &:before
+    width: 20px
+    height: 20px
+    background: url('/images/info-icon.svg') no-repeat
+    background-size: contain
+    display: block
+    content: ''
+    opacity: 0.4
+    position: absolute
+    left: 0
+    top: 4px

@@ -16,5 +16,3 @@ excerpt_separator: <!--more-->
 exclude: [vendor]
 sass:
   sass_dir: _sass
-  debug_info: true
-  sourcemap: true
