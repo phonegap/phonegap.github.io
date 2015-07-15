@@ -11,41 +11,98 @@ permalink: /getstarted/
 <div class="bounds">
   <ol class="gs-steps">
     <li class="gs-step">
-      <h2 class="gs-step__title">Install our desktop app</h2>
-      <div class="gs-step__description">
-        <p>Download and install our new PhoneGap Desktop app, which is currently in beta. If you want more detailed instructions on how to install and use the app, follow the <a href="#">full guide in our documentation</a>.</p>
+      <div class="gs-step__content">
+        <h2 class="gs-step__title">Install our desktop app</h2>
+        <div class="gs-step__description">
+          <p>Download and install our new PhoneGap Desktop app, which is currently in beta. If you want more detailed instructions on how to install and use the app, follow the <a href="#">full guide in our documentation</a>.</p>
+        </div>
+        <div class="gs-step__note">If you’d like to <a href="#">use the CLI to install PhoneGap</a>, check out our docs.</div>
       </div>
-      <footer class="gs-step__note">If you’d like to <a href="#">use the CLI to install PhoneGap</a>, check out our docs.</footer>
+      <div class="download">
+        <h3 class="download__version">Version 0.1.6 (Beta)</h3>
+        <div class="download__label">Download for:</div>
+        <ul>
+          <li>
+            <div class="download__platform"><a href="#">Mac</a></div>
+            <div class="download__platform__version">OS X 10.9 or later</div>
+          </li>
+          <li>
+            <div class="download__platform"><a href="#">Windows</a></div>
+            <div class="download__platform__version">Windows 8.1</div>
+          </li>
+          <div class="download__image">{% include images/pg-desktop.svg %}</div>
+      </div>
     </li>
     <li class="gs-step">
-      <h2 class="gs-step__title">Install our mobile app</h2>
-      <div class="gs-step__description">
-        <p>The PhoneGap Developer app is available for multiple platforms, and will get you running your PhoneGap project on your mobile device without code-signing or compiling.</p>
-        <p>You will pair this mobile app to the desktop app in step 4 to preview your new app.</p>
+      <div class="gs-step__content">
+        <h2 class="gs-step__title">Install our mobile app</h2>
+        <div class="gs-step__description">
+          <p>The PhoneGap Developer app is available for multiple platforms, and will get you running your PhoneGap project on your mobile device without code-signing or compiling.</p>
+          <p>You will pair this mobile app to the desktop app in step 4 to preview your new app.</p>
+        </div>
+        <footer class="gs-step__note">Read our <a href="#">guide on installing the mobile app</a> for step-by-step instructions.</footer>
       </div>
-      <footer class="gs-step__note">Read our <a href="#">guide on installing the mobile app</a> for step-by-step instructions.</footer>
+      <div class="download">
+        <div class="download__label">Download for:</div>
+        <ul>
+          <li>
+            <div class="download__platform"><a href="#">iOS</a></div>
+            <div class="download__platform__version">From the App Store</div>
+          </li>
+          <li>
+            <div class="download__platform"><a href="#">Android</a></div>
+            <div class="download__platform__version">From Google Play</div>
+          </li>
+          <li>
+            <div class="download__platform"><a href="#">Windows Phone</a></div>
+            <div class="download__platform__version">From The Windows Phone Store</div>
+          </li>
+          <div class="download__image">{% include images/pg-mobile.svg %}</div>
+      </div>
     </li>
     <li class="gs-step">
-      <h2 class="gs-step__title">Create your new PhoneGap app</h2>
-      <div class="gs-step__description">
-        <p>To begin, open the PhoneGap Desktop app (that you installed in step 1), and create a new project.</p>
+      <div class="gs-step__content">
+        <h2 class="gs-step__title">Create your new PhoneGap app</h2>
+        <div class="gs-step__description">
+          <p>To begin, open the PhoneGap Desktop app (that you installed in step 1), and create a new project.</p>
+        </div>
+        <div class="gs-step__note">For full details on <a href="#">using our desktop app</a>, go to our docs.</div>
       </div>
-      <footer class="gs-step__note">For full details on <a href="#">using our desktop app</a>, go to our docs.</footer>
+      <div class="gs-step__screenshots">
+        <figure>
+          <figcaption>PhoneGap Desktop: Add/create project menu</figcaption>
+          <img src="/images/menu_screenshot.png" alt="Menu screenshot" width="474" height="189">
+        </figure>
+      </div>
     </li>
     <li class="gs-step">
-      <h2 class="gs-step__title">Run your new app on your device</h2>
-      <div class="gs-step__description">
-        <p>This is where things get real!</p>
-        <p>You’ll need to connect the PhoneGap Developer app you installed in step 2 with the PhoneGap Desktop app you got running in step 3.</p>
-        <p>The PhoneGap Desktop app starts a small web server to host your project and once connected to that web server, the PhoneGap Developer app runs your project on your mobile device. Cool, right?</p>
+      <div class="gs-step__content">
+        <h2 class="gs-step__title">Run your new app on your device</h2>
+        <div class="gs-step__description">
+          <p>This is where things get real!</p>
+          <p>You’ll need to connect the PhoneGap Developer app you installed in step 2 with the PhoneGap Desktop app you got running in step 3.</p>
+          <p>The PhoneGap Desktop app starts a small web server to host your project and once connected to that web server, the PhoneGap Developer app runs your project on your mobile device. Cool, right?</p>
+        </div>
+        <div class="gs-step__note">The <a href="#">instructions to pair the Desktop and Developer apps</a> are in our docs.</div>
       </div>
-      <footer class="gs-step__note">The <a href="#">instructions to pair the Desktop and Developer apps</a> are in our docs.</footer>
+      <div class="gs-step__screenshots">
+        <figure>
+          <figcaption>PhoneGap Desktop: Server running</figcaption>
+          <img src="/images/server_screenshot.png" alt="Server running screenshot" width="490" height="113">
+        </figure>
+        <figure>
+          <figcaption>PhoneGap Developer App: Main screen</figcaption>
+          <img src="/images/pg-dev_screenshot.png" alt="PhoneGap Developer App main screen" width="377" height="250">
+        </figure>
+      </div>
     </li>
     <li class="gs-step">
-      <h2 class="gs-step__title">Write some code &amp; celebrate the world of possibilities!</h2>
-      <div class="gs-step__description">
-        <p>Edit some content or add an alert message to instantly preview your changes. You’ve got a functioning PhoneGap app at this point. If you’d like more help with moving beyond these steps, you’ll find some <a href="#">great articles in our docs</a>.</p>
-        <p>Good luck!</p>
+      <div class="gs-step__content">
+        <h2 class="gs-step__title">Write some code &amp; celebrate the world of possibilities!</h2>
+        <div class="gs-step__description">
+          <p>Edit some content or add an alert message to instantly preview your changes. You’ve got a functioning PhoneGap app at this point. If you’d like more help with moving beyond these steps, you’ll find some <a href="#">great articles in our docs</a>.</p>
+          <p>Good luck!</p>
+        </div>
       </div>
     </li>
   </ol>
