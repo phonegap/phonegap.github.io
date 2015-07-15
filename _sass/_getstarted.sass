@@ -8,8 +8,15 @@
   padding: 10px 0 0 111px
   position: relative
   box-sizing: border-box
-  max-width: 640px
   margin-bottom: 76px
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: justify
+  -webkit-justify-content: space-between
+  -ms-flex-pack: justify
+  justify-content: space-between
   &:before
     counter-increment: gs-step
     content: counter(gs-step)
@@ -26,6 +33,9 @@
     text-align: center
     padding: 9px 0 0 2px
     border-radius: 6px
+.gs-step__content
+  max-width: 526px
+  margin: 0
 .gs-step__title
   font-size: 1.875rem
   text-transform: none
@@ -46,3 +56,75 @@
     position: absolute
     left: 0
     top: 4px
+.gs-step__screenshots
+  margin-right: 10px
+  text-align: right
+  figcaption
+    font-size: 1rem
+    font-style: italic
+    margin-bottom: -10px
+.download
+  max-width: 314px
+  width: 100%
+  position: relative
+  border: 2px solid #c4c4c4
+  border-width: 2px 174px 2px 2px
+  border-radius: 6px
+  padding: 32px 0 16px 36px
+  margin: 40px 10px 0 0
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: justify
+    -webkit-justify-content: space-between
+    -ms-flex-pack: justify
+    justify-content: space-between
+    li
+      min-width: 150px
+      min-height: 80px
+      display: block
+.download__image
+  position: absolute
+  top: 0
+  right: -174px
+  width: 174px
+  height: 100%
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+  svg, img
+    width: 120px
+    height: auto
+.download__version
+  font-size: 1.125rem
+  line-height: 1rem
+  text-transform: uppercase
+  margin: 0
+  font-weight: normal
+.download__label
+  font-size: 1rem
+  font-weight: bold
+.download__platform a
+  font-size: 1.875rem
+  font-weight: $light-weight
+.download__platform__version
+  font-size: .875rem
+  text-transform: uppercase
+  color: #999
