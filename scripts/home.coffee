@@ -3,11 +3,11 @@
 document.addEventListener "DOMContentLoaded", (event) ->
   didScroll = false
 
-  header = Sizzle('.home-header')[0]
+  header = document.getElementById('site-header');
 
   doThisStuffOnScroll = ->
     didScroll = true
-    if(window.scrollY > 0)
+    if(window.scrollY > 50)
       # not top
       header.classList.add 'scroll'
     else
