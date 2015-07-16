@@ -94,6 +94,8 @@
       transition: all 0.5s
       text-decoration: none
       &:hover span
+        -webkit-transition: all 0.5s
+        transition: all 0.5s
         text-decoration: none
         border-bottom: 1px solid white
         padding-bottom: 10px
@@ -114,6 +116,8 @@
           &:hover span
             border-bottom: 1px solid #999
         svg, img
+          -webkit-transition: width 0.5s, margin-right 0.5s
+          transition: width 0.5s, margin-right 0.5s
           width: 2rem
           margin-right: .25rem
   .site-header__logo
