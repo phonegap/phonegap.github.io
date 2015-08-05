@@ -8,7 +8,7 @@ tags:
 - PhoneGap Day
 ---
 
-We had an awesome turnout for our first PhoneGap Day EU in 2013 and we're thrilled to do it again! On Monday, May 18th, we're hosting our second PhoneGap Day EU at [Het Compagnietheater](http://www.compagnietheater.nl/compagnietheater.html) in Amsterdam.
+We had an awesome turnout for our first PhoneGap Day EU in 2013 and we're thrilled to do it again! On Monday, May 18th, we're hosting our second PhoneGap Day EU at [Het Compagnietheater](http://www.compagnietheater.nl/compagnietheater.html) in Amsterdam. 
 
 We're excited to announce a [killer lineup of speakers](http://pgday.phonegap.com/eu2015/) all ready to share tips and best practices in mobile development, experiences with coding and performance, and the latest mobile trends. Be sure to check out the [PhoneGap Day site](http://pgday.phonegap.com/eu2015/) for the full list.
 

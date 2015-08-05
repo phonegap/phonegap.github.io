@@ -1,0 +1,85 @@
+---
+author: Jesse
+categories: app
+date: '2011-05-04 23:19:49'
+permalink: /2011/05/04/phonegap-alytics/
+slug: phonegap-alytics
+status: publish
+title: PhoneGap-alytics
+type: post
+format: html
+categories:
+- Plugins
+---
+
+<p><em>Do you want to gain marketing intelligence and information on how users interact with your PhoneGap app?   <strong>You need this plugin!</strong></em></p>
+
+<h2>Introducing the Google Analytics for PhoneGap plugin.</h2>
+
+<p>Over the last couple weeks,  Joe aka <a href="http://twitter.com/infil00p">@infil00p</a> and I have been working on some exciting new plugins.  We wanted to provide a simple way for PhoneGap developers to get analytics data on the usage of their apps.
+Instead of doing something silly [edit: removed prickish link], like trying to write our own analytics engine, we integrated with Google's best in class offering.</p>
+
+<h2>But PhoneGap apps are webpages already, can't I just include the script tag for web sites?</h2>
+
+<p>Yes, you could, in fact, if you are targeting BlackBerry, Palm or other devices, you will need to do this.  For iOS and Android though, this plugin allows analytics data to be stored when the application is running without a network connection, and updated when a network becomes available.  You could even track the fact that the network is unavailable, so you can compare metrics of offline vs online usage.</p>
+
+<h2>Building the plugin</h2>
+
+<p>Google already provides code for Android and iOS, so we really just needed to make a mapping from the JS side to the native side.  Phonegap's pluggable architecture made this simple, as this is exactly what it was built to do.   We simply reviewed the Google SDK functionality and mirrored this in JS.</p>
+
+<p>Google's GANTracker class provides the bulk of the functionality and exposes the following methods:</p>
+
+<h1>startTrackerWithAccountID</h1>
+
+<ul>
+<li><p>given a web-entity-id, start tracking engine.</p></li>
+<li><p>the engine will periodically send analytics data to the server.</p></li>
+<li><p>the engine will cache data if there is no network connection, and update the server when it can.</p></li>
+</ul>
+
+<h1>trackEvent</h1>
+
+<ul>
+<li><p>parameters for category, action, label, value</p></li>
+<li><p>when something happens in your app, and you want to keep track of it, you can call trackEvent</p></li>
+<li><p>google has an in-depth guide to using custom events <a href="http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html">here</a></p></li>
+</ul>
+
+<h1>trackPageview</h1>
+
+<ul>
+<li><p>pageViews mean something different in an application, they may reflect actual pages, or perhaps different views within your app.</p></li>
+<li><p>The choice of what you send for pageUri is up to you.  It can be any string value, for example /application/launch or app/settings.</p></li>
+</ul>
+
+<h2>Installation and Use</h2>
+
+<p>To setup Android, you will need to follow Google's instructions in the docs.
+For iOS, I have packaged the lib and header, so you can simply add everything in the iOS folder of the repo.</p>
+
+<p>From finder, place the plugin js file in your www folder, and include it in the page.
+After receiving the deviceready event in your app, start the tracker.
+Note that I create a local alias, so I don't need to type window.plugins.googleAnalyticsPlugin everywhere, and code can be more readable.
+This gist demonstrates the initialization, and shows how to track the fact that your app was launched, as well as showing an example trackEvent for tracking playback of a movie.</p>
+
+<p>You can get the code here:
+<a href="https://github.com/purplecabbage/phonegap-plugins/tree/CoreDump/GoogleAnalytics">https://github.com/purplecabbage/phonegap-plugins/tree/CoreDump/GoogleAnalytics</a></p>
+
+<p>More in depth info on Google Analytics for Mobile can be found here:
+Google SDK Docs
+<a href="http://code.google.com/mobile/analytics/docs/">http://code.google.com/mobile/analytics/docs/</a></p>
+
+<p>... and lots more info on how to use events so that you can track meaningful information on usage.
+<a href="http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html">http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html</a></p>
+
+<h2>Next Steps</h2>
+
+<p>Plugin work in general is ongoing.  One thing in particular is that we want to make the JavaScript code that you include in your app exactly the same on all the different devices that use it.  Currently it is sometimes necessary to have multiple JavaScript files, which is an unwanted evil.</p>
+
+<p>Another goal we are working towards is consistent plugin packaging.  Instead of forcing developers to take different steps to ready their app to use a plugin on multiple devices, we want to use a plugin configuration file, so the app code will be exactly the same on each device.</p>
+
+<p>Integration between the PhoneGap Build service and custom Plugins is something we are working towards, so developers can just get down to writing their apps.</p>
+
+<p>Expect more plugins in the coming weeks, as we try to fill more 'Gaps' and make everyone's PhoneGap apps easier to make.</p>
+
+<p>I welcome your comments, feedback, and questions.</p>

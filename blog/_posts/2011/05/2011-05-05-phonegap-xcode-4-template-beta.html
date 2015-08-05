@@ -1,0 +1,37 @@
+---
+author: Shazron
+categories: app
+date: '2011-05-05 23:57:23'
+link: http://blogs.nitobi.com/shazron/2011/05/05/phonegap-xcode-4-template/
+permalink: /2011/05/05/phonegap-xcode-4-template-beta/
+slug: phonegap-xcode-4-template-beta
+status: publish
+title: PhoneGap Xcode 4 Template (beta)
+type: post
+format: html
+---
+
+<p><img src="http://blogs.nitobi.com/shazron/wp-content/uploads/2011/03/apple-xcode-icon.png" alt="" /><a href="http://blogs.nitobi.com/shazron/wp-content/uploads/2011/05/PhoneGapInstaller_Xcode4_beta1.2.pkg.zip">Download the beta1.2 package here</a>.  </p>
+
+<p>View the screencast below (best in full-screen, in HD).</p>
+
+<p><strong>Xcode 4 template specs are undocumented and buggy. So, there are issues</strong>:  </p>
+
+<ul>
+<li><p>We cannot automatically include the "www" folder in the template - the user has to add it in manually (a quick drag and drop). I added in checks and warnings if users try to run the app without adding this in.</p></li>
+<li><p>Some files, like .h and the -Info.plist file, are included in the 'Copy Bundle Resources' build phase by the template. No biggie during run-time, but for those with OCD they will want to remove these from the Build Phase (if only to get rid of the warning).</p></li>
+<li><p>Because Xcode 4 does not expand tildes (~), I cannot add a reference to the PhoneGap.framework in the user's home folder, so I added it to a shared location /Users/Shared which has r+w permissions for everyone (the common folder /Library/Frameworks needs admin privileges). It was added here so users without admin privileges can still use PhoneGap.framework, and by extension, the Xcode 4 Template.</p></li>
+</ul>
+
+<p><strong>RELEASE NOTES</strong></p>
+
+<pre><code>* beta1 - Initial release
+
+
+* beta1.1 - Bug fix for [issue #81](https://github.com/phonegap/phonegap-iphone/issues/81) (moved framework from /Users/Shared/Library to /Users/Shared/PhoneGap)
+
+
+* beta1.2 - Made /Users/Shared/PhoneGap writable to everyone
+</code></pre>
+
+<p><a href="http://blogs.nitobi.com/shazron/2011/05/05/phonegap-xcode-4-template/"> › Visit the original post</a></p>

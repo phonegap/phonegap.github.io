@@ -1,0 +1,47 @@
+---
+author: silentrob
+categories: app
+date: '2009-11-05 12:01:04'
+link: http://blogs.nitobi.com/rob/index.php/2009/11/05/xui-sweeter-then-ever/
+permalink: /2009/11/05/xui-sweeter-then-ever/
+slug: xui-sweeter-then-ever
+status: publish
+title: XUI Sweeter then ever.
+type: post
+format: html
+---
+
+<p>With so much buzz around the office about PhoneGap, I figured I would chime in too, call it a spite driven blog post.</p>
+
+<p>Last week I decided to add some sugar to XUI our answer to a light weight JavaScript framework. Since XUI really doesn't need any new functionality it is really about progressively enhancing the existing code and project.</p>
+
+<p>One area of the code I felt was particularly lacking was how XUI dealt with FORMS, and specifically how we could make XHR handle forms automatically. So lets start by looking at an example of how it worked before.</p>
+
+<p>`// This will insert data.html into #some_div  </p>
+
+<p>$('#some_div').xhr('/data.html');`</p>
+
+<p>When this code runs, it will see that the XHR function has no options, and send the resulting responseText back to the DIV (blowing out the existing content - innerHTML)</p>
+
+<p><code>$('#some_div').xhr('/data.html', function() { alert("XHR Fired"); });</code>  </p>
+
+<p>By making a simple change and passing in a function as the second parameter, you get the responseText back in the callback, this circumvents the responseText from being passing back to the calling node, making it arbitrary.</p>
+
+<p><code>$('#some_form').xhr(function() { alert("XHR Fired"); });</code></p>
+
+<p>`<form id='some_form' action='/data.html' method='post'>  </p>
+
+<pre><code>&lt;input type='text' name='foo' value='bar' /&gt;
+</code></pre>
+
+<p></form>`</p>
+
+<p>With the new changes from my last commit you now have both. In this case, the XHR function checks to see if node is a form, and then uses that data to construct the XHR request, action, method and form properties are all taken into account. Once the XHR has completed, it will call the callback function.</p>
+
+<p>To learn more about XUI visit <a href="http://xuijs.com">XUI</a>  </p>
+
+<p>Check out the code here <a href="http://github.com/silentrob/xui">http://github.com/silentrob/xui</a></p>
+
+<p>Thanks.</p>
+
+<p><a href="http://blogs.nitobi.com/rob/index.php/2009/11/05/xui-sweeter-then-ever/"> › Visit the original post</a></p>

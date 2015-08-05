@@ -1,0 +1,92 @@
+---
+author: Jesse
+categories: app
+date: '2010-04-01 16:57:29'
+link: http://blogs.nitobi.com/jesse/2010/04/01/iphonegap-plugs/
+permalink: /2010/04/01/iphonegap-plugs/
+slug: iphonegap-plugs
+status: publish
+title: iPhoneGap Plugs
+type: post
+format: html
+---
+
+<p>Okay, in your phonegap application in XCode, ( Without EVER having to touch the PhoneGapLib )</p>
+
+<p>1) right click the plugins folder and select Add/NewFile/ObjectiveCClass  </p>
+
+<p>2) Call your new class : TestPlug  </p>
+
+<p>3) Paste the following code into the .m + .h files:</p>
+
+<p>// In the .h file …..  </p>
+
+<h1>import</h1>
+
+<h1>import "PhoneGapCommand.h"</h1>
+
+<p>@interface TestPlug : PhoneGapCommand {  </p>
+
+<p>}  </p>
+
+<ul>
+<li>(void)doit:(NSMutableArray<em>)arguments withDict:(NSMutableDictionary</em>)options;  </li>
+</ul>
+
+<p>@end</p>
+
+<p>// in the .m file </p>
+
+<h1>import "TestPlug.h"</h1>
+
+<p>@implementation TestPlug</p>
+
+<ul>
+<li>(void)addThemUp:(NSMutableArray<em>)arguments withDict:(NSMutableDictionary</em>)options  </li>
+</ul>
+
+<p>{  </p>
+
+<p>NSUInteger argc = [arguments count];  </p>
+
+<p>int total = 0;  </p>
+
+<p>for(int n = 0; n &lt; argc; n++)  </p>
+
+<p>{  </p>
+
+<p>total += [[ arguments objectAtIndex:n] intValue];  </p>
+
+<p>}  </p>
+
+<p>NSString* retStr = [ NSString stringWithFormat:@"alert("%d");",total];  </p>
+
+<p>[ webView stringByEvaluatingJavaScriptFromString:retStr ];  </p>
+
+<p>}  </p>
+
+<p>@end</p>
+
+<p>4) In your JS code, somewhere after deviceready, call your command like this.</p>
+
+<p>PhoneGap.exec("TestPlug.addThemUp",1,2,3,4);</p>
+
+<p>Build and run!</p>
+
+<p>Note the structure of the PhoneGap.exec call  </p>
+
+<p>1) a command name : TestPlug  </p>
+
+<p>2) a method name : addThemUp  </p>
+
+<p>3) a variable length list of arguments</p>
+
+<p>Next time, I'll get into passing objects via the 'options' object.</p>
+
+<p>If you have a compelling plug-in you want to share, you can fork my repo for plugins and send me a pull request :</p>
+
+<p>http://github.com/purplecabbage/PhoneGap-Plugins</p>
+
+<p>If your plugin makes sense on multiple devices, and it is implemented with standards in mind, it may end up in PhoneGapLib.</p>
+
+<p><a href="http://blogs.nitobi.com/jesse/2010/04/01/iphonegap-plugs/"> › Visit the original post</a></p>

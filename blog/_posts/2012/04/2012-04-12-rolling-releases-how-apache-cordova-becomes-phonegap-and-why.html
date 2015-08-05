@@ -1,0 +1,76 @@
+---
+author: Brian
+categories: app
+date: '2012-04-12 17:47:19'
+permalink: /2012/04/12/rolling-releases-how-apache-cordova-becomes-phonegap-and-why/
+slug: rolling-releases-how-apache-cordova-becomes-phonegap-and-why
+status: publish
+title: 'Rolling Releases: How Apache Cordova becomes PhoneGap and Why'
+type: post
+priority: 5
+format: html
+tags:
+- Insight
+---
+
+<p>Every software project has a different style in how its team manages a release. Our industry changes fast, and release management is no exception. This article discusses the Apache Cordova release model and how it relates to PhoneGap.</p>
+
+<h2>When and Why</h2>
+
+<p>Software developers, not so long ago, cut code which was then transferred to physical media, shrink wrapped in a pretty box and sold on a shelf in a store. Then the internet came along and you could buy that same box online and it would be shipped to you. Eventually, digital downloads started to make sense until finally today, we see hosted models emerge.</p>
+
+<p>This older model required extensive coordination from the manufacturing of the physical media, burning CDs perhaps, to the marketing campaign. With the newer model, we can ship new stuff every day and make noise about it whenever we want. Software development today can at least give the appearance of being more predictable but, better still, feedback from our customers is almost immediate.</p>
+
+<p>Open source changes things even more radically. The latest version, often rightfully called Edge, is always available. Download the bits and take them for a test drive; anytime, anywhere.</p>
+
+<p>Interestingly, the practice of customers working on the bleeding edge is actually quite rare. As the name implies, they aren’t interested in bleeding! A official release represents a commitment from the developers. It says, <em>“Hey man, we tested this. We documented it.  We know the performance is good. There have been no regressions or security concerns. This code is ready to be tagged 1.0.0! “</em></p>
+
+<p>The very act of assigning this mostly arbitrary number is a vote of confidence. A contract even. A symbolic gesture informing customers the release is a personal guarantee. Not just a guarantee of the bits that are there today, but a guarantee of support into the future too.</p>
+
+<p>If a customer discovers a bug in 1.0.0 then you can expect upon it being reviewed that bug will be assigned to be fixed in a patch release like 1.0.1 or, if it not urgent, the next point release which, for our example, would be 1.1.0. <strong>The version number is the canonical way of tracking issues related to the software, fixing them, and ensuring those issues never manifest again.</strong></p>
+
+<h2>About Version Numbers</h2>
+
+<p>The Linux kernel, for a time, and now NodeJS, Gnome, among others, use/used odd MINOR version numbers to denote development releases. Its a cool practice that tells the developer at a glance how much hardening a release has had. Linux has since dropped this practice and has moved to a more rapid release schedule.</p>
+
+<p>Earlier I wrote the version number is “mostly arbitrary”, and you hated me a little bit for it. It is true, we all know it, we assign logic to a magic number. Some projects practice the relatively recent <a href="http://semver.org/">Semantic Versioning</a> spec which seeks to resolve so called ‘dependency hell’. It codifies the long standing de facto version schema of X.Y.Z where X is MAJOR changes, Y represents MINOR updates and Z is a PATCH to the minor update stream.</p>
+
+<p>Dependency hell boils down to global dependency conflict resolution. If package A depends on version 1 of package B and C, but C depends on version 2 of package B: <strong>ur head asplode</strong>.</p>
+
+<p>NodeJS solved this one in a startlingly simple and, in hindsight, what should’ve been obvious way. They simply removed the idea of a global package. With only a local scope a package contains its own dependencies, often frozen (or vendored) into the package itself. Brilliant: lexical scope for the package artifacts themselves. No dependency hell. No false hope that the maintainers faithfully adhere to the plausible rigor of Semantic Versioning. <strong>Shit just works.</strong></p>
+
+<p>Another statement made by Semantic Versioning, which I really like, is a stated policy on what constitutes a public, and the subsequent private, API. Essentially, a public API is documented as such. The private API is considered unstable and, as such, remains undocumented. The private API is also left untested as it is not a part of contract, per se.</p>
+
+<p>However, one is forced to ask, <em>what does documented mean in an open source project?</em> <em>*If the API surface is there, somebody is certain to use it, and if the signature changes or is removed, that person will experience pain. *</em></p>
+
+<p>Of course this depends on your perspective of what constitutes pain. For me, pain is debugging a Java stack trace in Eclipse, but for another person it could be debugging CoffeeScript in a mobile browser. (Which I take joy in.) Neither of us is necessarily right or wrong. But we both share the hate for any pain caused by a project we did not write! Pain is not what we’re going for here. Negative feedback leads to hate, fear and ultimately the cold void of total abandonment. We all saw Star Wars; nobody enjoys having their arms and legs cut off, and then left for dead by an unforgiving flow of hot magma. But that is exactly what a breaking upgrade can feel like.</p>
+
+<h2>Mistakes Were Made</h2>
+
+<p>We at the Apache Cordova project recently left our community with their arms and legs cut off, and then left for dead by an unforgiving flow of hot magma. In our exuberance to ship Cordova 1.5 we left our documentation trailing slightly behind on some projects. You see, <a href="http://phonegap.com/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/">we recently changed our name</a>, and a part of that change means we changed our code to use Cordova instead of PhoneGap. Its a simple fix, a job for find and replace really, but that is no excuse for fucking over our community.</p>
+
+<p>In tandem with the name change, we’re shipping a new effort that unifies the JavaScript implementation of Cordova into a single canonical source. There may never be a single JS file to rule all Cordova platforms but we put a stop to unnecessary duplication and centralize our JS writing efforts. Through this, we have tickled out many small inconsistencies between platforms; and deprecated some of the rougher edges. This has broken things, namely 3rd party plugins, which have up to this point not been officially supported. Moving forward, that is going to change too.</p>
+
+<p>Our documentation is now up to date and, in the impending 1.7 sprint we have put in place a better definition of done. One wherein we not only ensure we have no regressions in our tests but that our docs are in sync with the code we are shipping for a particular tag. In addition, we will finally be documenting our Plugin API and will continue to support it into the future. And finally to help ensure this never happens again, we have an article describing our deprecation policy moving forward. The short of it is, we will not break things that exist until a MAJOR release, and leave old APIs around in the form of shims or otherwise with plenty of warning before removal.</p>
+
+<p>The coming months leading to 2.x the Apache Cordova team will make a concerted effort to improve upon the quality, and availability, of our documentation lead by <a href="https://twitter.com/#!/mwbrooks">Michael Brooks</a>. For folks who suffered with the great rename of 1.5: we apologize for cutting off your arms and legs, leaving you for dead beside an unforgiving flow of hot magma.</p>
+
+<h2>Cadence, Heartbeat, and the Release Train</h2>
+
+<p>The Apache Cordova community aims to ship a point release monthly, which is to say, we value consistent release cadence as a priority over forcing a particular issue, task, bug or feature to a particular date. I’ve tended to call this “Rolling Releases” but elsewhere it is often referred to as the Agile Train Model (which I think sounds lame++). There is a great deal of reading on the topic, and many projects implement this style, notably Ubuntu, Chrome, and Firefox. <em>*The key concept to understand is that we no longer ship physical media in a box to a store shelf so forcing issues to a particular dates is a practice considered by most free software developers: _deprecated_. *</em></p>
+
+<p>Shipping in a predictable manner drives adoption, and confidence, in an open source project. Confidence in the health of a project attracts contributors. Committers are our soul, and releases our heartbeat. If a particular issue doesn’t make it in its target sprint release it will certainly be in the next one. We market as we ship, and we ship every month, and each month there is always positive stuff to talk about. <em>*We can still have big events on big dates but this practice is not mutually exclusive to shipping on a regular schedule. *</em>And on that topic, keep your eyes open for announcements about PhoneGap Day 2.0 soon.</p>
+
+<p>Each minor release we ship is loosely themed on a generally agreed upon goal for the project. (We drive rough consensus on the mailing list, but other channels exist like IRC, Twitter and of course our Issue Tracker.) <strong>Bugs always take priority over new shiny.</strong> An overarching goal leads to the major releases, for which we aim to have one per year.</p>
+
+<p>Very early on, PhoneGap was mostly built during the spare time of Nitobi employees and a few outside contributors. We stalled on 0.8.0 for almost a year, and as a result our community worked off of Edge, making issue tracking very difficult, cascading into a host of predictability and reliability issues, which quite frankly jeopardized the entire effort. In late 2009, when IBM joined the fray with Nitobi, we started releasing once a month, rolling issues over to the next MINOR.</p>
+
+<p>The team at IBM taught us about the importance of predictability, brought the much needed cadence, calm pragmatism, and serious engineering chops into the project community culture. We have shipped reliably since they joined forces with Nitobi and we continue to work today, as Adobe, with even more contributors, most notably in my view: RIM and Microsoft.</p>
+
+<p>We have recently, in the past year or so, started tagging Release Candidates about a week before the expected ship for minor release (such as 1.6.0rc1) which tends to tease out more bugs and avoid the embarrassing patch release (our 1.4.1 comes to mind). Future releases we have decided to continue with this philosophy. Moving forward we aim to use the first two weeks of the month for the new shiny, tag the Release Candidate, and the final two weeks will be focused solely on hardening the code, ensuring it is performant, secure, tested, and well documented.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>It is an incredibly rare occurrence to see any software ship on a regular schedule let alone software that is being worked by multiple distributed team members from different organizations spread across timezones, cultures, devices, platforms, and programming disciplines.  Some might say this is lucky. I tend to agree, but I also believe we’re making our own luck, and the heartbeat of the project is a big part in the wider community confidence in our work. <em>*The Cordova community knows bugs emerge, and mistakes will be made, but they can be confident that we will correct those issues in a timely fashion. *</em></p>
+
+<p>If you are interested in helping us cut releases, and improve Apache Cordova. Please check out the <a href="http://incubator.apache.org/cordova/">open source Apache Cordova project website</a> and learn how to get involved.</p>

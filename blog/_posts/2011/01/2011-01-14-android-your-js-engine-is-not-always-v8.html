@@ -1,0 +1,103 @@
+---
+author: Joe B
+categories: app
+date: '2011-01-14 18:59:54'
+link: http://blogs.nitobi.com/joe/2011/01/14/android-your-js-engine-is-not-always-v8/
+permalink: /2011/01/14/android-your-js-engine-is-not-always-v8/
+slug: android-your-js-engine-is-not-always-v8
+status: publish
+title: 'Android: Your JS Engine is not always V8'
+type: post
+format: html
+---
+
+<p>Recently, I watched some Mobile Web training, and I noticed that people overlook many things about Android.  Namely these facts:</p>
+
+<ul>
+<li><p>WebKit is different on every phone</p></li>
+<li><p>The Browser and the WebKit engine are different things.</p></li>
+<li><p>WebKit can have a different engine</p></li>
+</ul>
+
+<p>So, as usual I will talk about how the source to Android is OPEN, and how with the source code, I can look at the build scripts and find out what Android ACTUALLY supports instead of doing feature detection or the other things people in turtlenecks use to decide what Android can and can't do very well.  Below is the applicable Makefile for WebKit:</p>
+
+<p>`  </p>
+
+<h1>Two ways to control which JS engine is used:</h1>
+
+<h1>1. use JS_ENGINE environment variable, value can be either 'jsc' or 'v8'</h1>
+
+<h1>This is the preferred way.</h1>
+
+<h1>2. if JS_ENGINE is not set, or is not 'jsc' or 'v8', this makefile picks</h1>
+
+<h1>up a default engine to build.</h1>
+
+<h1>To help setup buildbot, a new environment variable, USE<em>ALT</em>JS_ENGINE,</h1>
+
+<h1>can be set to true, so that two builds can be different but without</h1>
+
+<h1>specifying which JS engine to use.</h1>
+
+<h1>To enable JIT in Android's JSC, please set ENABLE<em>JSC</em>JIT environment</h1>
+
+<h1>variable to true.</h1>
+
+<h1>Read JS_ENGINE environment variable</h1>
+
+<p>JAVASCRIPT<em>ENGINE = $(JS</em>ENGINE)</p>
+
+<h1>The default / alternative engine depends on the device class.</h1>
+
+<h1>On devices with a lot of memory (e.g. Passion/Sholes), the</h1>
+
+<h1>default is V8. On everything else, the only choice is JSC.</h1>
+
+<h1>TODO: use ARCH<em>ARM</em>HAVE_ARMV7 once that variable is added to</h1>
+
+<h1>the build system.</h1>
+
+<p>ifeq ($(ARCH<em>ARM</em>HAVE_VFP),true)  </p>
+
+<pre><code>DEFAULT_ENGINE = v8  
+
+ALT_ENGINE = jsc
+</code></pre>
+
+<p>else  </p>
+
+<pre><code>DEFAULT_ENGINE = jsc  
+
+ALT_ENGINE = jsc
+</code></pre>
+
+<p>endif</p>
+
+<p>ifneq ($(JAVASCRIPT_ENGINE),jsc)  </p>
+
+<p>ifneq ($(JAVASCRIPT_ENGINE),v8)  </p>
+
+<pre><code># No JS engine is specified, pickup the one we want as default.  
+
+ifeq ($(USE_ALT_JS_ENGINE),true)  
+
+  JAVASCRIPT_ENGINE = $(ALT_ENGINE)  
+
+else  
+
+  JAVASCRIPT_ENGINE = $(DEFAULT_ENGINE)  
+
+endif
+</code></pre>
+
+<p>endif  </p>
+
+<p>endif  </p>
+
+<p>`</p>
+
+<p>So, if you're running a low-end Android device, like a Motorola Quench, your Javascript Engine will be different from the Nexus S, HTC EVO with CM7, the Motorola Droid, the Nexus One, etc.  Since nobody has seen the official Android 2.3 on anything other than the Nexus S, I can only really do experiments with Cyanogen on an HTC Dream, which isn't really accurate.  </p>
+
+<p>Recently, there was an issue with the emulator image on Android 2.3 that directly affected PhoneGap.  Because I have no idea what Javascript Engine is on the emulators, I suspect that this image may creep up again on low-end phones and cause even more fragmentation than before.  This is a REALLY bad thing, since it makes web development on Android even more frustrating, and will chase developers away from that platform.  Like everything else in Android, things are always changing, so if any phone manufacturers are reading this and can test PhoneGap on their low-end line and get back to me, that would be greatly appreciated. </p>
+
+<p><a href="http://blogs.nitobi.com/joe/2011/01/14/android-your-js-engine-is-not-always-v8/"> › Visit the original post</a></p>

@@ -1,0 +1,48 @@
+---
+author: Anis
+categories: app
+date: '2010-11-22 22:55:35'
+link: http://blogs.nitobi.com/anis/?p=73
+permalink: /2010/11/22/phonegap-textmate-bundle-2/
+slug: phonegap-textmate-bundle-2
+status: publish
+title: PhoneGap TextMate Bundle
+type: post
+format: html
+---
+
+<p>Dear TextMate users/PhoneGap developers,</p>
+
+<p>I put together a little bundle for your favorite editor. You should now be able to easily get code snippets right in your editor.</p>
+
+<p>You can find it <a href="https://github.com/imhotep/PhoneGap.tmbundle">here</a></p>
+
+<p>Installation instructions are <a href="http://manual.macromates.com/en/bundles#installing_a_bundle">here</a></p>
+
+<p>How to use:</p>
+
+<p>Type <code>accel.wa</code> and press <em>Tab</em> and you should get:</p>
+
+<pre><code>&lt;code&gt;
+function onSuccess(acceleration) {
+    alert('Acceleration X: ' + acceleration.x + 'n' +
+          'Acceleration Y: ' + acceleration.y + 'n' +
+          'Acceleration Z: ' + acceleration.z + 'n' +
+          'Timestamp: '      + acceleration.timestamp + 'n');
+};
+
+function onError() {
+    alert('onError!');
+};
+
+var options = { frequency: 3000 };  // Update every 3 seconds
+
+var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+&lt;/code&gt;
+</code></pre>
+
+<p>Now all you have to do is modify the callbacks to suit your needs! Almost every API method should be present.</p>
+
+<p>Feedback always welcome!</p>
+
+<p><a href="http://blogs.nitobi.com/anis/?p=73"> › Visit the original post</a></p>
