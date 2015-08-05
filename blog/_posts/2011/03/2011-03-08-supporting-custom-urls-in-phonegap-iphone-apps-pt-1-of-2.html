@@ -1,0 +1,50 @@
+---
+author: Jesse
+categories: app
+date: '2011-03-08 00:09:29'
+link: http://blogs.nitobi.com/jesse/2011/03/07/supporting-custom-urls-in-phonegap-iphone-apps-pt-1-of-2/
+permalink: /2011/03/08/supporting-custom-urls-in-phonegap-iphone-apps-pt-1-of-2/
+slug: supporting-custom-urls-in-phonegap-iphone-apps-pt-1-of-2
+status: publish
+title: Supporting Custom URLs in PhoneGap-iPhone apps pt 1 of 2
+type: post
+format: html
+---
+
+<p>I recently reworked some of the launchOption / handleOpenURL code in PhoneGap iPhone.  </p>
+
+<p>The commit is <a href="https://github.com/purplecabbage/phonegap-iphone/commit/a492f0582641bd1a6729ca29e6d58d4bc5baec99">here</a>. </p>
+
+<p>You can expect these changes to be included in the next official release 0.9.5 later this month, however these are not considered PhoneGap functions, so I thought I would explain how this all works and save anyone having to wait for the next release.</p>
+
+<p>The custom url schemes are an iOS thing, so it did not make sense to me to include them in the core of PhoneGap, but they are definitely useful, so they needed to be included somewhere.</p>
+
+<p>When you create a new PhoneGap project in XCode, the template spits out a new XCode project containing a subclass of PhoneGapAppDelegate where you can choose to implement whatever you want without worrying about breaking the base classes.  I chose to modify the template to make it easier for users to use custom urls.  You can also add this functionality to an existing project quite simply.</p>
+
+<p>For a very good description of how to set up the custom url, check out <a href="http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html">this post.</a></p>
+
+<p>Once you have set up the plist and added your custom url, you can turn your attention to your app delegate files.  First we will look at launchOptions.</p>
+
+<h1>Launch Options</h1>
+
+<p>In your MYPROJECT_AppDelegate.h add a variable to store the invoked url like this.</p>
+
+<p>Now turning your attention to the implementation file, MYPROJECT_AppDelegate.m, you will need to respond to the didFinishLaunchingWithOptions: message. If you were previously handling applicationDidFinishLaunching: you can safely remove this call, and handle things in the withOptions variant.  This is the way the baseClass ( PhoneGapDelegate.m/.h ) functions now, but the template was not updated to reflect the change.</p>
+
+<p>Your didFinishLaunchingWithOptions should look like this:</p>
+
+<p>The above stores the launchOptions url as a string for later use.  </p>
+
+<p>Next we will pass it into the UIWebView where our JS app loads, we have to wait for the page to load to do this, but we add it before we call super, so the value will be available when the deviceready event fires in our page.</p>
+
+<p>Now moving to the html/js</p>
+
+<p>Awesome, we have received the launchOptions in our Javascript code, and we can continue on and do something relevant with them.</p>
+
+<p>To test this, open Mobile Safari on your device or simulator ( after having installed your app, and making sure it is not running in the background. )</p>
+
+<p>In Mobile Safari's address bar enter your customUrl scheme and verify that it launches your app and you see an alert with the freaking launchOptions.</p>
+
+<p>Next up : handleOpenURL</p>
+
+<p><a href="http://blogs.nitobi.com/jesse/2011/03/07/supporting-custom-urls-in-phonegap-iphone-apps-pt-1-of-2/"> › Visit the original post</a></p>

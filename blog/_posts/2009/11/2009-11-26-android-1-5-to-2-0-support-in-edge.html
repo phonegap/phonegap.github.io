@@ -1,0 +1,22 @@
+---
+author: Joe B
+categories: app
+date: '2009-11-26 12:41:58'
+link: http://blogs.nitobi.com/joe/2009/11/26/android-1-5-to-2-0-support-in-edge/
+permalink: /2009/11/26/android-1-5-to-2-0-support-in-edge/
+slug: android-1-5-to-2-0-support-in-edge
+status: publish
+title: Android 1.5 to 2.0 Support in EDGE
+type: post
+format: html
+---
+
+<p>After spending a day with Java reflection, I believe that we are now at the point where PhoneGap Android can now be supported on 1.5, 1.6 and 2.0 versions of Android.  This wasn't incredibly hard, except for the fact that I was unfamiliar with reflection, and the example on the Android site is less than helpful, since it deals with the Debug static methods, and not a real world object that can have things like instances.  Also, reading Sun's documentation made me realize how useless examples that use the word Class is as a classname.</p>
+
+<p>The result of this is that we may have a JAR that can be used on Android 1.5, 1.6 and 2.0, which solves the divergence issue.  However, this doesn't mean that we have SQLite database storage that doesn't exist on Android 1.5 or 1.6.  It means that if you are using Android 2.0, you have access to the SQLite Database if you are running the Edge version.</p>
+
+<p>After pairing down PhoneGap to a jar, it appears to be weighing in at under 200k.  I'm thinking about distributing it as an installable library on Android so that if you have it installed, you can download PhoneGap compatible APKs.  This would be similar to the Text-To-Speech API functionality.  This may encourage Google to close the browser gap, or it may just get ignored if people just use their own stand-alone PhoneGap + app apps.</p>
+
+<p>More info on this will come shortly.</p>
+
+<p><a href="http://blogs.nitobi.com/joe/2009/11/26/android-1-5-to-2-0-support-in-edge/"> › Visit the original post</a></p>

@@ -1,0 +1,218 @@
+---
+author: Jesse
+categories: app
+date: '2009-05-28 18:32:14'
+link: http://blogs.nitobi.com/jesse/2009/05/28/yutuplr-getting-started/
+permalink: /2009/05/28/yutuplr-%e2%80%93-getting-started/
+slug: yutuplr-%e2%80%93-getting-started
+status: publish
+title: YuTuplr – Getting Started.
+type: post
+format: html
+---
+
+<p>Lately in my spare time I have been quietly plugging away at building a simple YouTube uploader application in Air. Â Nitobi encourages us to spend part ofÂ our time on our own pet projects, as well as community interaction and contributing to open source initiatives. Â I have been working on this application (Â YuTuplr - as in a short form of YouTube Uploader ) primarily by myself, so it has forced me to reach outside my comfort zone, and do some things that IÂ usually take for granted. Â I have approached this project as if it were a stand-alone product, so it has it's own logo, branding, domain, and <a href="http://www.yutuplr.com">website</a>. Â  AllÂ of my work, with the exception of some developer keys and fonts is open source and is available on <a href="http://code.google.com/p/air-youtube-uploader/">google cod</a>e.</p>
+
+<p><img src="http://www.yutuplr.com/images/yutuplrScreen.gif" alt="" /></p>
+
+<p>I am posting the following as sort of a quick start guide for anyone who wants to add YouTube upload functionality to their own Air apps, or just learn some AS3. Â For the complete picture, please download and study the YuTuplr source.</p>
+
+<p>The application is seperated into 2 seperate flex projects.</p>
+
+<p>The <em>*AirYouTubeUploaderLib *</em>is a Flex/Air library project that contains all of the functionality related to YouTube. Â The goal was to hide the low level stuff,Â and allow API users to build client application without the greasy YouTube API details.</p>
+
+<p>YuTuplr is a somewhat full-blown example of a client, and can be used as a guide for building your own clients. Â YuTuplr's source code is in the projectÂ <strong>AirYouTubeUploaderSampleApp</strong> and contains a reference to the AirYouTubeUploaderLib project.</p>
+
+<p>The <strong>YouTubeService</strong> class is the main point of interaction with your code.</p>
+
+<p>To get started using the service, simply create an instance, and give it your YouTube developer credentials. You will need to get your credentials from <a href="http://code.google.com/apis/youtube/dashboard/">YouTube</a>.</p>
+
+<p>`  </p>
+
+<p>import com.nitobi.webapis.youtube.YouTubeService;  </p>
+
+<p>ytService = new YouTubeService();  </p>
+
+<p>ytService.setCredentials(clientID,devKey);  </p>
+
+<p>`</p>
+
+<h2>Authentication</h2>
+
+<p>You can look at <strong>ytService.isAuthenticated</strong> to see if you are already logged in, and currentUserName to get the current user's name.</p>
+
+<p>To login, simply call :`  </p>
+
+<p>ytService.login(userName:String,password:String,rememberMe:Boolean = true):void  </p>
+
+<p>`</p>
+
+<p>If the rememberMe flag is true, the YouTubeService will store the username/password in a LocalSharedObject.</p>
+
+<p>To retrieve the previously stored values, YouTubeService has public getters :Â `  </p>
+
+<p>storedUsername():StringÂ   </p>
+
+<p>storedPassword():String  </p>
+
+<p>`  </p>
+
+<p>Both getters will return "" if the last login did not set rememberMe to true.</p>
+
+<p>YuTuplr uses this information when it initializes the login window like the following:</p>
+
+<p>` usernameInput.text = ytService.storedUsername;  </p>
+
+<p>passwordInput.text = ytService.storedPassword;  </p>
+
+<p>cbRememberMe.selected = usernameInput.text.length &gt; 0;  </p>
+
+<p>`</p>
+
+<p>The service will dispatch the following YouTubeEvent(s) related to login:</p>
+
+<p><strong>YouTubeEvent.YT<em>LOGIN</em>STARTÂ - the service is attempting to log in, use this to display a spinner or disable a log in button</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>LOGIN</em>SUCCESSÂ - all systems go! The user has been authenticated.</strong></p>
+
+<p><strong><em>*YouTubeEvent.YT_LOGIN_ERRORÂ - there was an error logging in, bad username or password.</em>*</strong></p>
+
+<h2>Getting the user's Uploads</h2>
+
+<p>The service exposes several bindable ArrayCollections for data storage.</p>
+
+<p><strong>YouTubeService.userUploadsÂ - a collection of UserUpload objects, all in various states. Â Some may be completed, but still in the list, others may be pending or failed.</strong></p>
+
+<p>Upload status is statically defined by the UserUpload class</p>
+
+<p><strong>UserUpload.STATUS_UPLOADINGÂ - the file is currently being uploaded</strong></p>
+
+<p><strong>UserUpload.STATUS_COMPLETEDÂ - the upload has completed</strong></p>
+
+<p><strong>UserUpload.STATUS_ERRORÂ - the upload failed</strong></p>
+
+<p><strong>UserUpload.STATUS_QUEUEDÂ - file is in queue, and will be uploaded according to it's order in the queue</strong></p>
+
+<p><strong>UserUpload.STATUS_PENDING</strong>Â - this upload is being edited (meta) and should not be uploaded yet</p>
+
+<p><em>- set the status to STATUS</em>PENDING to prevent the uploader from trying to upload a file while the user is editing the details._</p>
+
+<p>In order to add to <strong>YouTubeService.userUploads</strong>, simply call YouTubeService's <strong>addFile</strong> method passing it a file object. Â If the file object is a directory, theÂ service will locate all supported video files (by extension) within it and add them to the list.</p>
+
+<p>` public function addFile(file:File):Boolean;  </p>
+
+<p>public function addFiles(fileList:Array):Boolean;  </p>
+
+<p>`</p>
+
+<p><strong>The service also provides methods for cleaning up the list:</strong></p>
+
+<p>To remove all uploads that have a status of complete:  </p>
+
+<p>`  </p>
+
+<p>public function clearCompletedUploads():void  </p>
+
+<p>`  </p>
+
+<p>To retry all failed uploads:Â `  </p>
+
+<p>public function retryFailedUploads():void`  </p>
+
+<p><em>- Behind the scenes, this resets status to UserUpload.STATUS</em>QUEUED and they will be uploaded according to their order in the queue._</p>
+
+<p>To remove failed uploads:`  </p>
+
+<p>public function removeFailedUploads():void  </p>
+
+<p>`  </p>
+
+<p>To remove an individual UserUpload from the queue:`  </p>
+
+<p>public function removeFileFromQueue(upld:UserUpload):void  </p>
+
+<p>`  </p>
+
+<p>Â   </p>
+
+<p>A key goal in the design of the architecture was to support binding throughout.</p>
+
+<p>You can safely bind a list control to the UserVideos collection, and when updates are received from YouTube the same object instances are updated with theÂ new values. Â This makes the service pretty easy to interact with, as binding does most of the work.</p>
+
+<h2>YouTubeService.userVideos</h2>
+
+<p>The userVideos ArrayCollection is a list of all the users previously uploaded videos. Each item in the list is of type :UserVideo</p>
+
+<p>UserVideo have the following properties:  </p>
+
+<p>`  </p>
+
+<p>id:String; // the unique id assigned by YouTube  </p>
+
+<p>thumbnail1:String;// URLs to video images.  </p>
+
+<p>// Note: the thumbnails are null until YouTube has processed the movie  </p>
+
+<p>thumbnail2:String;  </p>
+
+<p>thumbnail3:String;  </p>
+
+<p>durationSeconds:int;  </p>
+
+<p>viewCount:int;  </p>
+
+<p>commentsCount:int;  </p>
+
+<p>published:Date;  </p>
+
+<p>updated:Date;  </p>
+
+<p>status:String; // UserVideo. ( STATUS<em>PROCESSING | STATUS</em>ACTIVE | STATUS_REJECTED )  </p>
+
+<p>reason:String; // ie. Duplicate video ( this is only available if status == STATUS_REJECTED )  </p>
+
+<p>description:String;  </p>
+
+<p>keywords:String;  </p>
+
+<p>rating:Number = 0;`</p>
+
+<p>The UserVideo also has a getter for formatted duration, which returns a formatted time string MM:SS`  </p>
+
+<p>get formattedDuration():String`</p>
+
+<h2>YouTube events dispatched by the service</h2>
+
+<p>Your application will want to subscribe to events to know what is happening with the service.</p>
+
+<p>YouTubeEvent statically defines all the events that the service will dispatch.</p>
+
+<p><strong>YouTubeEvent.YT<em>LOGIN</em>STARTÂ - the service is attempting to log in, use this to display a spinner or disable a log in button</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>LOGIN</em>SUCCESSÂ - all systems go!</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>LOGIN</em>ERRORÂ - there was an error logging in, bad username or password</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>GOT</em>USER_VIDEOSÂ - the authenticated user's videos have been retrieved from YouTube</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>NO</em>CREDENTIALSÂ - an API call was attempted, but you have not set the developerKey and clientID.</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>UPLOAD</em>SUCCESSÂ - an upload has successfully completed</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>UPLOAD</em>ERRORÂ - there was an error uploading a file.</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>UPLOAD</em>COMPLETEÂ - an upload has completed, this is fired both on success and error conditions</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>UPLOAD</em>PROGRESSÂ - YouTubeEvent.data contains bytesLoaded and bytesTotal that you can use to bind directly to a progress bar.</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>PROCESSING</em>COUNT_CHANGEÂ - when videos are uploaded to YouTube, they must be transcoded before they are available. Â The YouTubeService keeps tracks of how many UserVideos areÂ processing and fires this event whenever the count changes.</strong></p>
+
+<p><strong>YouTubeEvent.YT<em>FILESIZE</em>EXCEEDEDÂ - the user has added a file that is over the YouTube defined 1 GB limit</strong></p>
+
+<p>Â </p>
+
+<p>Hopefully that is enough to get you started playing with the YouTube Uploader Library. Â I welcome all comments, questions, suggestions and especially contributions if anyone wants to jump in and help push the app to the next level.</p>
+
+<p>Jesse</p>
+
+<p><a href="http://blogs.nitobi.com/jesse/2009/05/28/yutuplr-getting-started/"> › Visit the original post</a></p>

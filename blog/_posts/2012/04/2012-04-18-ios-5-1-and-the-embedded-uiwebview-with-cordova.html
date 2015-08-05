@@ -1,0 +1,64 @@
+---
+author: Shazron
+categories: app
+date: '2012-04-18 20:18:24'
+permalink: /2012/04/18/ios-5-1-and-the-embedded-uiwebview-with-cordova/
+slug: ios-5-1-and-the-embedded-uiwebview-with-cordova
+status: publish
+title: iOS 5.1 and the embedded UIWebView with Cordova
+type: post
+format: html
+tags:
+- Guide
+- iOS
+---
+
+<p><a href="/uploads/2012/04/ios51_cordova.png"><img src="/uploads/2012/04/ios51_cordova.png" alt="" /></a>There are two issues with Apple's iOS 5.1 SDK that are important to Cordova and web developers that use the embedded UIWebView:</p>
+
+<blockquote>
+  <ol>
+  <li>localStorage and WebSQL databases have been moved to <em>~/Library/Caches</em> from <em>~/Library/WebKit</em></li>
+  <li>"SECURITY_ERR: DOM Exception 18" error when calling window.openDatabase after updating to iOS 5.1</li>
+  </ol>
+</blockquote>
+
+<h2>Persistence of localStorage / WebSQL databases</h2>
+
+<p>The first issue is a policy issue -- this change means that localStorage and WebSQL databases are not backed-up and may be deleted by iOS at any time to save space. In the "<a href="https://developer.apple.com/icloud/documentation/data-storage/">Data Storage Guidelines for iCloud</a>" article it describes data in ~/Library/Caches as "Data that can be downloaded again or regenerated".</p>
+
+<p>You thought localStorage was supposed to be persistent? So did I, but it appears that expiring localStorage is well within the definitions of the spec: <a href="http://www.w3.org/TR/webstorage/#user-tracking">Section 6.1 "Expiring stored data"</a></p>
+
+<p>The solution for embedded UIWebView developers is to backup and restore the databases from <em>~/Library/Caches</em> to persistent storage (e.g the Documents folder), or move the storage location to persistent storage.</p>
+
+<p>This issue has been worked around and the backup/restore mechanism is implemented in Cordova 1.6.0, and the issue has been further discussed also in this bug: <a href="https://issues.apache.org/jira/browse/CB-330">https://issues.apache.org/jira/browse/CB-330</a>.</p>
+
+<h2><strong>SECURITY_ERR</strong></h2>
+
+<p>The second issue appears to be a genuine Apple bug when you are on iOS 5.1, and upgrading an app to a newer version. This issue has been reported to Apple and they know about this issue:
+<a href="rdar://11081309"> rdar://11081309</a> <a href="rdar://11081647">rdar://11081647</a> <a href="rdar://10296507">rdar://10296507</a> <a href="rdar://11105407">rdar://11105407</a> <a href="rdar://11063678">rdar://11063678</a></p>
+
+<p>A sample of what was filed is here: <a href="http://openradar.appspot.com/radar?id=1608403">http://openradar.appspot.com/radar?id=1608403</a></p>
+
+<p>Through the community's efforts (see this issue here: <a href="https://issues.apache.org/jira/browse/CB-347">https://issues.apache.org/jira/browse/CB-347</a>) and our experimentation, we hypothesize that during an app upgrade the app bundle's GUID is changed, but the WebKit database locations in the app's .plist have <strong>not</strong> been changed. These database locations have hard-coded paths in them (which of course include the app bundle's GUID).</p>
+
+<p>The way we arrived at this conclusion is by:</p>
+
+<ul>
+<li><p>Printing the app bundle path before and after an app upgrade when on iOS 5.1</p></li>
+<li><p>Iterating through the app's .plist keys and values and observing the "<em>WebDatabaseDirectory</em>" and "<em>WebKitLocalStorageDatabasePathPreferenceKey</em>" values</p></li>
+</ul>
+
+<p>The data supports our conclusions. The app bundle path does change when upgrading the app (the GUID changes). The plist values which point to database paths within our app bundle point to a path that is not in our app bundle, and the GUID is from the previous app bundle GUID.</p>
+
+<p>This issue has been 'fixed' by Cordova in 1.6.0, by changing the paths in the app's .plist to the correct paths.</p>
+
+<p>Hopefully in a newer version of iOS this issue will have been resolved by Apple by either:</p>
+
+<ul>
+<li><p>Changing the database locations in the app's .plist when the app bundle's path changes OR</p></li>
+<li><p>Use relative paths for the database locations, not absolute ones</p></li>
+</ul>
+
+<h2><em>* Changing the database location</em>*</h2>
+
+<p>For the second issue, it is also clear that a developer can change the database location permanently to persistent storage, and not do the backup/restore method. iOS Cordova is steering clear of this solution because of the potential of side-effects if and when this issue is resolved by Apple.</p>

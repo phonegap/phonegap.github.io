@@ -1,0 +1,230 @@
+---
+author: Kevin Griffin
+categories: app
+date: '2011-09-26 18:24:42'
+permalink: /2011/09/26/building-an-nfc-enabled-android-application-with-phonegap/
+slug: building-an-nfc-enabled-android-application-with-phonegap
+status: publish
+title: Building a NFC enabled Android application with PhoneGap
+type: post
+format: html
+categories:
+- Plugins
+tags_old:
+- nfc
+- phonegap
+- plugins
+---
+
+<p>One of the most powerful things about PhoneGap is its “Plugin” architecture. If you can write it in native code, you can make it into a plugin.</p>
+
+<p>Near Field Communications (NFC) is a short range, zero configuration, wireless communication. NFC transactions typically happen between a passive device (tag) and an active device (in our case an Android powered phone). The phone generates an RF field which provides enough power to read and write data from the tag. Peer-to-peer communication can also occur between two powered devices (two phones).</p>
+
+<h2>Build a Project</h2>
+
+<p>If you don’t already have a PhoneGap Android project there a couple of ways to get started:</p>
+
+<ul>
+<li><p><a href="http://www.phonegap.com/start#android">PhoneGap: Get Started Guide</a> and</p></li>
+<li><p><a href="https://github.com/phonegap/phonegap-start">PhoneGap Start Project</a></p></li>
+</ul>
+
+<h2>Checkout phonegap-nfc</h2>
+
+<p>Once you have a project up and running you will need to get your hands on either the phonegap-nfc plugin source or distributable.</p>
+
+<ul>
+<li><p><a href="https://github.com/chariotsolutions/phonegap-nfc">phonegap-nfc source</a></p></li>
+<li><p><a href="https://github.com/downloads/chariotsolutions/phonegap-nfc/phonegap-nfc-0.2.0.js">phonegap-nfc.js 0.2.0</a></p></li>
+<li><p><a href="https://github.com/downloads/chariotsolutions/phonegap-nfc/phonegap-nfc-0.2.0.jar">phonegap-nfc.jar 0.2.0</a></p></li>
+</ul>
+
+<h2>Add phonegap-nfc to your project</h2>
+
+<p>The phonegap-nfc.jar needs to be placed in your projects lib/ directory and the phonegap-nfc.js needs to be placed in your www/assets directory.</p>
+
+<p>Next you need to update you plugins.xml to include the phonegap-nfc plugin:</p>
+
+<pre><code>&lt;code&gt;&lt;plugin name="NfcPlugin" value="com.chariotsolutions.nfc.plugin.NfcPlugin"/&gt;
+&lt;/code&gt;
+</code></pre>
+
+<p>And update your index.html to include phonegap-nfc.js</p>
+
+<pre><code>&lt;code&gt;&lt;script type="text/javascript" charset="utf-8" src="phonegap-nfc.js"&gt;&lt;/script&gt;
+&lt;/code&gt;
+</code></pre>
+
+<p>Lastly you need to update your AndroidManifest file with:</p>
+
+<pre><code>&lt;code&gt;&lt;uses-permission android:name="android.permission.NFC" /&gt;
+&lt;uses-feature android:name="android.hardware.nfc" android:required="true" /&gt;
+&lt;uses-sdk android:minSdkVersion="10" /&gt;
+&lt;/code&gt;
+</code></pre>
+
+<h2>Phones and Tags</h2>
+
+<p>Now that we have the housework out the way, we really should scan something.</p>
+
+<p>At this point you’ll need some hardware to test you application. For our phone we used the <a href="http://www.google.com/nexus/">Nexus S</a> (we bought ours from Amazon) and for tags we've used <a href="http://www.identivenfc.com/">Identive NFC</a> and <a href="http://www.tagage.net/">TagAge</a> - there are many vendors so shop around and ensure you know what you are getting when you order. Specifically make sure they are writable and can take NDEF messages.</p>
+
+<p>However you can proceed without any hardware. One option is to use the <a href="http://developer.android.com/resources/samples/NFCDemo/src/com/example/android/nfc/simulator/FakeTagsActivity.html">FakeTagsActivity</a> from the good Google folks, as used in their NFC Demo.</p>
+
+<p>You can also look at using <a href="http://www.open-nfc.org/nfcc_simu.html">Open NFC</a> to simulate NFC tags with the Android Emulator.</p>
+
+<h3>A note on tags</h3>
+
+<p>If you can get them pre-formatted it will make your transition into the world of reading NFC tags a lot easier. Either way you are going to want to make an app to write tags too :)</p>
+
+<h2>Scan some tags!</h2>
+
+<p>If you have some pre-formatted tags you can start by adding in a simple NDEF Listener into your application, if your tags aren’t formatted you can jump to the ‘writing’ section.</p>
+
+<h3>Wait, what is NDEF?</h3>
+
+<p>NDEF stands for, NFC Data Exchange Format (NDEF). It is a specification put together by the NFC Forum for communicating via a defined common format. It provides specifications for transmitting things like mime type objects, plain text, ‘Smart Posters’ and URLS.</p>
+
+<h3>The first listener</h3>
+
+<p>All interactions in the phonegap-nfc plugin are event based. You can register for one (or more) ‘listeners’ and the plugin will return the corresponding event when appropriate. See the README for a full list of the available listeners.</p>
+
+<p>The definition of the NDEF listener looks like this:</p>
+
+<pre><code>&lt;code&gt;nfc.addNdefListener(callback, [onSuccess], [onFailure]);&lt;/code&gt;
+</code></pre>
+
+<p>For our first implementation we will just log the events. Place the following block in your existing <code>'ondeviceready'</code> callback.</p>
+
+<pre><code>&lt;code&gt;nfc.addNdefListener(
+    function() {
+        document.write("Found an NDEF formatted tag");
+    },
+    function() {
+        console.log("Success.");
+    },
+    function() {
+        console.log("Fail.");
+    }
+);
+&lt;/code&gt;
+</code></pre>
+
+<p>Note: We are inlining all our functions, you may want to arrange your code differently.</p>
+
+<p>Not terribly useful, but a good start. In order to make the implementation slightly more useful we are going to swap out our vanilla ‘NDEF Listener’ for the ‘Mime Type Listener’. The reason we opt to use the mime listener is that it allows you to generate a 1:1 relationship between your tag and your application. If you format your tags with a ‘unique’ mime type, then only your app will start when you scan the tag avoiding the annoying ‘select which application you want to complete this task with’ screen. More importantly you won’t appear under any generic scans for Tag/NDEF, which has the potential to be annoying for users. <a href="http://www.youtube.com/watch?v=49L7z3rxz4Q">See the NFC video from Google IO to get a better understanding of why this is good.</a></p>
+
+<p>The definition for the mime type listener looks like:</p>
+
+<pre><code>&lt;code&gt;nfc.addMimeTypeListener(mimeType, callback, [onSuccess], [onFailure]);
+&lt;/code&gt;
+</code></pre>
+
+<p>Our implementation looks like:</p>
+
+<pre><code>&lt;code&gt;nfc.addMimeTypeListener(
+    "my/mimeType", 
+
+    parseTag,     
+
+    function() {
+        console.log("Success.");
+    }   ,
+    function() {
+        console.log("Fail.");
+    }
+);
+&lt;/code&gt;
+</code></pre>
+
+<p>Note that the second argument isn’t inlined. Since we are going to be doing some work here I broke it out into it’s own named function.</p>
+
+<pre><code>&lt;code&gt;function parseTag(nfcEvent) {
+    var records = nfcEvent.tagData;
+
+    for (var i = 0; i &lt; records.length; i++) {
+        var record = records[i],
+        p = document.createElement('p');
+        p.innerHTML = nfc.bytesToString(record.payload);
+        display.appendChild(p);
+    }
+}
+&lt;/code&gt;
+</code></pre>
+
+<p>Our <code>parseTag</code> function is not doing anything too special, it makes some bold assumptions though. Specifically that the tag was formatted in such a manner that calling <code>nfc.bytesToString</code> will return text.</p>
+
+<p>This simple implementation will read a tag formatted with a specific mime type, and attempt to display the data stored on the tag.</p>
+
+<h3>What happens when our app isn’t running?</h3>
+
+<p>One of the great things about NFC is the ability for this unique matching of mime type to application to open your app whenever the device detects a tag with our mime type. To see this in action you need and an ‘intent fitler’ to your android manifest.</p>
+
+<pre><code>&lt;code&gt;&lt;intent-filter&gt;
+    &lt;action android:name="android.nfc.action.NDEF_DISCOVERED" /&gt;
+    &lt;data android:mimeType="my/mimetype" /&gt;
+    &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+&lt;/intent-filter&gt;
+&lt;/code&gt;
+</code></pre>
+
+<h2>Write an NDEF message</h2>
+
+<p>We’ve talked a lot about reading specific mime types from tags, but how do we get them there? We can re-use some of the code we already have. We can set a listener for any ‘NDEF’ formatted tag, then we can write an NDEF message with our mime type to it.</p>
+
+<p>Lets start with the NDEF listener again</p>
+
+<pre><code>&lt;code&gt;nfc.addNdefListener(
+    writeTag,
+
+    function() {
+        console.log("Success.");
+    },
+    function() {
+        console.log("Fail.");
+    }
+);
+&lt;/code&gt;
+</code></pre>
+
+<p>Now the writeTag implementation:</p>
+
+<pre><code>&lt;code&gt;function writeTag(nfcEvent) {
+    var mimeType = "my/mimetype";
+    var payload = "super secret data";
+    var message = nfc.mimeMediaRecord(mimeType, nfc.stringToBytes(payload));
+
+    nfc.write(
+      [message],
+      function () {
+        console.log("success");
+      },
+      function (reason) {
+        console.log("fail");
+      }
+    );
+}
+&lt;/code&gt;
+</code></pre>
+
+<h2>In progress</h2>
+
+<p>The phonegap-nfc plugin is very much in its infancy, there may be bugs or things that are just flat out wrong. Our repo is always open, we love issues with examples and we love pull requests even more!</p>
+
+<p>We are working on adding BlackBerry’s NFC support in OS7 to the plugin, as well as expanding the Android functionality.</p>
+
+<h2>Going further</h2>
+
+<p>There are more complete examples we have used alongside presentations; <a href="https://github.com/don/phonegap-nfc-reader">reader</a>, <a href="https://github.com/don/phonegap-nfc-writer">writer</a>, <a href="https://github.com/don/phonegap-p2p">peer-to-peer sharing</a> and <a href="https://github.com/don/rockpaperscissors">RockPaperScissors (peer-to-peer game)</a> as always we appreciate feedback, code even more!</p>
+
+<h2>Resources</h2>
+
+<ul>
+<li><p><a href="https://github.com/chariotsolutions/phonegap-nfc">phonegap-nfc plugin</a></p></li>
+<li><p><a href="https://github.com/don/phonegap-nfc-reader">reader</a></p></li>
+<li><p><a href="https://github.com/don/phonegap-nfc-writer">writer</a></p></li>
+<li><p><a href="https://github.com/don/phonegap-p2p">peer-to-peer sharing</a></p></li>
+<li><p><a href="https://github.com/don/rockpaperscissors">RockPaperScissors</a></p></li>
+</ul>
+
+<p><em>Kevin is a consultant with Chariot Solutions where he spends his time  solving mobile related problems. He creates mobile solutions using  native platforms, PhoneGap and the web. Oh, and he likes dogs.</em></p>

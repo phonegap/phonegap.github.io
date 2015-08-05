@@ -1,0 +1,73 @@
+---
+author: atrice
+categories: app
+date: '2012-05-02 00:59:22'
+permalink: /2012/05/02/phonegap-explained-visually/
+slug: phonegap-explained-visually
+status: publish
+title: PhoneGap Explained Visually
+type: post
+format: html
+tags:
+- Insight
+---
+
+<p>I've been "out and about" lately, attending tech conferences, meetup groups, and meeting with developers in their offices, and I am getting great feedback on mobile development and PhoneGap. There are some common questions that I am often asked, and I hope this post helps everyone understand PhoneGap better.</p>
+
+<h2>PhoneGap</h2>
+
+<p>Before I go too far, let me attempt to clearly state what <a href="http://www.phonegap.com/">PhoneGap</a> is... PhoneGap is an application container technology that allows you to create natively-installed applications for mobile devices using HTML, CSS, and JavaScript.   The core engine for PhoneGap is also 100% open source, under the <a href="http://incubator.apache.org/cordova/">Apache Cordova</a> project.</p>
+
+<hr />
+
+<h2>PhoneGap User Interface</h2>
+
+<p>The user interface for PhoneGap applications is created using HTML, CSS, and JavaScript. The UI layer of a PhoneGap application is a web browser view that takes up 100% of the device width and 100% of the device height.</p>
+
+<p><img src="/uploads/2012/05/web-view_updated.png" alt="" /></p>
+
+<p>Think of this as a "chrome-less" web browser.  It renders HTML content, without the "chrome" or window decoration of a regular web browser.  You build your application to take advantage of this space, and you build navigational/interactive/content elements and application chrome into your HTML and CSS based user interface.</p>
+
+<p>The web view used by PhoneGap is the same web view used by the native operating system.   On iOS, this is the Objective-C UIWebView class; on Android, this is android.webkit.WebView.  Since there are differences in the web view rendering engines between operating systems, make sure that you account for this in your UI implementation.</p>
+
+<hr />
+
+<h2>PhoneGap API</h2>
+
+<p>PhoneGap provides an application programming interface (API) that enables you to access native operating system functionality using JavaScript. You build your application logic using JavaScript, and the PhoneGap API handles communication with the native operating system.</p>
+
+<p><img src="/uploads/2012/05/API_updated.png" alt="" /></p>
+
+<p>You can read about the PhoneGap API and all of the native functionality it exposes at <a href="http://docs.phonegap.com/">docs.phonegap.com</a>.</p>
+
+<p>In addition to the "out of the box" functionality, you can also leverage PhoneGap's JavaScript-to-native communication mechanism to write "native plugins". PhoneGap native plugins enable you to write your own custom native classes and corresponding JavaScript interfaces for use within your PhoneGap applications.  You can read more about PhoneGap native plugins at: <a href="http://www.tricedesigns.com/2012/03/01/phonegap-native-plugins/">http://www.tricedesigns.com/2012/03/01/phonegap-native-plugins/</a>and <a href="http://wiki.phonegap.com/w/page/36752779/PhoneGap%20Plugins">http://wiki.phonegap.com/w/page/36752779/PhoneGap%20Plugins</a></p>
+
+<hr />
+
+<h2>PhoneGap Application Packaging and Distribution</h2>
+
+<p>PhoneGap applications are developed using HTML, CSS, and JavaScript, however the final product of a PhoneGap application is a binary application archive that can be distributed through standard application ecosystems.</p>
+
+<p><img src="/uploads/2012/05/export_updated.png" alt="" /></p>
+
+<p>For iOS applications the output is an <a href="http://en.wikipedia.org/wiki/.ipa_(file_extension">IPA file</a>) (iOS Application Archive), for Android applications the output is an <a href="http://en.wikipedia.org/wiki/APK_(file_format">APK file</a>) (Android Package), for Window Phone the output is a <a href="http://stackoverflow.com/questions/5190495/what-is-xap-file-on-windows-phone-7">XAP</a> file (Application Package), etc...  These are the same application packaging formats used by "native" applications, and can be distributed through the appropriate ecosystems (iTunes Store, Android Market, Amazon Market, BlackBerry App World, Windows Phone Marketplace, etc...)</p>
+
+<hr />
+
+<h2>PhoneGap High-Level Application Architecture</h2>
+
+<p>Specific application architectures are going to differ on a case-by-case basis, however most data-driven applications employ the following basic architecture.   The PhoneGap application acts as a client for the user to interact with.   The PhoneGap client communicates with an application server to receive data.   The application server handles business logic and communicates with a back-end data repository.</p>
+
+<p><img src="/uploads/2012/05/architecture_updated.png" alt="" /></p>
+
+<p>The application server is normally a web server (Apache, IIS, etc...) and has a server side scripting language such as ColdFusion, Java, .NET, PHP, etc... PhoneGap is agnostic of back-end technologies and can work with any application server using standard web protocols.   The application server performs business logic and calculations, and generally retrieves or persists data from a separate data repository - this is normally a relational database, but could be any structure or mechanism for data persistence.</p>
+
+<p>PhoneGap applications generally do not talk directly to a database; communication is routed through an application server.    The client to application server communication can be based upon standard HTTP requests for HTML content, <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>-ful <a href="http://en.wikipedia.org/wiki/XML">XML</a> services, <a href="http://www.json.org/">JSON</a> services, or <a href="http://en.wikipedia.org/wiki/SOAP">SOAP</a> (or websockets if your OS supports it).  These are the exact same techniques that you would use in a desktop-browser based <a href="http://en.wikipedia.org/wiki/Ajax_(programming">AJAX</a>) application.</p>
+
+<p>The client-side architecture generally uses the <a href="http://en.wikipedia.org/wiki/Single-page_application">single-page application model</a>, where the application logic is inside a single HTML page.  This page is never unloaded from memory.  All data will be displayed by updating the HTML DOM, data is retrieved from the application server using AJAX techniques, and variables are kept in-memory within JavaScript.</p>
+
+<p>Multi-page client-side application architectures are supported, but are not recommended because you lose in-memory variables when loading a separate page.</p>
+
+<hr />
+
+<p><img src="/uploads/2012/05/andrew_trice_icon1.jpg" alt="" />Andrew Trice is a Technical Evangelist with Adobe Systems. Andrew brings to the table over a decade of experience designing, implementing, and delivering rich applications for the web, desktop, and mobile devices. Andrew is an experienced architect, team leader, accomplished speaker, and published author, specializing in immersive experiences, mobile development, realtime data systems, and data visualization.  Andrew regularly writes at <a href="http://www.tricedesigns.com">tricedesigns.com</a>, or you can follow him on twitter <a href="https://twitter.com/andytrice">@andytrice</a>.</p>

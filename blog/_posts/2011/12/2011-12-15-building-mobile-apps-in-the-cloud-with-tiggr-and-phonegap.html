@@ -1,0 +1,116 @@
+---
+author: Colene Chow
+categories: app
+date: '2011-12-15 00:57:37'
+permalink: /2011/12/15/building-mobile-apps-in-the-cloud-with-tiggr-and-phonegap/
+slug: building-mobile-apps-in-the-cloud-with-tiggr-and-phonegap
+status: publish
+title: Building Mobile Apps in the Cloud with Tiggr and PhoneGap
+type: post
+format: html
+tags:
+- Guest Post
+- App
+- iOS
+---
+
+<p><em>Guest blog post by Max Katz</em>  </p>
+
+<p><strong>Tiggr - the easiest platform for building mobile apps in the cloud</strong>  </p>
+
+<p><a href="http://gotiggr.com">Tiggr</a> is a cloud-based mobile apps builder. It lets developers build HTML5/JavaScript and native apps very quickly, entirely in the cloud. There is nothing to download, nothing to install, and nothing to configure. Just create a new project, and you are ready to start building your mobile app with HTML5/JavaScript and PhoneGap.  </p>
+
+<p><strong>Building mobile UI with jQuery Mobile</strong>  </p>
+
+<p>To build the mobile UI, there is a visual editor and <a href="http://jquerymobile.com">jQuery Mobile</a> components, as shown below. You simply drag and drop components into the phone area.</p>
+
+<p><img src="/assets/tiggr2/pg_visualeditor.png" alt="" />  </p>
+
+<p>You can create multiple screens, navigate between screens, store data in Local Storage, and write custom JavaScript. This means you can create the complete UI for your mobile app and also test in a Web browser.   </p>
+
+<p><strong>Testing the mobile app</strong>  </p>
+
+<p>Testing is one of the most innovative features in Tiggr. There is a big Test button at the top. Clicking that button opens up a browser window with the mobile app in it. Need to test the app on the actual device? Scan the QR code, and e-mail the URL to your device. Don’t forget to make the app public. (More about testing native apps a little bit later.)</p>
+
+<p><img src="/assets/tiggr2/pg_test.png" alt="" />  </p>
+
+<p><strong>Consuming any cloud service</strong>  </p>
+
+<p>Once the UI is ready, the next step is connecting to cloud services. In Tiggr, you can connect to any cloud REST service. Below is an example of using the service editor to define a connection to Twitter’s search REST service:</p>
+
+<p><img src="/assets/tiggr2/pg_restservice_url.png" alt="" />  </p>
+
+<p>Once the service is defined, it is mapped to the UI. A service usually has inputs and outputs. Mapping specifies how different UI components are related to different service parameters for input and output. There is even a visual data mapping editor available (service output is shown on the left, screen components are shown on the right:</p>
+
+<p><img src="/assets/tiggr2/pg_mapping.png" alt="" />  </p>
+
+<p>The JavaScript column (on the left) allows you to write custom JavaScript to give you more power and flexibility when mapping service to UI (custom JavaScript is also available when mapping UI to service).  </p>
+
+<p>One last step is adding an event to invoke the service. For example, on a specific button click (HTML click event) the service could be invoked. You can of course use any other HTML events. With Tiggr this is easy.  </p>
+
+<p><strong>Native apps with PhoneGap</strong>
+PhoneGap is an awesome mobile app platform.  It takes advantage of Web technologies developers already know: HTML and JavaScript. PhoneGap makes it super easy to wrap any mobile Web app as native, but also provide access to device native features via its elegant and easy-to-use <a href="http://docs.phonegap.com/en/1.2.0/index.html">API</a>.</p>
+
+<p><strong>Exporting native app</strong>
+Every app (native) in Tiggr comes with PhoneGap installed. To export the app as native is as simple as clicking the big Export button:</p>
+
+<p><img src="/assets/tiggr2/pg_export.png" alt="" />  </p>
+
+<p>If you are targeting for Android, then you can download Android Release binary (.apk). This file is ready for the Android Market. Tiggr has a Android .apk file editor for you to enter all the necessary information.  </p>
+
+<p>If you are targeting iOS, then export iOS xCode project (Eclipse). You can then build the app on your machine or use cloud-based <a href="http://build.phonegap.com">PhoneGap Build</a> service to build for iOS.  </p>
+
+<p>As an alternative, for both Android, iOS or any other platform you can download the mobile Web version (Web resources, HTML/CSS/JS) and use PhoneGap Build service to build for the platform.  </p>
+
+<p>For example, if you need to build for BlackBerry, then simply download the mobile Web version and upload to PhoneGap Build. It’s that simple.</p>
+
+<p><strong>Using PhoneGap API</strong>  </p>
+
+<p>What if you need to invoke PhoneGap API to access device features? Well, that’s very simple too.  Tiggr comes with Run Custom JavaScript action, which can be invoked on any HTML event.</p>
+
+<p>As an example, we will implement a Vibrate button.  </p>
+
+<p><img src="/assets/tiggr2/pg_app_buttons.png" alt="" />  </p>
+
+<p>First, we add the click HTML event to the button:
+<img src="/assets/tiggr2/pg_clickevent.png" alt="" />  </p>
+
+<p>Add an action - Run Custom JavaScript:
+<img src="/assets/tiggr2/pg_runcustomjs.png" alt="" />  </p>
+
+<p>and finally add the PhoneGap JavaScript call:
+<img src="/assets/tiggr2/pg_runcustomjs_editor.png" alt="" />  </p>
+
+<p>Another option is to create a JavaScript file (Project &gt; JavaScript), write all the custom code in functions in the file, and then invoke any function via the Run Custom JavaScript action.
+<img src="/assets/tiggr2/pg_createjs.png" alt="" />  </p>
+
+<p>Note that you can also import an existing JavaScript file (from a URL or via uploading).
+<img src="/assets/tiggr2/pg_js_file.png" alt="" />  </p>
+
+<p>Invoking a function from the custom JavaScript file is done via Run Custom JavaScript action:
+<img src="/assets/tiggr2/pg_runcustomjs_location.png" alt="" />  </p>
+
+<p><strong>Testing native apps</strong> 
+Once you use a native API, testing in Web browser is no longer as useful.  To test native apps, you can use Tiggr Mobile Tester. It’s a native app (<a href="https://market.android.com/details?id=com.exadel.tiggr.projectlist.">Android</a>, <a href="http://exadel.org/tiggrmobiletester">iOS</a>) that lists all your mobile app in Tiggr. You simply tap any app in the list to launch the native app for testing. It’s the easiest and fasted way to test a native app without having to install it. The tester app looks like this:
+<img src="/assets/tiggr2/pg_tiggrmobiletester_1.png" alt="" />  </p>
+
+<p><strong>Device components</strong>  </p>
+
+<p>Being able to invoke custom JavaScript (and PhoneGap API) almost from anywhere makes Tiggr and PhoneGap so powerful. But, that’s not all. Tiggr now has components in the Device palette which are based on PhoneGap API:
+<img src="/assets/tiggr2/pg_device.png" alt="" />  </p>
+
+<p>This is even simpler than using the API. More components are planned to be added such as Camera and others.  </p>
+
+<p><strong>Tiggr and PhoneGap - The ULTIMATE mobile app development combo?</strong>  </p>
+
+<p>We think so.  </p>
+
+<p>You have Tiggr, a cloud-based mobile apps builder. There is nothing to install or configure. Tiggr uses jQuery Mobile, HTML5, JavaScript and CSS to build mobile apps. The app's UI is built inside a visual editor, the app can easily be connected to any cloud service, and the app can be tested at any point in a browser or on a device. At the end, you can export the app source.  </p>
+
+<p>Then, you have PhoneGap, a powerful framework that uses HTML5 and JavaScript to build native mobile apps and makes it super easy to access native features in an app, such as contacts and camera. PhoneGap’s cloud-based build service allows you to build quickly for multiple platforms.  </p>
+
+<p>When you combine the two, Tiggr and PhoneGap, you get powerful cloud-based HTML5 mobile apps builder with an easy way to incorporate native device features and build for multiple mobile platforms.    </p>
+
+<p>Sign up for <a href="http://gotiggr.com">Tiggr</a> and build your mobile app today.   </p>
+
+<p>_Max Katz is Head of Developer Relations for Tiggr at Exadel. You can find his writings about Web and mobile technologies on his <a href="http://mkblog.exadel.com">blog</a>, and follow him Twitter at <a href="http://twitter.com/maxkatz">@maxkatz</a>. He also runs the <a href="http://blog.gotiggr.com">Tiggr blog</a>. Lastly, you can always email him at <a href="mailto:max@exadel.com">max@exadel.com</a>. _</p>

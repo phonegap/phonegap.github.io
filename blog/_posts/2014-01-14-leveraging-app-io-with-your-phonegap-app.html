@@ -1,0 +1,26 @@
+---
+date: 2014-01-14 11:00:04
+author: David Truong
+title: "Leveraging App.io with your PhoneGap App"
+format: html
+tags:
+- Guest Post
+---
+
+<p>Ever wanted to quickly test your PhoneGap app in an iPhone, without actually having an iPhone? App.io is a relatively new service that allows you to run your native iOS app in any browser, on any device, without the need for complicated provisioning or plugins. This means that you are now able to run and test the app you built with PhoneGap, directly in the browser!</p>
+
+<p>Here’s an example of <a href="http://www.infogems.net">Infogems.net’s</a> app they build in PhoneGap, running in the browser:<br />
+
+Link: <a href="https://app.io/LutPah">https://app.io/LutPah</a><br /><br />
+<iframe src="https://app.io/LutPah?orientation=portrait&device=iphone5" height="607px" width="291px" frameborder="0" allowtransparency="true" scrolling="no"></iframe></p>
+
+<p>The process is incredibly easy as App.io only requires the simulator build of your app. To create the simulator build of your app, <a href="http://docs.phonegap.com/en/3.3.0/guide_platforms_ios_index.md.html#iOS%20Platform%20Guide_open_a_project_in_the_sdk">follow these instructions</a> to open your app in Xcode: </p>
+
+<p>Once you’ve deployed to the simulator, simply navigate to <br />
+<blockquote>~/Library/Developer/Xcode/DerivedData/<b>YourAppName</b>/Build/Products/Debug-iphonesimulator/ </blockquote>
+
+Zip the .app file found in the directory, and upload it to your <a href="https://app.io/signup?ref=phonegap">FREE App.io account</a>.</p>
+
+<p><b><i>Guest blog post by David Truong</b><br/>
+David Truong is Head of Business Development at App.io, where he spends time hustling to spread the word about App.io and posts GIFs in the company chat.</i></p>
+

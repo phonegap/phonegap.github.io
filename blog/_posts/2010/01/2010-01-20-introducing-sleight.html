@@ -1,0 +1,74 @@
+---
+author: alunny
+categories: app
+date: '2010-01-20 00:00:00'
+link: http://blogs.nitobi.com/andrew/2010/11/28/introducing-sleight
+permalink: /2010/01/20/introducing-sleight/
+slug: introducing-sleight
+status: publish
+title: Introducing Sleight
+type: post
+format: html
+---
+
+<p>Some time in October I threw together <em>Sleight</em> - a tiny little <a href="http://nodejs.org">node.js</a> server for use in developing <a href="http://www.phonegap.com">PhoneGap</a> apps (it's not coupled with PhoneGap, but PhoneGap's the ideal use case).</p>
+
+<p><em>Sleight</em> is basically just an if statement: for each request to the server, if the resource is a file on the server, then serve it as the response. If it's not there, proxy a response back from some remote server. This lets you develop as though you're working on a PhoneGap app (on the <code>file://</code> protocol, where cross-origin XHRs are allowed) from an HTTP server. You can then run your app from a server locally and open it in a mobile browser, while keeping the cross-origin requests working.</p>
+
+<p>Let's get a quick demo going. Create a <code>sleight-demo</code> directory, and create an <code>index.html</code> file with this text:</p>
+
+<pre><code>    &lt;code class="html"&gt;&lt;body&gt;
+    &lt;div id="latest-tweet"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+  var server = window.location.protocol == "file:" ?
+      "http://search.twitter.com" : "";
+
+  window.addEventListener('load', function () {
+      function handleResponse(text) {
+          var match = JSON.parse(text).results[0].text;
+          document.getElementById('latest-tweet').innerHTML = match;
+      }
+
+      var url = server + "/search.json?q=phonegap";
+      var req = new XMLHttpRequest();
+      req.onreadystatechange = function () {
+          if (this.readyState == 4) {
+              if (this.status == 200 || this.status == 0) {
+                  handleResponse(this.responseText);
+              } else {
+                  console.log('something went wrong');
+              }
+          }
+      }
+
+      req.open('GET', url, true);
+      req.send();
+  })
+&lt;/script&gt;&lt;/code&gt;
+</code></pre>
+
+<p>Open that in Safari or the like from your hard drive; ensure the file is run from the <code>file://</code> protocol. Good.</p>
+
+<p>Now, assuming you've installed <em>Sleight</em>, enter the following command in your <code>sleight-demo</code> directory:</p>
+
+<pre><code>    &lt;code class="bash"&gt;$ sleight target=search.twitter.com
+Listening on port 8088 @ ${insert your current timestamp here}&lt;/code&gt;
+</code></pre>
+
+<p>Now navigate to <code>http://localhost:8088/</code> in Safari. The tweet should still be present (or maybe there'll be a new tweet by this point). And check your Sleight log:</p>
+
+<pre><code>    &lt;code class="bash"&gt;Static file served from: / @ timestamp
+Remote request to search.twitter.com:80/search.json?q=phonegap @ timestamp
+Remote request to search.twitter.com:80/favicon.ico @ timestamp&lt;/code&gt;
+</code></pre>
+
+<p>Much success and joy ensues. And since you're now running an HTTP server, you can easily access the page form your mobile device, so all of you PhoneGap testing can be done without any installation, or re-installation.</p>
+
+<p>Right now this is all Sleight does, but there are some other, PhoneGap-specific features we'd like to add in the future - hooks for logging, debugging, and testing in particular.</p>
+
+<p>Oh yeah, and you can get the <em>Sleight</em> source code at <a href="http://github.com/alunny/sleight">Github</a>, as ever.</p>
+
+<p>p.s. If you were hoping <em>Sleight</em>, in reference to <em>sleight of hand</em>, meant there would be any magic, I sincerely apologize. Here is the best I can manage:</p>
+
+<p><a href="http://blogs.nitobi.com/andrew/2010/11/28/introducing-sleight"> › Visit the original post</a></p>

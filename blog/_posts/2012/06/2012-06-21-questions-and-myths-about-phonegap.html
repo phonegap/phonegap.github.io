@@ -1,0 +1,144 @@
+---
+author: atrice
+categories: app
+date: '2012-06-21 19:22:28'
+permalink: /2012/06/21/questions-and-myths-about-phonegap/
+slug: questions-and-myths-about-phonegap
+status: publish
+title: Questions and Myths About PhoneGap
+type: post
+format: html
+tags:
+- App
+- Guest Post
+---
+
+<p>When technology teams are making decisions of whether or not to adopt a mobile strategy revolving around PhoneGap, lots of questions arise. This is natural - investing in any technology is a big decision, and the proper course is to evaluate its strengths and weaknesses. Phonegap is a relatively new concept to many IT organizations, so there are many unanswered questions and misunderstandings about PhoneGap and <a href="http://incubator.apache.org/cordova/">Apache Cordova</a>.  In this post, I'll try to answer a few of these questions, clear up a few misunderstandings, and dispel some of the myths.  Before I get started, I want to highlight two previous entries on the PhoneGap blog:</p>
+
+<ul>
+<li><p><a href="http://phonegap.com/2012/05/02/phonegap-explained-visually/">PhoneGap Explained Visually</a> provides a clear definition of what makes up a PhoneGap application. Read this for a better understanding of what PhoneGap is, and how you use it.</p></li>
+<li><p><a href="http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/">PhoneGap Beliefs, Goals and Philosophy</a> provides insight into the motivation, goals, philosophy, and "why" PhoneGap was created. Read this for a better understanding of why the PhoneGap/Cordova teams do what they do.</p></li>
+</ul>
+
+<p>Now, on to the questions... <br />
+<strong>Question: What is the difference between PhoneGap and Apache Cordova?</strong> PhoneGap is a distribution of Apache Cordova.  Apache Cordova is the technology that powers a PhoneGap application, however a distribution of an open source technology may eventually contain tools that enhance the developer workflow with Cordova, or tie into other tools and services.  PhoneGap is still free and open source, and is powered by Cordova.   You can read more about <a href="http://phonegap.com/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/">the relationship of PhoneGap and Apache Cordova in this post by Brain Leroux</a>, lead of the PhoneGap project within Adobe.  </p>
+
+<p><strong>Question: Why is the <em>*<a href="http://wiki.apache.org/cordova/RoadmapProjects"></strong>PhoneGap Roadmap<strong></a></strong> so short?</em>* I'm often asked this question, encountered by enterprise decision makers who wonder why there isn't a three to five year product roadmap outlining the directions of the project.  Instead of using a longer term roadmap, PhoneGap/Cordova uses a short term roadmap that advances product development based upon market forces and feedback from current users.  This is roughly about six months out, with an emphasis on delivering features that will provide immediate benefit for developers. Due to the rapid changes in the mobile landscape this may include support for new platforms or consolidation based upon mobile OS changes.  In retrospect:</p>
+
+<ul>
+<li><p>5 years ago, the iPhone did not exist</p></li>
+<li><p>3 years ago, the iPad had not been introduced to world, and there were no commercially successful tablets on any platform</p></li>
+<li><p>3 years ago, the dominant operating systems were RIM with 42% market share, Apple with 24% market share, Microsoft with 19% (Windows Mobile, not Win Phone 7), Palm with 8.3%, and Google (Android) with 2.5%,   As of January 2012, Google has 48.6% market share, Apple has 29.5%, RIM has dropped to 15.2%, Microsoft has dropped to 4.4%, and Palm is no longer in existence.   
+Sources:</p>
+
+<ul>
+<li><p><a href="http://www.comscore.com/Press_Events/Press_Releases/2010/2/comScore_Reports_December_2009_U.S._Mobile_Subscriber_Market_Share">December<em>2009</em>U.S.<em>Mobile</em>Subscriber<em>Market</em>Share</a></p></li>
+<li><p><a href="http://www.comscore.com/Press_Events/Press_Releases/2012/6/comScore_Reports_April_2012_U.S._Mobile_Subscriber_Market_Share">April<em>2012</em>U.S.<em>Mobile</em>Subscriber<em>Market</em>Share</a></p></li>
+</ul></li>
+
+
+
+<li><p>5 years ago, 11% of all adults had smartphone devices, compared to 49.7% today. 
+Sources:</p>
+
+<ul>
+<li><p><a href="http://blog.nielsen.com/nielsenwire/online_mobile/smartphones-account-for-half-of-all-mobile-phones-dominate-new-phone-purchases-in-the-us">2012 SmartPhone Penetration</a></p></li>
+<li><p><a href="http://blogs.forrester.com/consumer_product_strategy/2010/01/2009-year-of-the-smartphone-kinda.html">2009 SmartPhone Penetration</a></p></li>
+</ul></li>
+</ul>
+
+<p>Based upon the rapid rate of change of the mobile landscape, a three to five year roadmap is not practical. In addition, mobile OS development companies such as Apple, Google, Microsoft and RIM do not provide multi-year roadmaps that could be used as reference in a long term PhoneGap/Cordova roadmap.  The open source Cordova project roadmap, available at <a href="http://wiki.apache.org/cordova/RoadmapProjects">http://wiki.apache.org/cordova/RoadmapProjects</a> highlights all ongoing efforts.  Major efforts include command line tools for PhoneGap, Cordova JS, and the PhoneGap Plugin Project.  There are no dates associated with these yet, however they are ongoing, and contribute to a more standardized and canonical API, and are listed in the project roadmap.  </p>
+
+<p><strong>Question: How much does a PhoneGap app cost to develop and maintain compared to a native app?</strong> There is no cost associated with using PhoneGap or Apache Cordova.  The PhoneGap SDK is free for anyone to use or extend.  Any comparison of long-term development cost of HTML, hybrid, or native development is very subjective based upon the application that is being built.  Adobe does not provide metrics for these approaches, as they can be vastly different based upon the nature of the application, developer skills, and number of supported platforms.  For a broader view, I suggest looking to independent research firms such as Forrester or Gartner for this answer.  A recent report by Forrester indicates that HTML/Hybrid applications do, in fact, cost less over time.  This report suggests to start with web and hybrid approaches.</p>
+
+<ul>
+<li><p>"Forrester says that enterprise development shops that plan on writing distinct native apps for each platform should plan on a budget 150% to 210% higher than what might be reasonably expected."</p>
+
+<ul>
+<li><p>Source: <a href="http://www.readwriteweb.com/mobile/2012/01/hybrid-html5-apps-are-more-les.php">ReadWriteWeb.com</a></p></li>
+<li><p>Based upon this <a href="http://www.forrester.com/Building+Mobile+Apps+Start+With+Web+Move+To+Hybrid/fulltext/-/E-RES61154?objectid=RES61154">Forrester Report</a></p></li>
+</ul></li>
+</ul>
+
+<p>It should also be noted that many, if not all assets used within a PhoneGap application can be easily repurposed for a standard web-based applications, targeting either desktop or mobile browsers.   Properly authored PhoneGap applications are portable back to desktop or mobile browsers with little to no modification. </p>
+
+<p><strong>Question: Who are the PhoneGap/Cordova contributors and who leads the open source project?</strong> The core PhoneGap/Cordova contributors are listed online at <a href="http://incubator.apache.org/projects/callback.html">http://incubator.apache.org/projects/callback.html</a> This list is comprised of members from <a href="http://www.adobe.com/">Adobe</a>, <a href="http://www.ibm.com/">IBM</a>, <a href="http://www.microsoft.com/">Microsoft</a>, <a href="http://www.rim.com/">RIM</a> and <a href="http://www.ics.com/">ICS</a>. - I apologize in advance if I've missed anyone.  The PhoneGap team will also be voting soon to add members from <a href="http://www.intel.com/">Intel</a> to the Apache core team.  The majority of the core contributors are from Adobe, and the direction of the project is largely lead by Adobe; however, the core team votes/forms a consensus upon new features and project direction, and all of those features are rooted in requests from users or market changes.  The PhoneGap lead within Adobe is <a href="https://twitter.com/brianleroux">Brian LeRoux</a>.  However, input is not only limited to Adobe - we strongly encourage you to <a href="http://incubator.apache.org/cordova/">get involved, become a committer,</a> and help push Cordova forward.  If you count every JIRA issue logged, every wiki update, every open source PhoneGap plugin, and every message on the Apache mailing list, the number of contributors is in the hundreds - if not thousands.  There is no easy or accurate way to measure the makeup of this base, as it has evolved over several open source repositories.  </p>
+
+<p><strong>Question: What is the industry reputation of PhoneGap?</strong> PhoneGap has recently received several awards worth noting.  Here are two of the most recent:</p>
+
+<ul>
+<li><p><strong>PhoneGap Named 2012 Technology of the Year By InfoWorld:</strong></p>
+
+<ul>
+<li><p><a href="http://blogs.adobe.com/conversations/2012/01/adobe-phonegap-named-2012-technology-of-the-year-by-infoworld-test-center.html">Adobe Blog Announcement</a></p></li>
+<li><p><a href="http://www.infoworld.com/slideshow/24605/infoworlds-2012-technology-of-the-year-award-winners-183313#slide2">InfoWorld Article</a></p></li>
+</ul></li>
+
+
+
+<li><p><strong>PhoneGap Named Best Cross-Platform Development Tool By Code Project:</strong></p>
+
+<ul>
+<li><p><a href="http://phonegap.com/2012/06/12/adobe-phonegap-named-best-cross-platform-development-tool-by-codeproject/">Adobe/Phonegap Blog Annoucement</a></p></li>
+<li><p><a href="http://www.codeproject.com/PressReleases/5777/CODEPROJECT-ANNOUNCES-FOURTH-ANNUAL-MEMBERS-CHOICE.aspx">CodeProject Press Release</a></p></li>
+</ul></li>
+</ul>
+
+<p>PhoneGap is also the leader for developer mindshare of cross platform technologies according to independent research firm Vision Mobile: <a href="http://www.visionmobile.com/product/cross-platform-developer-tools-2012/">http://www.visionmobile.com/product/cross-platform-developer-tools-2012/</a></p>
+
+<p><img src="/uploads/2012/06/mindshare-index.png" alt="" /></p>
+
+<p><img src="/uploads/2012/06/intentshare-index.png" alt="" /></p>
+
+<p>Also worth noting in these charts is that AppMobi is built on top of PhoneGap/Cordova, but is visualized separately.  </p>
+
+<p><strong>Question: Are there any PhoneGap usage metrics available?</strong> I spoke with the engineering teams to get some insight into PhoneGap adoption rates.  There are no publicly reference-able statistics yet; however, much of this will be available once PhoneGap is promoted to a top-level project within Apache. As of September 2011 (9 months ago), 4% of all apps in the iTunes Store were built with PhoneGap.  We believe this number has grown, but don't have the reports to prove it yet. Currently, there is an average around 100,000 downloads of the PhoneGap SDK per month. This is indicative of a significant developer base.  </p>
+
+<p><strong>Myth: Adobe has not invested in PhoneGap because it was contributed to the Apache Software Foundation</strong> Adobe is committed to the development and success of PhoneGap/Cordova.  It is important to understand that PhoneGap has always been open source, and contribution of PhoneGap to the Apache Software Foundation was to provide a larger support base for the project.  Adobe is involved with many open source initiatives in the area of HTML and web standards development, which you can learn more about at: <a href="http://html.adobe.com/opensource/">http://html.adobe.com/opensource/</a>. </p>
+
+<p>Contribution of PhoneGap to the Apache Software Foundation is not indicative of any lack of investment.  The PhoneGap team is also involved with the W3C Web Applications Working Group (<a href="http://www.w3.org/2008/webapps/">http://www.w3.org/2008/webapps</a>) and the W3C Device APIs Working group (<a href="http://www.w3.org/2009/dap/">http://www.w3.org/2009/dap</a>) to help drive APIs that will be used in future standards specifications.  Adobe does not disclose financial investment into projects or future product roadmaps, however you can see evidence in Adobe's investment in PhoneGap in the following:</p>
+
+<ul>
+<li><p>Acquisition of Nitobi (the creators of PhoneGap) in November 2011</p></li>
+<li><p>Integration of PhoneGap into Adobe Creative Suite Projects:</p>
+
+<ul>
+<li><a href="http://phonegap.com/2012/04/24/adobe-dreamweaver-cs6-supports-phonegap-build/">http://phonegap.com/2012/04/24/adobe-dreamweaver-cs6-supports-phonegap-build/</a></li>
+</ul></li>
+
+
+
+<li><p>Creation of the PhoneGap Build Service:</p>
+
+<ul>
+<li><a href="https://build.phonegap.com/">https://build.phonegap.com/</a></li>
+</ul></li>
+
+
+
+<li><p>PhoneGap and HTML-centric products and tools:</p>
+
+<ul>
+<li><a href="http://html.adobe.com/toolsandservices/">http://html.adobe.com/toolsandservices/</a></li>
+</ul></li>
+</ul>
+
+<p>It is also important to understand that Adobe is not the only company invested in the success of PhoneGap/Cordova.  Below is a brief list of other large-scale enterprises that have invested in PhoneGap/Cordova:</p>
+
+<ul>
+<li><p><strong><a href="http://facebook.com">Facebook</a></strong> uses Apache Cordova in their mobile SDK.  You can learn more about this at: <a href="https://developers.facebook.com/docs/guides/mobile/">https://developers.facebook.com/docs/guides/mobile/</a></p></li>
+<li><p><em>* <strong><a href="http://SalesForce.com/"></strong>SalesForce.com</em>*</a> uses Apache Cordova in their mobile development SDK.  You can read more about the <a href="http://Salesforce.com/">Salesforce.com</a> SDK at: <a href="http://wiki.developerforce.com/page/Mobile_SDK">http://wiki.developerforce.com/page/Mobile_SDK</a>. You can view how <a href="http://Salesforce.com/">Salesforce.com</a> is using PhoneGap/Cordova in their Github repository at: <a href="https://github.com/forcedotcom">https://github.com/forcedotcom</a></p></li>
+<li><p><strong><a href="http://www.ibm.com">IBM</a></strong> not only has several core committers to the Cordova project, IBM's Worklight platform is built on top of PhoneGap/Cordova: <a href="http://www.worklight.com/">http://www.worklight.com/</a></p></li>
+<li><p><strong><a href="http://www.microsoft.com">Microsoft</a></strong> has several core committers to Cordova project, and is involved with the development of PhoneGap/Cordova for windows devices.</p></li>
+<li><p><em>*<a href="http://www.rim.com">RIM</a> *</em>has several core Cordova committers, and is involved with creating tools for PhoneGap/Cordova development, such as the Ripple device emulator: <a href="http://ripple.tinyhippos.com/">http://ripple.tinyhippos.com/</a></p></li>
+<li><p><strong><a href="http://www.sap.com">SAP</a></strong> has partnered with Adobe to leverage PhoneGap for the mobile development solutions: <a href="http://www.news-sap.com/sap-drives-openness-and-choice-for-millions-of-mobile-app-developers/">http://www.news-sap.com/sap-drives-openness-and-choice-for-millions-of-mobile-app-developers/</a></p></li>
+</ul>
+
+<p>In addition to the large-scale companies listed above, smaller firms are also building businesses and product lines around the Cordova toolset, including:</p>
+
+<ul>
+<li><p><strong><a href="http://www.appmobi.com">AppMobi</a></strong> - AppMobi produces a mobile development suite based upon Apache Cordova.</p></li>
+<li><p><strong><a href="http://www.icenium.com">Icenium</a></strong> - Icenium also produces a mobile development suite based upon Apache Cordova.</p></li>
+</ul>
+
+<p>If you have any other questions or concerns, please let us know.  We would love to answer them for you.</p>
