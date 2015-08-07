@@ -1,0 +1,31 @@
+.bounds--blog
+  @extend .bounds
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: justify
+  -webkit-justify-content: space-between
+  -ms-flex-pack: justify
+  justify-content: space-between
+  aside
+    width: 100%
+    max-width: 300px
+.blog-post__preview-list
+  max-width: 750px
+.blog-post__preview
+  border-bottom: 1px solid #c4c4c4
+  padding: 44px 0 25px
+  header
+    color: #999
+    font-size: 1.25rem
+  h1
+    font-size: 3.0625rem
+    font-weight: $light-weight
+    line-height: 3rem
+    margin: 0
+.blog-post__content
+  margin: 20px 0
+.button--pill--blog-post
+  @extend .button--pill--next
+  background: #f5f5f5
