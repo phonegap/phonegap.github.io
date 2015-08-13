@@ -3,7 +3,6 @@ date: 2014-06-12 14:20:04
 author: Lorin Beer
 title: "PhoneGap 3.5.0 Release"
 tags:
-- 3.5.0
 - Release
 ---
 

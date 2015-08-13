@@ -84,7 +84,7 @@ end
 desc "Generate a page for each tag"
 task :tags do
   Dir.chdir POSTS
-  files = Rake::FileList["**/*.md", "**/*.markdown"]
+  files = Rake::FileList["**/*.md", "**/*.markdown", "**/*.html"]
   files.exclude("README.md")
   tags = []
   for file in files
@@ -97,7 +97,15 @@ task :tags do
     end
   end
   tags = tags.uniq - ["", nil]
-  puts tags
+  for tag in tags
+    content = File.read("#{File.dirname(__FILE__)}/blog/tags/_template.html")
+    parsed_content = content.gsub!("{tag}", tag)
+    slug = tag.gsub(" ", "-").downcase
+    parsed_content = content.gsub("{slug}", slug)
+    directory = "#{File.dirname(__FILE__)}/blog/tags"
+    File.write("#{directory}/#{slug}.html", parsed_content)
+    puts "#{slug}.html"
+  end
 end
 
 # rake post["Title"]
