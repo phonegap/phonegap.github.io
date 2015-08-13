@@ -1,4 +1,4 @@
-<ul>
+<ul class="blog-post__tag-list">
   {% if post.tags.size > 0 %}
     {% for post_tag in post.tags %}
       <li><a href="/blog/tag/{{ post_tag | downcase | replace:' ','-' }}/">{{ post_tag }}</a></li>
