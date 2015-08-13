@@ -4,7 +4,6 @@ author: Tim Kim
 title: "PhoneGap Developer App 1.5.3"
 tags:
 - App
-- Desktop 
 - News
 - Windows Phone
 - iOS
