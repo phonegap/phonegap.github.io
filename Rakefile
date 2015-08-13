@@ -92,9 +92,11 @@ task :tags do
     yaml_data = content.split('---')[1]
     yaml_data = YAML.load(yaml_data)
     tags_temp = yaml_data["tags"]
-    tags.push(*tags_temp)
+    if tags_temp.respond_to?('each')
+      tags.push(*tags_temp)
+    end
   end
-  tags = tags.uniq
+  tags = tags.uniq - ["", nil]
   puts tags
 end
 
