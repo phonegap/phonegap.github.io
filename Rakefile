@@ -18,7 +18,7 @@ CONFIG = YAML.load_file("_config.yml")
 DATE = Time.now.strftime("%Y-%m-%d")
 
 # Directories
-POSTS = "_posts/"
+POSTS = "blog/_posts/"
 DRAFTS = "_drafts"
 
 # == Helpers ===================================================================
@@ -79,6 +79,24 @@ def open_command
 end
 
 # == Tasks =====================================================================
+
+# rake generate-tags
+desc "Generate a page for each tag"
+task :tags do
+  Dir.chdir POSTS
+  files = Rake::FileList["**/*.md", "**/*.markdown"]
+  files.exclude("README.md")
+  tags = []
+  for file in files
+    content = File.read("#{File.dirname(__FILE__)}/#{POSTS}#{file}")
+    yaml_data = content.split('---')[1]
+    yaml_data = YAML.load(yaml_data)
+    tags_temp = yaml_data["tags"]
+    tags.push(*tags_temp)
+  end
+  tags = tags.uniq
+  puts tags
+end
 
 # rake post["Title"]
 desc "Create a post in articles/_posts/"
