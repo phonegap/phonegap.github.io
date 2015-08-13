@@ -1,0 +1,15 @@
+---
+layout: default
+title: Insight
+tag: Insight
+permalink: /blog/tag/insight/
+---
+<div class="bounds--blog">
+  <div class="blog-post__preview-list">
+    {% for post in site.posts %}
+      {% if post.tags contains page.title %}
+        {% include post-preview.html %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
