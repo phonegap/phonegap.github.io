@@ -12,15 +12,44 @@ title: Blog
     <!-- Pagination links -->
     <div class="pagination">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+        <a href="{{ paginator.previous_page_path }}" class="pagination__previous">{% include images/arrow-right.svg %}Newer</a>
       {% else %}
-        <span class="previous">Previous</span>
+        <span class="pagination__previous">{% include images/arrow-right.svg %}Newer</span>
       {% endif %}
-      <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+
+      {% assign pagination_padding = site.paginate_list_count | divided_by: 2 %}
+      {% assign lower_limit = paginator.page | minus: pagination_padding %}
+      {% assign upper_limit = paginator.page | plus: pagination_padding %}
+      {% if paginator.total_pages > site.paginate_list_count %}
+        {% if lower_limit <= 0 %}
+          {% assign count_start = 1 %}
+          {% assign count_end = site.paginate_list_count %}
+        {% elsif upper_limit > paginator.total_pages %}
+          {% assign count_start = paginator.total_pages | minus: site.paginate_list_count %}
+          {% assign count_start = count_start | plus: 1 %}
+          {% assign count_end = paginator.total_pages %}
+        {% else %}
+          {% assign count_start = paginator.page | minus: pagination_padding %}
+          {% assign count_end = paginator.page | plus: pagination_padding %}
+        {% endif %}
       {% else %}
-        <span class="next ">Next</span>
+        {% assign count_start = 1 %}
+        {% assign count_end = paginator.total_pages %}
+      {% endif %}
+
+      {% for i in (count_start..count_end) %}
+        {% if i == paginator.page %}
+          <span class="pagination__page--current">{{ i }}</span>
+        {% else %}
+          <a href="/blog/page{{ i }}/" class="pagination__page">{{ i }}</a>
+        {% endif %}
+      {% endfor %}
+
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="pagination__next">Older{% include images/arrow-right.svg %}</a>
+      {% else %}
+        <span class="pagination__next">Older{% include images/arrow-right.svg %}</span>
       {% endif %}
     </div>
   </div>
