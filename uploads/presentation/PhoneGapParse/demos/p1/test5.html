@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="../parse-1.2.8.min.js"></script>
+		<script>
+		function randRange(min, max) {
+    		return ((Math.random() * (max - min + 1)+min).toFixed(1));
+		}	
+
+		$(document).ready(function() {
+			
+			var appID = "f4yClrICW58n0IbryPbFFBC99cZvHUaVI0muEH7d";
+			var jsID = "zZXGuIVdUpp1OzxxNhxtsVSboRlZawRhiFhuy543";
+			var resultDiv = $("#results");
+			
+			Parse.initialize(appID, jsID);
+			
+			var BeerObject = Parse.Object.extend("BeerObject4");
+
+			$("#seedButton").on("click", function() {
+				var beers = [];
+				for(var i=0; i<25; i++) {
+					var b = new BeerObject();
+					b.set("name","Something "+i);
+					b.set("abv", Number(randRange(1,15)));
+					beers.push(b);
+				}
+				
+				Parse.Object.saveAll(beers, { 
+					success:function() {
+						alert("Ok, done seeding.");
+					}
+				});
+			});
+
+			$("#searchButton").on("click", function(e) {
+				e.preventDefault();
+				
+				var minabv = Number($("#abvSearch").val());
+				if(minabv < 0) return;
+
+				var query = new Parse.Query(BeerObject);
+				query.greaterThanOrEqualTo("abv",minabv);
+				
+				query.find({
+					success:function(results) {
+						var s = "<h2>Results</h2>";
+						for(var i=0; i<results.length; i++) {
+							s += "<p>" + results[i].get("name") + " has a ABV of " + results[i].get("abv") + "</p>";		
+						}
+						resultDiv.html(s);
+					},
+					error:function(err) {
+						console.log("Um, yeah, this happened.");
+					}
+				});
+				
+			});
+		});
+		</script>
+		
+	</head>
+	<body>
+
+		<button id="seedButton">Seed</button>
+		<p/>
+		<input type="number" id="abvSearch" placeholder="Min ABV"> <button id="searchButton">Search</button>
+
+		<div id="results"></div>
+	</body>
+</html>

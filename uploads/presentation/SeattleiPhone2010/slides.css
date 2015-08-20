@@ -1,0 +1,176 @@
+body {
+	border:none;
+	margin:0;
+	padding:0;
+	background:#000;
+	color:#fff;
+	font-family:Helvetica, Arial;
+}
+
+a {
+	color:blue;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+#slides{
+  padding-top:20px;
+}
+.slide {
+	background:#111;
+	display:block;
+	width:900px;
+	height:600px;
+	margin:0 auto 200px auto;
+	text-align:center;
+	position:relative;
+	overflow:hidden;
+}
+
+.slide p{
+  margin:0;
+}
+
+.slide p img{
+  width:100%;
+  height:100%;
+  text-align:center;
+}
+
+
+.slide h1 {
+	font-size:4.5em;
+	margin:40px 0 15px 0;
+}
+
+.slide h2 {
+	font-size:3.8em;
+	margin:0 0 12px 0;
+}
+
+.slide h3 {
+	font-size:3.2em;
+	margin:0 0 8px 0;
+}
+
+.slide h4 {
+	font-size:3.0em;
+	margin:0 0 5px 0;
+}
+
+.slide h5 {
+	font-size:1.8em;
+	margin:0 0 5px 0;
+}
+
+.slide h6 {
+	font-size:1.5em;
+	margin:0 0 5px 0;
+}
+
+/* colors */
+
+.bg-white{background-color:#fff; color:black;}
+.bg-black{background-color:#000; color:white;}
+.white{color:white;}
+
+.black{color:#000;}
+
+.pink {color:#ef105a}
+.bg-pink {background-color:#ef105a}
+
+.blue {color:#1184A0}
+.bg-blue{background-color:#1184A0}
+
+.red {color:#ee0000}
+.bg-red{background-color:#ee0000}
+
+.orange{color:#FF5400}
+.bg-orange{background-color:#FF5400}
+
+.green{color:green}
+.bg-green{background-color:green}
+
+.yellow{color:#FFAC05}
+.bg-yellow{background-color:#FFAC05}
+
+.royalblue{color:#0547c8}
+.bg-royalblue{background-color:#0547c8}
+
+
+table {
+	width:100%;
+	text-align:left;
+	color:#666;
+}
+
+table tr th {
+	border-bottom:1px solid #ccc;
+	padding:20px;
+	font-size:1.5em;
+	color:#333;
+}
+
+table tr td {
+	border-bottom:1px solid #ccc;
+	padding:20px;
+	font-size:1.5em;
+}
+
+.highlight{
+  font-size:1.2em;
+  text-align:left;
+  padding:20px;
+  margin:0px 30px 0px 30px;
+  border:4px solid #ddd;
+  background:#eee;
+}
+
+.code{
+  font-family:Monaco;
+  font-weight:300;
+}
+
+.top{
+  position:absolute;
+  top:0px;
+}
+.bottom{
+  position:absolute;
+  bottom:0px;
+}
+
+.left{
+  position:absolute;
+  left:10px;
+}
+
+.right{
+  position:absolute;
+  right:10px;
+}
+
+
+ul, ol{
+  padding-left:100px;
+  text-align:left;
+}
+
+
+
+.l{text-align:left;}
+.r{text-align:left;}
+
+
+h6.l{
+  margin-left:30px;
+  margin-top:20px;
+}
+
+
+ul > li, ol > li {
+  list-style-type:none;
+  font-size:2em;
+}

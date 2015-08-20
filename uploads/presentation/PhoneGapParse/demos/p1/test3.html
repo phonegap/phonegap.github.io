@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="../parse-1.2.8.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			
+			var appID = "f4yClrICW58n0IbryPbFFBC99cZvHUaVI0muEH7d";
+			var jsID = "zZXGuIVdUpp1OzxxNhxtsVSboRlZawRhiFhuy543";
+			
+			Parse.initialize(appID, jsID);
+			
+			//Hey Ray, be sure to tell them why you used BeerObject2
+			var BeerObject = Parse.Object.extend("BeerObject2");
+			var BreweryObject = Parse.Object.extend("Brewery");
+			
+			var b = new BeerObject();
+			b.set("name","Epic Beer of Epicnesss");
+			
+			var b2 = new BeerObject();
+			b2.set("name","Coors Superheavy");
+			
+			var brewery = new BreweryObject();
+			brewery.set("name","Uncle Joe");
+			
+			brewery.save().then(function(ob) {
+
+				b.set("brewer", brewery);
+				b2.set("brewer", brewery);
+				
+				//Another way to save stuff
+				Parse.Object.saveAll([b,b2], {
+					success:function(list) {
+						console.log("I saved "+list.length +" things.");	
+					}, 
+					error:function(err) {
+						console.dir(err);
+						console.log("Can we pretend this didn't happen?");
+					}});
+			});
+			
+		});
+		</script>
+		
+	</head>
+	<body>
+		
+	</body>
+</html>

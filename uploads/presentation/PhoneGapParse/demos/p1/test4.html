@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="../parse-1.2.8.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			
+			var appID = "f4yClrICW58n0IbryPbFFBC99cZvHUaVI0muEH7d";
+			var jsID = "zZXGuIVdUpp1OzxxNhxtsVSboRlZawRhiFhuy543";
+			
+			Parse.initialize(appID, jsID);
+			
+			var BeerObject = Parse.Object.extend("BeerObject3");
+			var TagObject = Parse.Object.extend("Tag");
+			
+			var t = new TagObject();
+			t.set("name","Bitter");
+			var t2 = new TagObject();
+			t2.set("name","Smelly");
+			
+			//Save our tags.
+			Parse.Object.saveAll([t,t2], {
+			
+				success:function() {
+					var b = new BeerObject();
+					b.set("name","Epic Beer of Epicnesss");
+					var relation = b.relation("tags");
+					relation.add([t,t2]);
+					//and yes, there is .remove too
+					b.save();
+					console.log("Done! Ok, not really, but let's pretend async doesn't exist.");
+				}
+				
+			});
+			
+
+			
+		});
+		</script>
+		
+	</head>
+	<body>
+		
+	</body>
+</html>

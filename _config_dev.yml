@@ -20,3 +20,11 @@ excerpt_separator: <!--more-->
 exclude: [vendor]
 sass:
   sass_dir: _sass
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
