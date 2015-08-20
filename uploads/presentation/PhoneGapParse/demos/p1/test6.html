@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="../parse-1.2.8.min.js"></script>
+		<script>
+		var mypos;
+			
+		function getLoc() {
+			var x = Math.floor(Math.random() * 4);
+			/*
+			p1=SF
+			p2=Lafayette
+			p3=Norfolk
+			p4=Montreal
+			*/
+			var points = [
+				[37.649,-122.404],	
+				[30.227,-92.024],
+				[36.848,-76.285],
+				[45.466,-75.597]
+			];
+			return points[x];
+		}
+
+		function randRange(min, max) {
+    		return ((Math.random() * (max - min + 1)+min).toFixed(1));
+		}	
+			
+		$(document).ready(function() {
+			
+			var appID = "f4yClrICW58n0IbryPbFFBC99cZvHUaVI0muEH7d";
+			var jsID = "zZXGuIVdUpp1OzxxNhxtsVSboRlZawRhiFhuy543";
+			var resultDiv = $("#results");
+			
+			Parse.initialize(appID, jsID);
+
+			navigator.geolocation.getCurrentPosition(function(res) {
+				console.dir(res);
+				mypos = new Parse.GeoPoint({latitude:res.coords.latitude, longitude:res.coords.longitude});
+				console.dir(mypos);
+				$("#searchButton").removeAttr("disabled");
+			}, function(err) {
+				
+			});
+			
+			
+			var BeerObject = Parse.Object.extend("BeerObject5");
+
+			$("#seedButton").on("click", function() {
+				var beers = [];
+				for(var i=0; i<25; i++) {
+					var b = new BeerObject();
+					b.set("name","Something "+i);
+					var loc = getLoc();
+					b.set("location", new Parse.GeoPoint({latitude:loc[0], longitude:loc[1]}));
+					beers.push(b);
+				}
+				
+				Parse.Object.saveAll(beers, { 
+					success:function() {
+						alert("Ok, done seeding.");
+					}
+				});
+			});
+
+
+			$("#searchButton").on("click", function(e) {
+				e.preventDefault();
+				
+
+
+				var query = new Parse.Query(BeerObject);
+				query.withinMiles("location",mypos,200);
+				
+				query.find({
+					success:function(results) {
+						var s = "<h2>Results</h2>";
+						for(var i=0; i<results.length; i++) {
+							var pos = results[i].get("location");
+							s += "<p>" + results[i].get("name") + " has a location of " + pos.latitude+","+pos.longitude + "</p>";		
+						}
+						resultDiv.html(s);
+					},
+					error:function(err) {
+						console.log("Um, yeah, this happened.");
+					}
+				});
+				
+			});
+		});
+		</script>
+		
+	</head>
+	<body>
+
+		<button id="seedButton">Seed</button>
+		<p/>
+		<button id="searchButton" disabled>Search for Close Beers</button>
+
+		<div id="results"></div>
+	</body>
+</html>

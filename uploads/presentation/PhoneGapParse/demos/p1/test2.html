@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="../parse-1.2.8.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			
+			var appID = "f4yClrICW58n0IbryPbFFBC99cZvHUaVI0muEH7d";
+			var jsID = "zZXGuIVdUpp1OzxxNhxtsVSboRlZawRhiFhuy543";
+			
+			Parse.initialize(appID, jsID);
+			
+			var BeerObject = Parse.Object.extend("BeerObject");	
+
+			var beer = new BeerObject();
+			beer.set("name","FooBeer");
+			beer.set("brewer","Me, Myself, and I");
+			beer.set("abv",9.2);
+
+			beer.save(null, {
+				success:function(ob) {
+					console.log("Parse Saves");
+					console.dir(ob);
+				}, 
+				error:function(ob, err) {
+					console.log("Oh crap");
+					console.dir(err);
+				}
+			});
+
+			/* Promises version too...
+			beer.save().then(function(ob) {
+			
+			}, function(err) {
+			
+			}
+			*/
+		});
+		</script>
+		
+	</head>
+	<body>
+		
+	</body>
+</html>

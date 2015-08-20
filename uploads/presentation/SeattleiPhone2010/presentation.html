@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Presentations | PhoneGap</title>
+   <meta name="author" content="Brock Whitten" />
+
+   <link rel="stylesheet" href="slides.css" type="text/css" media="screen, projection" />
+
+   <script type="application/javascript" src="jq-min.js"></script>
+   
+   <script type="text/javascript" charset="utf-8">
+    $(function(){
+
+    	/**
+    	 * mostly good enough presentation software
+    	 * 
+    	 */
+    	var Crooner = function() {
+
+
+    		/**
+    		 * keyboard navigation
+    		 * 
+    		 * - up, left, right and down keys
+    		 * - c create, d delete, e edit
+    		 * 
+    		 */
+    		var keyboardNavigation = function() {
+    			var index = 0;
+    			var offset = 0;
+
+    			$(document).keydown(function(e) {
+    			  
+    				var go = function(direction) {
+              e.preventDefault();
+    					var slides = $('.slide');
+    					var max = slides.length;
+    					var min = 0;
+
+    					this.up = function() {
+    						if (index > min) index--;
+    						return index;
+    					};
+
+    					this.down = function() {
+    						if (index < max) index++;
+    						if (index == max) index = min;
+    						return index;		
+    					};
+
+    					index = this[direction]();
+    					offset = $(slides[index]).offset().top;
+
+    					$('html,body').animate({scrollTop: offset - 20}, 0);
+    				};
+
+    				var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+
+    				var keys = {
+    					0:function(){}, 
+    					37:function(){go('up')}, // left
+    					38:function(){go('up')},
+    					39:function(){go('down')}, // right
+    					40:function(){go('down')},
+    				};
+
+    				try {
+    					keys[key]();
+    				} catch( e ) {
+    					// ignore other keys
+    				};
+    			});
+    		};
+
+
+    		return {
+    			init:function() {
+    				keyboardNavigation();
+    			}
+    		}
+    	}();
+
+    	Crooner.init();
+
+    /// ---	
+    });
+   </script>
+</head>
+<body>
+  <div id="slides">
+	
+<div class="slide">
+	<h1 style="margin-top:130px;">PhoneGap</h1>
+	<br/>
+	<h3 class="yellow">Developing for the iPhone</h3>
+</div>
+
+<div class="slide">
+	<h4 class="blue" style="margin-top:230px;">Nitobi</h4>
+	<br/>
+	<h4 style="font-size:2em;">Jesse Macfadyen</h4>
+	<h4 style="font-size:2em;">Shazron Abdullah</h4>
+	<h4 style="font-size:2em;">Andrew Lunny</h4>
+</div>
+
+<div class="slide">
+	<h4 class="blue" style="margin-top:80px;">What's good about the iPhone?</h4>
+	<br/>
+	<ul style="font-size:14px;line-height:40px;color:#cdcdcd;padding-top:20px;">
+		<li>Hugely Popular Platform</li>
+		<li>No compatibility problems (other than performance)*</li>
+		<li>OS upgrades: next to ubiquitous</li>
+		<li>Awesome Browser / WebView (very close to desktop Safari)</li>
+		<li>Massive developer community, third-party support (mostly PhoneGap compatible)</li>
+		<li>Some excellent tools (XCode, Instruments)</li>
+		<li>iPod Touch -- cheapest first-rate mobile platform</li>
+	</ul>
+	<p>* iPad changes this</p>
+</div>
+
+<div class="slide">
+	<h4 class="blue" style="margin-top:80px;">What's bad about the iPhone?</h4>
+	<br/>
+	<ul style="font-size:14px;line-height:40px;color:#cdcdcd;padding-top:20px;">
+		<li>Have to get a certificate</li>
+		<li>Provisioning and code-signing</li>
+		<li>The App Review Process</li>
+		<li>Objective-C</li>
+	</ul>
+</div>
+
+<div class="slide bg-green">
+	<h5 style="margin-top:40px;">The <u>Apple</u> Path to iPhone Development</h5>
+	
+	<ul style="font-size:14px;line-height:40px;color:#cdcdcd;padding-top:20px;">
+		<li>Get an iPhone + a Mac</li>
+		<li>Sign up with Apple</li>
+		<li>Install XCode</li>
+		<li>Learn Objective-C <i>( is this a big deal? yeah, I think so! )</i></li>
+		<li>Provision your phone</li>
+		<li>Build Your App</li>
+		<li>Submit to Apple, and wait ...</li>
+	</ul>	
+</div>
+
+<div class="slide">
+	<img style="height:100%;width=auto;" src="images/fail_6.jpg"/>
+</div>
+
+<div class="slide">
+	<img style="height:100%;width=auto;" src="images/dont-worry-guys.png"/>
+</div>
+
+<div class="slide bg-blue">
+	<h5 style="margin-top:40px;">The <u>PhoneGap</u> Path to iPhone Development</h5>
+
+	<table style="color:#cdcdcd;">
+			<tr><td>Get an iPhone + a Mac</td>	<td>Yes</td></tr>
+			<tr><td>Sign up with Apple</td> <td>Yep</td></tr>
+			<tr><td>Install XCode</td> <td>Same</td></tr>
+			<tr><td>Learn Objective-C</td> <td>NO!</td></tr>
+			<tr><td>Provision your phone</td> <td>uh-huh</td></tr>
+			<tr><td>Build Your App</td><td>Yeah</td></tr>
+			<tr><td>Submit to Apple, and wait ...</td><td>of course ...</td></tr>
+		</table>		
+</div>
+
+
+
+<div class="slide bg-orange">
+	<h3 style="margin-top:200px;">So how does this work?</h3>
+</div>
+
+<div class="slide bg-orange">
+	<h4 style="margin-top:200px;">
+	<p>It all starts with UIWebView</p>
+	</h4>
+	<br/>
+	<code style="font-size:18px"> stringByEvaluatingJavaScriptFromString</code>
+</div>
+
+<div class="slide" style="padding-top:200px;">
+	<code style="font-size:20px;">DeviceInfo = {"version":"3.0","uuid":"B486A392-2B43-551F-88E3-773FC454FD82","name":"iPhone Simulator","platform":"iPhone Simulator","gap":"0.8.0"};
+	</code>
+</div>
+
+<div class="slide" style="padding-top:200px;">
+	<p style="font-size:24px;">stringByEvaluatingJavaScriptFromString can call js methods too!</p>
+	<br/>
+	<code style="font-size:20px;">navigator.geolocation.setLocation</code>
+</div>
+
+<div class="slide bg-orange" style="padding-top:200px;">
+	<p style="font-size:24px;">So how does Javascript call Objective-C?</p>
+	<br/>
+	<p style="font-size:22px;">On the iPhone, js sets the location.</p>
+</div>
+
+<div class="slide bg-white" style="padding-top:200px;">
+	
+	<code style="font-size:24px;">
+	document.location = "gap://Location.start/null";
+	</code>
+	
+	<ul style="font-size:18px;">
+		<li>a) the gap protocol</li>
+		<li>b) the command handler</li>
+		<li>c) the operation</li>
+		<li>d) any arguments</li>
+	</ul>
+
+	Note: the calls from JS->ObjC are Asynchronous, there is NO return value	
+	
+</div>
+
+<div class="slide bg-white" style="padding-top:200px;">
+	<h5>
+	All PhoneGap js calls are accessed through the navigator object
+	</h5>
+	<ul style="font-size:12px;line-height:32px;">
+	<li>navigator.geolocation : defines GPS functionality</li>
+	<li>navigator.accelerometer : defines device position functionality</li>
+	<li>navigator.notification : defines Alert + Prompt popup functionality + activityStart + vibrate</li>
+	</ul>
+	
+	
+</div>
+
+<div class="slide bg-white" style="padding-top:200px;">
+	<p style="font-size:28px;">
+	Where is PhoneGap.js?
+	</p>
+	<br/>
+	<p style="font-size:24px;" class="blue">
+	This used to be an issue, thankfully the EDGE version addresses it.
+	</p>
+	<br/>
+	<p style="font-size:24px;margin-left:100px;margin-right:100px;" class="blue">
+	There will be only one phonegap.js file and it will be built when you build your app.
+	</p>
+</div>
+
+<div class="slide bg-orange" style="padding-top:200px;">
+	<p style="font-size:24px;">
+	How do I debug it?
+	</p>
+</div>
+
+<div class="slide bg-white orange" style="padding-top:200px;">
+	<p style="font-size:24px;">
+	How to setup for Javascript debugging
+	</p>
+	<br/>
+	<p style="font-size:24px;">
+		Desktop Safari is very close to Mobile Safari ( close but not exactly )
+	</p>
+</div>
+
+<div class="slide bg-white orange" style="padding-top:200px;">
+	
+	<p style="font-size:28px;" class="green">Things to keep in mind:</p>
+	<br/>
+	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="black">
+	The iPhone simulator runs about 1000 times smoother and faster than the device, ALWAYS test on the device
+	</p>
+	<br/>
+	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="black">
+		Don't depend on timeouts firing on time! Use callbacks.	
+	</p>
+	
+</div>
+
+<div class="slide bg-white orange" style="padding-top:200px;">
+	<h3>onDeviceReady</h3>
+	<br/>
+	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="black">
+	The new way of being sure that phonegap is ready to receive your commands.
+	</p>
+	<br/>
+	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="black">
+	DOM event based, so you add a listener to the document.
+	</p>
+	<br/>
+	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="blue">Let's see the code!</p>
+	</div>
+	
+	<div class="slide">
+		<h4 class="blue" style="margin-top:80px;">Bonus</h4>
+		<br/>
+		<ul style="font-size:14px;line-height:40px;color:#cdcdcd;padding-top:20px;">
+			<li>Calling Objective-C and CocoaTouch code</li>
+			<li>Native Views</li>
+			<li>Using external libraries</li>
+			<li>PhoneGap plug-ins</li>
+		</ul>
+	</div>
+	
+</body>
+</html>
