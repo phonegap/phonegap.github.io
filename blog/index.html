@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Blog
+extra_js:
+  - taglist.js
 ---
 <div class="bounds--blog">
   <div class="blog-post__preview-list">
@@ -53,7 +55,39 @@ title: Blog
       {% endif %}
     </div>
   </div>
-  <aside>
-    This is an aside.
+  <aside class="blog-aside">
+    <section id="top-tag-list" class="tag-list__top">
+      
+    </section>
+    <section class="featured-posts__blog">
+      <header>
+        <h2>Featured Posts</h2>
+      </header>
+      <ul>
+        {% assign counter = 0 %}
+        {% for post in site.posts %}
+          {% if post.featured == true %}
+            {% assign counter=counter | plus:1 %}
+            {% if counter <= 3 %}
+              <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+            {% else %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="tag-list__all">
+      <header>
+        <h2>All Tags</h2>
+      </header>
+      <ul>
+        {% for page in site.pages %}
+          {% if page.category contains 'tag_page' %}
+            <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
   </aside>
 </div>
