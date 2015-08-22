@@ -2,6 +2,7 @@
 date: 2015-07-27 09:00:02
 author: "Michael Brooks"
 title: "The Metrics that Matter at PhoneGap"
+featured: true
 tags:
 - App
 ---
