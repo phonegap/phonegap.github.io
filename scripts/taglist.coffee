@@ -16,7 +16,7 @@ document.addEventListener "DOMContentLoaded", (event) ->
     liElement = document.createElement('li')
     spanElement = document.createElement('span')
     spanElement.style.width = "#{tag.percentage * 200}px"
-    spanElement.style.backgroundColor = "rgba(44, 161, 197, #{0.8 * tag.percentage + 0.2})"
+    spanElement.style.backgroundColor = "rgba(44, 161, 197, #{0.9 * tag.percentage + 0.1})"
     linkElement = document.createElement('a')
     linkElement.href = tag.url
     linkElement.innerHTML = tag.title
