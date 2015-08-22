@@ -1,0 +1,37 @@
+<aside class="blog-aside">
+  <section id="top-tag-list" class="tag-list__top">
+    <header>
+      <h2><img src="/images/trophy-icon.svg"/> Top Tags</h2>
+    </header>
+  </section>
+  <section class="featured-posts__blog">
+    <header>
+      <h2><img src="/images/star-icon.svg"/> Featured Posts</h2>
+    </header>
+    <ul>
+      {% assign counter = 0 %}
+      {% for post in site.posts %}
+        {% if post.featured == true %}
+          {% assign counter=counter | plus:1 %}
+          {% if counter <= 3 %}
+            <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+          {% else %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="tag-list__all">
+    <header>
+      <h2><img src="/images/tag-icon.svg"/> All Tags</h2>
+    </header>
+    <ul>
+      {% for page in site.pages %}
+        {% if page.category contains 'tag_page' %}
+          <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+</aside>
