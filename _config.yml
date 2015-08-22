@@ -29,3 +29,5 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      extra_js:
+        - taglist.js
