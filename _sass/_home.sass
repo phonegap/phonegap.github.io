@@ -3,7 +3,7 @@ body.home-body::before
 .bounds
   max-width: 1240px
 .home-hero
-  height: 665px
+  height: auto
   background: #27a1c5
   box-sizing: border-box
   padding-top: 35px
@@ -11,17 +11,7 @@ body.home-body::before
   margin-bottom: 64px
   .bounds--header
     height: 100%
-    &:before
-      content: ''
-      display: block
-      width: 620px
-      height: 720px
-      background: url('../images/phone_robit.svg') no-repeat center
-      background-size: contain
-      position: absolute
-      bottom: -18px
-      right: 48px
-      z-index: 1
+    margin-bottom: 20px
   h1
     font-weight: $light-weight
     color: #003252
@@ -33,20 +23,24 @@ body.home-body::before
   .button--cta
     margin-right: 26px
   footer
-    position: absolute
-    bottom: 0
+    position: relative
     background: rgba(22,146,178,0.9)
     width: 100%
     z-index: 2
     padding: 20px 0
     box-sizing: border-box
-    height: 264px
+    height: auto
     .bounds
       height: 100%
       display: -webkit-box
       display: -webkit-flex
       display: -ms-flexbox
       display: flex
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -webkit-flex-direction: column
+      -ms-flex-direction: column
+      flex-direction: column
       -webkit-box-pack: justify
       -webkit-justify-content: space-between
       -ms-flex-pack: justify
@@ -56,10 +50,7 @@ body.home-body::before
       -ms-flex-align: center
       align-items: center
     .vr
-      position: relative
-      width: 1px
-      background: #3fadcf
-      height: 100%
+      display: none
   .button--pill--next
     margin-top: 7px
 .link--learn-more
@@ -291,7 +282,38 @@ hr
       font-size: 1.875rem
       text-transform: none
       margin-bottom: 0.6rem
-@media (min-width: 820px)
+@media (min-width: 840px)
+  .home-hero
+    height: 665px
+    .bounds--header
+      margin-bottom: 0
+      &:before
+        content: ''
+        display: block
+        width: 620px
+        height: 720px
+        background: url('../images/phone_robit.svg') no-repeat center
+        background-size: contain
+        position: absolute
+        bottom: -18px
+        right: 48px
+        z-index: 1
+    footer
+      position: absolute
+      bottom: 0
+      height: 264px
+      .bounds
+        -webkit-box-orient: horizontal
+        -webkit-box-direction: normal
+        -webkit-flex-direction: row
+        -ms-flex-direction: row
+        flex-direction: row
+      .vr
+        position: relative
+        width: 1px
+        background: #3fadcf
+        height: 100%
+        display: block
   .home-header
     color: white
     background: $header-bg
