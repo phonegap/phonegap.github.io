@@ -17,7 +17,9 @@ markdown: kramdown
 permalink: /:categories/:title/
 highlighter: pygments
 excerpt_separator: <!--more-->
-exclude: [vendor]
+exclude:
+  - vendor
+  - blog
 sass:
   sass_dir: _sass
 
