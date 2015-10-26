@@ -1,3 +1,6 @@
+body.expand
+  height: 100vh
+  overflow: hidden
 .site-header
   position: fixed
   width: 100%
@@ -7,6 +10,8 @@
   top: 0
   background: white
   overflow: hidden
+  -webkit-transition: all 0.5s
+  transition: all 0.5s
   a
     color: #999
   .bounds
@@ -28,6 +33,14 @@
     -ms-flex-direction: column
     flex-direction: column
     padding: 0 20px 0 20px
+  &.expand
+    height: 100vh
+    .site-header__expand-button
+      color: #9b9b9b
+      border-color: #9b9b9b
+      &:hover
+        background: #9b9b9b
+        color: white
 .site-header__logo
   margin-right: 40px
   height: 63px
@@ -64,6 +77,24 @@
     list-style: none
     margin: 0
     padding: 0
+    a
+      color: #033351
+      display: block
+      box-sizing: border-box
+      text-align: center
+      padding-top: 3px
+      font-size: 1.125rem
+      text-transform: uppercase
+      width: 225px
+      height: 35px
+      background: url("../images/chevron-right.svg") no-repeat 202px center #f3f3f3
+      border-radius: 35px
+      &:hover
+        background: #033351
+        color: #f3f3f3
+        text-decoration: none
+  li
+    margin-bottom: 10px
 .site-header__expand-button
   display: block
   position: absolute
@@ -111,13 +142,14 @@
 .adobe-logo
   display: none
 @media (min-width: 820px)
+  body.expand
+    height: auto
+    overflow: auto
   .site-header
     color: white
     background: $header-bg
     height: 160px
     margin-bottom: 50px
-    -webkit-transition: all 0.5s
-    transition: all 0.5s
     padding-top: 95px
     .bounds
       -webkit-box-orient: horizontal
@@ -128,12 +160,12 @@
       padding: 0 20px 0 20px
     a
       color: white
-      -webkit-transition: all 0.5s
-      transition: all 0.5s
+      -webkit-transition: color 0.5s
+      transition: color 0.5s
       text-decoration: none
       &:hover span
-        -webkit-transition: all 0.5s
-        transition: all 0.5s
+        -webkit-transition: color 0.5s
+        transition: color 0.5s
         text-decoration: none
         border-bottom: 1px solid white
         padding-bottom: 10px
@@ -158,6 +190,8 @@
           transition: width 0.5s, margin-right 0.5s
           width: 2rem
           margin-right: .25rem
+    &.expand
+      height: 160px
   .site-header__logo
     margin-right: 40px
     height: auto
@@ -199,11 +233,24 @@
         margin: 0 4px
         &:last-child
           padding-right: 5px
-    a
-      text-decoration: none
-      padding-bottom: 10px
-      &:hover
+      a
         text-decoration: none
-        border-bottom: 1px solid white
+        padding-bottom: 10px
+        display: inline
+        padding: 0
+        text-transform: none
+        width: auto
+        height: auto
+        background: none
+        border-radius: 0
+        margin: 0
+        color: white
+        font-size: 1rem
+        padding-bottom: 10px
+        &:hover
+          text-decoration: none
+          border-bottom: 1px solid white
+          background: none
+          color: inherit
   .site-header__expand-button
     display: none
