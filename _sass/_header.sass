@@ -1,13 +1,19 @@
+body.expand
+  height: 100vh
+  overflow: hidden
 .site-header
   position: fixed
   width: 100%
-  height: 140px
+  height: 63px
   z-index: 10
   box-sizing: border-box
-  padding-top: 95px
   top: 0
+  background: white
+  overflow: hidden
+  -webkit-transition: all 0.5s
+  transition: all 0.5s
   a
-    color: white
+    color: #999
   .bounds
     display: -webkit-box
     display: -webkit-flex
@@ -21,9 +27,26 @@
     -webkit-align-items: center
     -ms-flex-align: center
     align-items: center
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -ms-flex-direction: column
+    flex-direction: column
     padding: 0 20px 0 20px
+  &.expand
+    height: 100vh
+    .site-header__expand-button
+      color: #9b9b9b
+      border-color: #9b9b9b
+      &:hover
+        background: #9b9b9b
+        color: white
 .site-header__logo
   margin-right: 40px
+  height: 63px
+  box-sizing: border-box
+  padding: 10px 10px 0
+  width: 100%
   h1
     font-size: 1.0625rem
     margin: 0
@@ -54,6 +77,41 @@
     list-style: none
     margin: 0
     padding: 0
+    a
+      color: #033351
+      display: block
+      box-sizing: border-box
+      text-align: center
+      padding-top: 3px
+      font-size: 1.125rem
+      text-transform: uppercase
+      width: 225px
+      height: 35px
+      background: url("../images/chevron-right.svg") no-repeat 202px center #f3f3f3
+      border-radius: 35px
+      &:hover
+        background: #033351
+        color: #f3f3f3
+        text-decoration: none
+  li
+    margin-bottom: 10px
+.site-header__expand-button
+  display: block
+  position: absolute
+  top: 10px
+  right: 10px
+  background: white
+  height: 44px
+  box-sizing: border-box
+  border: 1px solid #2692b0
+  border-radius: 4px
+  color: #2692b0
+  padding: 0 14px
+  outline: none
+  cursor: pointer
+  &:hover
+    background: #2692b0
+    color: white
 .subheader
   background: #1c93b2
   padding: 40px 0
@@ -81,21 +139,33 @@
 .subheader__description
   margin-left: 34px
   max-width: 420px
+.adobe-logo
+  display: none
 @media (min-width: 820px)
+  body.expand
+    height: auto
+    overflow: auto
   .site-header
     color: white
     background: $header-bg
     height: 160px
     margin-bottom: 50px
-    -webkit-transition: all 0.5s
-    transition: all 0.5s
+    padding-top: 95px
+    .bounds
+      -webkit-box-orient: horizontal
+      -webkit-box-direction: normal
+      -webkit-flex-direction: row
+      -ms-flex-direction: row
+      flex-direction: row
+      padding: 0 20px 0 20px
     a
-      -webkit-transition: all 0.5s
-      transition: all 0.5s
+      color: white
+      -webkit-transition: color 0.5s
+      transition: color 0.5s
       text-decoration: none
       &:hover span
-        -webkit-transition: all 0.5s
-        transition: all 0.5s
+        -webkit-transition: color 0.5s
+        transition: color 0.5s
         text-decoration: none
         border-bottom: 1px solid white
         padding-bottom: 10px
@@ -120,8 +190,12 @@
           transition: width 0.5s, margin-right 0.5s
           width: 2rem
           margin-right: .25rem
+    &.expand
+      height: 160px
   .site-header__logo
     margin-right: 40px
+    height: auto
+    width: auto
     h1
       font-size: 2.1875rem
       font-weight: $light-weight
@@ -145,6 +219,9 @@
   .site-header__nav
     display: block
     position: relative
+    -webkit-flex-shrink: 0
+    -ms-flex-negative: 0
+    flex-shrink: 0
     ul
       -webkit-box-orient: horizontal
       -webkit-box-direction: normal
@@ -156,9 +233,24 @@
         margin: 0 4px
         &:last-child
           padding-right: 5px
-    a
-      text-decoration: none
-      padding-bottom: 10px
-      &:hover
+      a
         text-decoration: none
-        border-bottom: 1px solid white
+        padding-bottom: 10px
+        display: inline
+        padding: 0
+        text-transform: none
+        width: auto
+        height: auto
+        background: none
+        border-radius: 0
+        margin: 0
+        color: white
+        font-size: 1rem
+        padding-bottom: 10px
+        &:hover
+          text-decoration: none
+          border-bottom: 1px solid white
+          background: none
+          color: inherit
+  .site-header__expand-button
+    display: none
