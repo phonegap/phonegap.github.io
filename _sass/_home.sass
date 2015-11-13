@@ -91,6 +91,26 @@ section h2
   padding: 0
   position: relative
   margin-bottom: 70px
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -webkit-flex-direction: row
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
 .home-gid__item
   width: 318px
   text-align: center
@@ -146,20 +166,15 @@ section h2
     -webkit-flex-wrap: wrap
     -ms-flex-wrap: wrap
     flex-wrap: wrap
-    -webkit-box-pack: center
-    -webkit-justify-content: center
-    -ms-flex-pack: center
-    justify-content: center
+    -webkit-box-pack: space-around
+    -webkit-justify-content: space-around
+    -ms-flex-pack: space-around
+    justify-content: space-around
   li
     width: 100%
-    max-width: 345px
-    margin: 0 70px
-    &:first-child
-      text-align: right
-      .app-showcase__img
-        float: right
-        margin-left: 23px
-    &:last-child
+    max-width: 360px
+    margin: 0 0 24px
+    &:last-child, &:first-child
       text-align: left
       .app-showcase__img
         float: left
@@ -174,16 +189,8 @@ section h2
   max-width: 970px
   margin: 0 auto
   box-sizing: border-box
-  padding: 20px 0 24px 0
+  padding: 20px 0 0 0
   position: relative
-  &:before
-    content: ""
-    position: absolute
-    height: 116px
-    width: 1px
-    background: #c4c4c4
-    left: 50%
-    top: 63px
   & > div
     text-transform: uppercase
     font-size: 1.125rem
@@ -368,14 +375,30 @@ hr
   a.adobe-logo:hover
     opacity: 1
     border-bottom: none
+  .app-showcase
+    li
+      &:first-child
+        text-align: right
+        .app-showcase__img
+          float: right
+          margin-left: 23px
+          margin-right: 0
+      &:last-child
+        text-align: left
+        .app-showcase__img
+          float: left
+          margin-right: 23px
+  .app-showcase__box
+    &:before
+      content: ""
+      position: absolute
+      height: 116px
+      width: 1px
+      background: #c4c4c4
+      left: 50%
+      top: 63px
+@media (min-width: 994px)
   .tools ul
-    display: -webkit-box
-    display: -webkit-flex
-    display: -ms-flexbox
-    display: flex
-    -webkit-flex-wrap: wrap
-    -ms-flex-wrap: wrap
-    flex-wrap: wrap
     -webkit-box-pack: space-between
     -webkit-justify-content: space-between
     -ms-flex-pack: space-between
