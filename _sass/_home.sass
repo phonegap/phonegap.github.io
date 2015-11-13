@@ -163,10 +163,14 @@ section h2
     display: -webkit-flex
     display: -ms-flexbox
     display: flex
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -webkit-flex-direction: row
+    -ms-flex-direction: row
+    flex-direction: row
     -webkit-flex-wrap: wrap
     -ms-flex-wrap: wrap
     flex-wrap: wrap
-    -webkit-box-pack: space-around
     -webkit-justify-content: space-around
     -ms-flex-pack: space-around
     justify-content: space-around
@@ -382,6 +386,10 @@ hr
         .app-showcase__img
           float: left
           margin-right: 23px
+    ul
+      -webkit-flex-wrap: nowrap
+      -ms-flex-wrap: nowrap
+      flex-wrap: nowrap
   .app-showcase__box
     &:before
       content: ""
