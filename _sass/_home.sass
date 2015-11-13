@@ -176,7 +176,7 @@ section h2
     justify-content: space-around
   li
     width: 100%
-    max-width: 360px
+    max-width: 240px
     margin: 0 0 24px
     &:last-child, &:first-child
       text-align: left
@@ -287,6 +287,8 @@ hr
       font-size: 1.875rem
       text-transform: none
       margin-bottom: 0.6rem
+.detritus
+  display: none
 @media (min-width: 840px)
   .home-hero
     height: 665px
@@ -375,6 +377,7 @@ hr
     border-bottom: none
   .app-showcase
     li
+      max-width: 360px
       &:first-child
         text-align: right
         .app-showcase__img
@@ -399,6 +402,8 @@ hr
       background: #c4c4c4
       left: 50%
       top: 63px
+  .detritus
+    display: inline
 @media (min-width: 994px)
   .tools ul
     -webkit-box-pack: space-between
