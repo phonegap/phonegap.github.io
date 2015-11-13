@@ -222,17 +222,9 @@ hr
   padding: 0
 .latest-blog
   position: relative
-  margin-bottom: 65px
+  margin-bottom: 35px
   h2
     margin-bottom: 52px
-  &:before
-    content: ""
-    position: absolute
-    height: 170px
-    width: 1px
-    background: #c4c4c4
-    left: 50%
-    top: 70px
   ul
     list-style: none
     margin: 0
@@ -248,6 +240,8 @@ hr
     -webkit-justify-content: center
     -ms-flex-pack: center
     justify-content: center
+  li
+    margin-bottom: 30px
 .latest-blog__post
   display: -webkit-box
   display: -webkit-flex
@@ -416,3 +410,12 @@ hr
       left: 33.3%
     &:after
       left: 66.6%
+@media (min-width: 1080px)
+  latest-blog:before
+    content: ""
+    position: absolute
+    height: 170px
+    width: 1px
+    background: #c4c4c4
+    left: 50%
+    top: 70px
