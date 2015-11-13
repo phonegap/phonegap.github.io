@@ -146,7 +146,7 @@ layout: compress
           <ul>
             {% assign counter = 0 %}
             {% for post in site.posts %}
-              {% if counter < 3 %}
+              {% if counter < 2 %}
                 {% assign counter=counter | plus:1 %}
                 <li class="latest-blog__post" itemprop="itemListElement">
                   <time class="latest-blog__date" datetime="{{ post.date | date: '%Y-%m-%dT%H:%M:%SZ'}}">
