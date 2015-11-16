@@ -114,7 +114,7 @@ body.expand
     color: white
 .subheader
   background: #1c93b2
-  padding: 40px 0
+  padding: 20px 0 30px
   margin-bottom: 50px
   font-size: 1.25rem
   color: #FFF
@@ -131,9 +131,13 @@ body.expand
     -webkit-justify-content: center
     -ms-flex-pack: center
     justify-content: center
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -ms-flex-direction: column
+    flex-direction: column
   h1
-    padding: 26px 30px 40px 0
-    border-right: 1px solid #42afd1
+    padding: 12px 0 20px 0
     margin: 0
     font-size: 1.875rem
 .subheader__description
@@ -141,6 +145,18 @@ body.expand
   max-width: 420px
 .adobe-logo
   display: none
+@media (min-width: 566px)
+  .subheader
+    padding: 40px 0
+    .bounds
+      -webkit-box-orient: horizontal
+      -webkit-box-direction: normal
+      -webkit-flex-direction: row
+      -ms-flex-direction: row
+      flex-direction: row
+    h1
+      padding: 26px 30px 40px 0
+      border-right: 1px solid #42afd1
 @media (min-width: 820px)
   body.expand
     height: auto
