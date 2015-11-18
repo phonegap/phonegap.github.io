@@ -29,7 +29,8 @@
   &:before
     counter-increment: gs-step
     content: counter(gs-step)
-    position: absolute
+    position: relative
+    margin-bottom: 20px
     display: block
     left: 0
     top: 0
@@ -54,7 +55,6 @@
   text-transform: none
   margin: 0 0 1rem
   max-width: 526px
-  padding-left: 65px
 .gs-step__description
   max-width: 526px
 .gs-step__note
@@ -130,50 +130,6 @@
 .server-screenshot, .pg-dev-screenshot, .menu-screenshot
   width: 100%
   height: auto
-@media (min-width: 680px)
-  .gs-step
-    padding: 10px 0 0 111px
-    position: relative
-    box-sizing: border-box
-    margin-bottom: 76px
-    display: -webkit-box
-    display: -webkit-flex
-    display: -ms-flexbox
-    display: flex
-    -webkit-box-pack: justify
-    -webkit-justify-content: space-between
-    -ms-flex-pack: justify
-    justify-content: space-between
-    -webkit-box-align: start
-    -webkit-align-items: flex-start
-    -ms-flex-align: start
-    align-items: flex-start
-    -webkit-box-orient: vertical
-    -webkit-box-direction: normal
-    -webkit-flex-direction: column
-    -ms-flex-direction: column
-    flex-direction: column
-    &:before
-      counter-increment: gs-step
-      content: counter(gs-step)
-      position: absolute
-      display: block
-      left: 30px
-      top: 0
-      width: 50px
-      height: 50px
-      border: 1px solid #003351
-      box-sizing: border-box
-      font-size: 1.875rem
-      font-weight: $light-weight
-      text-align: center
-      padding: 9px 0 0 2px
-      border-radius: 6px
-  .gs-step__title
-    padding-left: 0
-  .gs-step__screenshots
-    figure
-      margin: 1em 40px
 @media (min-width: 566px)
   .server-screenshot
     width: 490px
@@ -229,6 +185,50 @@
     svg, img
       width: 120px
       height: auto
+@media (min-width: 680px)
+  .gs-step
+    padding: 10px 0 0 111px
+    position: relative
+    box-sizing: border-box
+    margin-bottom: 76px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: justify
+    -webkit-justify-content: space-between
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-box-align: start
+    -webkit-align-items: flex-start
+    -ms-flex-align: start
+    align-items: flex-start
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -ms-flex-direction: column
+    flex-direction: column
+    &:before
+      counter-increment: gs-step
+      content: counter(gs-step)
+      position: absolute
+      display: block
+      left: 30px
+      top: 0
+      width: 50px
+      height: 50px
+      border: 1px solid #003351
+      box-sizing: border-box
+      font-size: 1.875rem
+      font-weight: $light-weight
+      text-align: center
+      padding: 9px 0 0 2px
+      border-radius: 6px
+  .gs-step__title
+    padding-left: 0
+  .gs-step__screenshots
+    figure
+      margin: 1em 40px
 @media (min-width: 980px)
   .gs-step
     -webkit-box-orient: horizontal
