@@ -27,7 +27,7 @@ body.home-body::before
       bottom: -80px
       right: 50%
       margin-right: -160px
-      z-index: 1
+      z-index: 0
   h1
     font-weight: $light-weight
     color: #003252
@@ -39,6 +39,8 @@ body.home-body::before
     max-width: 540px
   .button--cta
     margin-right: 26px
+  a
+    z-index: 2
   footer
     position: relative
     background: rgba(22,146,178,0.9)
@@ -313,92 +315,6 @@ hr
       margin-bottom: 0.6rem
 .detritus
   display: none
-@media (min-width: 930px)
-  .home-hero
-    height: 672px
-    .bounds--header
-      margin-bottom: 0
-      padding-bottom: 0
-      max-width: 100%
-      margin-left: 0
-      margin-right: 0
-      &:before
-        width: 620px
-        height: 720px
-        bottom: -18px
-        right: 48px
-        margin-right: 0
-    footer
-      position: absolute
-      bottom: 0
-      height: 264px
-      .bounds
-        -webkit-box-orient: horizontal
-        -webkit-box-direction: normal
-        -webkit-flex-direction: row
-        -ms-flex-direction: row
-        flex-direction: row
-      .vr
-        position: relative
-        width: 1px
-        min-width: 1px
-        background: #3fadcf
-        height: 100%
-        display: block
-  .home-header
-    color: white
-    background: $header-bg
-    height: 72px
-    margin-bottom: 50px
-    -webkit-transition: all 0.5s
-    transition: all 0.5s
-    a
-      -webkit-transition: all 0.5s
-      transition: all 0.5s
-      text-decoration: none
-      &:hover span
-        text-decoration: none
-        border-bottom: 1px solid white
-        padding-bottom: 10px
-    &.scroll
-      background: rgba(255,255,255,0.95)
-      height: 90px
-      padding-top: 24px
-      box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15)
-      a
-        color: #1d93b2
-      .home-header__logo
-        position: relative
-        top: -3px
-        h1
-          font-size: 1.6875rem
-        a
-          color: #999
-          &:hover span
-            border-bottom: 1px solid #999
-        svg, img
-          width: 2rem
-          margin-right: .25rem
-  .home-header__logo
-    margin-right: 40px
-    h1
-      font-size: 2.1875rem
-      font-weight: $light-weight
-    span
-      top: .125rem
-    img, svg
-      margin-right: .75rem
-  .adobe-logo
-    position: absolute
-    right: 9px
-    top: -75px
-    width: 70px
-    height: 16px
-    display: inline-block
-    opacity: 0.7
-  a.adobe-logo:hover
-    opacity: 1
-    border-bottom: none
 @media (min-width: 840px)
   .app-showcase
     li
@@ -429,6 +345,48 @@ hr
       top: 63px
   .detritus
     display: inline
+@media (min-width: 720px)
+  .home-hero
+    height: 900px
+    .bounds--header
+      margin-bottom: 0
+      padding-bottom: 0
+      max-width: 100%
+      margin-left: 0
+      margin-right: 0
+      height: auto
+      &:before
+        width: 440px
+        height: 720px
+        bottom: -460px
+        right: 48px
+        margin-right: 0
+    footer
+      position: absolute
+      bottom: 0
+@media (min-width: 930px)
+  .home-hero
+    height: 672px
+    .bounds--header
+      &:before
+        width: 620px
+    footer
+      position: absolute
+      bottom: 0
+      height: 264px
+      .bounds
+        -webkit-box-orient: horizontal
+        -webkit-box-direction: normal
+        -webkit-flex-direction: row
+        -ms-flex-direction: row
+        flex-direction: row
+      .vr
+        position: relative
+        width: 1px
+        min-width: 1px
+        background: #3fadcf
+        height: 100%
+        display: block
 @media (min-width: 994px)
   .tools ul
     -webkit-box-pack: space-between
