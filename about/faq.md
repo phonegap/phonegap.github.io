@@ -2,6 +2,7 @@
 layout: page
 title: Frequently Asked Questions
 permalink: /about/faq/
+subtitle: Find the answers to things we get asked all the time.
 ---
 Q: What is PhoneGap?
 --------------------
