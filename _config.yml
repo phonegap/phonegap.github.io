@@ -15,7 +15,7 @@ paginate_path: "/blog/page:num/"
 markdown: kramdown
 
 permalink: /:categories/:year/:month/:day/:title/
-highlighter: pygments
+highlighter: rouge
 excerpt_separator: <!--more-->
 exclude: [vendor]
 sass:
