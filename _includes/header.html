@@ -11,7 +11,7 @@
     <nav class="site-header__nav">
       {% assign current = page.url | downcase | split: '/' %}
       <ul>
-        <li><a href="#" {% if current[1] == 'products' %}class='current'{% endif %}>Products</a></li>
+        <li><a href="/products" {% if current[1] == 'products' %}class='current'{% endif %}>Products</a></li>
         <li><a href="/getstarted" {% if current[1] == 'getstarted' %}class="current"{% endif %}>Get Started</a></li>
         <li><a href="http://docs.phonegap.com">Docs</a></li>
         <li><a href="#" {% if current[1] == 'apps' %}class='current'{% endif %}>App Showcase</a></li>

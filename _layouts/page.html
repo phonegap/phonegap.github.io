@@ -12,3 +12,13 @@ layout: default
     {{ content }}
   </div>
 </article>
+{% if page.subfooter %}
+  <div class="sub-footer">
+    <div class="bounds">
+      <h2>Dig into documentation</h2>
+      <div class="sub-footer__description">
+        Whether you’re looking for <a href="http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/">in-depth guides</a> on how to get started creating PhoneGap apps or <a href="http://docs.phonegap.com/references/desktop-app/">helpful references</a> for using the PhoneGap tools, this is the place to go. How could you go wrong?
+      </div>
+    </div>
+  </div>
+{% endif %}
