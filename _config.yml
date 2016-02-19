@@ -7,6 +7,8 @@ url: "http://phonegap.com" # the base hostname & protocol for your site
 twitter_username: phonegap
 github_username:  phonegap
 
+gems: [jekyll-paginate]
+
 paginate: 10
 paginate_list_count: 7
 paginate_path: "/blog/page:num/"
@@ -14,7 +16,7 @@ paginate_path: "/blog/page:num/"
 # Build settings
 markdown: kramdown
 
-permalink: /:categories/:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/
 highlighter: rouge
 excerpt_separator: <!--more-->
 exclude: [vendor]

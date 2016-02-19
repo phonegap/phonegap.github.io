@@ -1,0 +1,28 @@
+--- 
+external: true
+date: 2013-09-05 18:19:00 Z
+status: publish
+type: post
+format: html
+author: Raymond Camden
+permalink: /admin/blog/2013-09-05-how-do-you-check-and-update-your-phonegap-version-in-3-0-
+link: http://www.raymondcamden.com/index.cfm/2013/9/5/How-do-you-check-and-update-your-PhoneGap-version-in-30
+title: How do you check (and update) your PhoneGap version in 3.0?
+---
+A tip of the rage wolf to fellow Adobian Brian Leroux for his help with this blog post. And by help, I mean he basically explained it all to me and I'm just making it pretty. 
+
+One of the big changes to PhoneGap 3.0 is in how you install it. Previously you would download a zip file, expand it, and have all the bits you need. Now the installation process has you use npm (Node Package Manager) to grab the bits.I've been using Node and npm for a while, but I'm definitely still a bit unsure of how it works. The question I had was - how would I be able to tell when a new version was released and how would I get my copy updated?
+
+First, remember that the phonegap CLI has a -v argument that tells you the current version you have installed:
+
+<img src="http://www.raymondcamden.com/images/bp1.jpg" />
+
+Currently the PhoneGap site only mentions 3.0 and not anything more specific, so to compare your version to the latest in npm, you would do "npm info phonegap version". This is demonstrated below:
+
+<img src="http://www.raymondcamden.com/images/bp2.jpg" />
+
+In this case, my version is the same, but if I wanted to update, I'd run: npm update -g phonegap. I always use sudo in front but you may not have to do that (especially on Windows ;).
+
+<img src="http://www.raymondcamden.com/images/bp3.jpg" />
+
+Hope this helps. Tomorrow morning I'll be blogging about how plugins have changed.<img src="http://feeds.feedburner.com/~r/RaymondCamdensColdfusionBlog/~4/mTNjY-uAuO0" height="1" width="1"/>

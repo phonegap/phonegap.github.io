@@ -1,0 +1,13 @@
+--- 
+format: html
+external: true
+title: Windows 8 Security and Dynamic Code
+permalink: /admin/blog/2012-10-03-windows-8-security-and-dynamic-code
+author: Jesse MacFadyen
+link: http://www.risingj.com/archives/288
+date: 2012-10-03 19:35:18 Z
+type: post
+status: publish
+thumb: /uploads/blog/thumb/jesse.jpg
+---
+Recently while working on bringing Apache Cordova to Windows 8 I came across an issue with dynamic content.  The Apache Cordova mobile-spec project, which defines all of our tests,  has some tricks for loading a configurable cordova-js file without having to modify every html page.  It seems the security model does not like to script tags written at runtime with document.write ( ...

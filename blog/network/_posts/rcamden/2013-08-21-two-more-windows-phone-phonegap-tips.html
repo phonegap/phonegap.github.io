@@ -1,0 +1,18 @@
+--- 
+external: true
+title: Two more Windows Phone/PhoneGap Tips
+permalink: /admin/blog/2013-08-21-two-more-windows-phone-phonegap-tips
+author: Raymond Camden
+status: publish
+link: http://www.raymondcamden.com/index.cfm/2013/8/21/Two-more-Windows-PhonePhoneGap-Tips
+date: 2013-08-21 19:47:00 Z
+format: html
+type: post
+---
+Please note the date of this posting (Aug 21, 2013) - what you are seeing here should be fixed rather soon and is probably not an issue at the time you're reading this. I ran into this last week and wanted to blog it in case others hit the same hurdles.First Issue: When you create a new application via the PhoneGap CLI, the default ID includes the word "hello-word". If you then try to build for Windows Phone you will get:
+
+C:\Users\labuser\Desktop\pg3test\test2\platforms\wp8\App.xaml(1,1,1,1): error : x:Class="com.phonegap.hello-world.App" is not valid. 'com.phonegap.hello-world.App' is not a valid fully qualified class name.
+
+This has already been reported (and <a href="https://github.com/phonegap/phonegap-cli/issues/156">fixed</a>), but if you run into this, just add the --id attribute: phonegap create pathtoapp --id "com.camden.helloworld"
+
+Second Issue: If you run your app on the Windows Phone and notice that the deviceready event doesn't fire (the default PG app uses a pretty animation to let you know when this occurs), then the issue is that the index.html is loading phonegap.js. Change the script src to cordova.js and all will be well.<img src="http://feeds.feedburner.com/~r/RaymondCamdensColdfusionBlog/~4/9o2xi2EQyII" height="1" width="1"/>

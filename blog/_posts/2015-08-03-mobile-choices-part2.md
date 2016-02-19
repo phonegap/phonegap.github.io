@@ -1,8 +1,7 @@
 ---
 date: 2015-08-03 08:00:02
 author: Holly Schinsky
-title: "Choosing a Mobile Strategy: Part 2 "
-featured: true
+title: "Choosing a Mobile Strategy: Part 2"
 tags:
 - Guide
 ---

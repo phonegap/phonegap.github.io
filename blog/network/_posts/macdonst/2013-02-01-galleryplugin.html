@@ -1,0 +1,12 @@
+--- 
+date: 2013-02-01 00:09:00 Z
+permalink: /admin/blog/2013-02-01-galleryplugin
+status: publish
+format: html
+type: post
+external: true
+title: GalleryPlugin
+link: http://simonmacdonald.blogspot.com/2013/01/galleryplugin.html
+author: Simon MacDonald
+---
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-cs_a2ro_P0Y/TkA8D-vPCVI/AAAAAAAABwE/gHJwh4m8Jkw/s1600/pg.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-cs_a2ro_P0Y/TkA8D-vPCVI/AAAAAAAABwE/gHJwh4m8Jkw/s200/pg.png" width="159" /></a></div>I've updated the <a href="https://github.com/macdonst/GalleryPlugin">GalleryPlugin</a> to the Cordova 2.2.0 API but I've realized that I've never really talked about it. The GalleryPlugin is used when you need to add or remove a file from&nbsp;the Gallery or Music apps. Typical use cases include downloading an image from the internet and wanting it to show up in&nbsp;the Android Gallery app or conversely you delete a file and you don't want the dreaded black rectangle to be left in&nbsp;the Gallery app.<br /><br /><br />First lets take a look at what the gallery.js file. It's written using the cordova.define template but it still adds itself into window.plugins for those of you using the old style plugins:<br /><script src="https://gist.github.com/4687773.js?file=gallery.js"></script><br />Then will move on to the Java code. I've trimmed down code only to show the execute method for brevity.<br /><script src="https://gist.github.com/4687773.js?file=GalleryPlugin.java"></script><br />In order to use this plugin you'll need to include the gallery.js in your HTML as a script tag:<br/><script src="https://gist.github.com/4687773.js?file=scriptinc.js"></script><br />and add a line to res/xml/config.xml to tell the JavaScript side where to find your Java class:<br/><script src="https://gist.github.com/4687773.js?file=gallery.xml"></script><br />Now you should be able to add and remove images from the gallery. Here is some sample code to get you going:  <script src="https://gist.github.com/4687773.js?file=galleryexample.js"></script><br />

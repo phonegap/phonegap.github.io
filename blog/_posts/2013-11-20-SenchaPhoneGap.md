@@ -3,8 +3,8 @@ date: 2013-11-20 12:40:04
 author: Ross Gerbasi
 title: "Leveraging PhoneGap within Sencha Touch"
 tags:
-- Guest Post
--
+- Guest post
+- 
 ---
 
 
@@ -17,14 +17,14 @@ With the release of [Sencha Touch 2.3](http://www.sencha.com/products/touch/) an
 
 ##Creating Your Application##
 
-Once you have downloaded the Sencha Touch 2.3 framework and installed Sencha CMD you can quickly generate an application with the following command.
+Once you have downloaded the Sencha Touch 2.3 framework and installed Sencha CMD you can quickly generate an application with the following command. 
 
 	//sencha generate app [path/to/app] [AppName]
 	$ sencha generate app ~/Desktop/MyApp MyApp
-
+	
 You will then want to make sure to follow the [PhoneGap CLI Getting Started Guide](http://docs.phonegap.com/en/3.1.0/guide_cli_index.md.html#The%20Command-line%20Interface) to get your system up and running with PhoneGap and any dependencies for the native platforms you wish to deploy to. **Remember** if you are planning on building with [PhoneGap Build](http://build.phonegap.com), you simply need to install NodeJS and the PhoneGap CLI, and not worry about native SDK's.
 
-To add PhoneGap support to any application, that is Sencha CMD 4 ready, you run the following command with the optional *APP_ID* and *APP_NAME* arguments.
+To add PhoneGap support to any application, that is Sencha CMD 4 ready, you run the following command with the optional *APP_ID* and *APP_NAME* arguments. 
 
 	//sencha phonegap init [APP_ID] [APP_NAME]
 	$ sencha phonegap init com.mycompany.MyApp MyApp
@@ -32,17 +32,17 @@ To add PhoneGap support to any application, that is Sencha CMD 4 ready, you run 
 
 ##Folder Structure##
 
-Your application is now ready to take advantage of the power of the Sencha Touch Framework with the ease of native development provided by PhoneGap. If you are a Sencha developer already you will notice your normal application build workflow is the same as always and we have only modified the normal folder structure slightly by adding in a nested PhoneGap project.
+Your application is now ready to take advantage of the power of the Sencha Touch Framework with the ease of native development provided by PhoneGap. If you are a Sencha developer already you will notice your normal application build workflow is the same as always and we have only modified the normal folder structure slightly by adding in a nested PhoneGap project. 
 
 <div style="text-align:center">
 	<img src="/uploads/blog/2013-11/SenchaAndPhoneGapFolders.png"/>  <br />
 	<i>Sencha &amp; PhoneGap Folder Structure</i>
-</div>
+</div> 
 
 ##Custom Configuration##
 
 You can configure your PhoneGap application using the standard config.xml as you would normally do. Sencha CMD provides a **'phonegap.local.properties'** file to configure the build process. Not only can you use PhoneGap locally to create your own custom native projects but Sencha CMD is also integrated into [PhoneGap Build](http://build.phonegap.com) allowing you to build your application easily without having the native development tools locally. Below is a sample of the properties file you can configure.
-
+	
 	# The following are supported platforms for local building (blackberry is version 10)
 	# android, blackberry, ios, wp7, wp8
 	#
@@ -70,7 +70,7 @@ The great benefit of this integration is that your development workflow need not
 ##Building and Testing##
 
 Building your application for testing in the native emulator or on a device is also as easy as a single command. The *-run* flag is optional and allows you to decide if you would like run your application after it is built or simply build the native binaries you will then take to a device.
-
+	
 	$ sencha app build -run native
 
 
@@ -86,11 +86,11 @@ If the command line is not your style and you find yourself using more 'industri
 
 ##Apache Cordova Support##
 
-Sencha CMD 4 not only supports PhoneGap but also [Apache Cordova](http://cordova.apache.org/) for developers that don't want/need the extras provided by PhoneGap. The commands are identical except instead of initializing PhoneGap you simply use cordova instead.
-
+Sencha CMD 4 not only supports PhoneGap but also [Apache Cordova](http://cordova.apache.org/) for developers that don't want/need the extras provided by PhoneGap. The commands are identical except instead of initializing PhoneGap you simply use cordova instead. 
+	
 	//sencha cordova init [APP_ID] [APP_NAME]
 	$ sencha cordova init com.mycompant.MyApp MyApp
-
+	
 For more information watch the [Sencha &amp; PhoneGap Video Tutorial](https://vimeo.com/76568053) as it goes into detail on both processes.
 
 
@@ -98,7 +98,7 @@ For more information watch the [Sencha &amp; PhoneGap Video Tutorial](https://vi
 ##A Quick Camera Demo App##
 
 
-Adding PhoneGap or Cordova APIs to your application is very simple. If you already have a good understanding of the Sencha framework, learning the Cordova API should not be a problem. In this demo we will look at a small code snippet to add native photo library support to your Sencha Touch application.
+Adding PhoneGap or Cordova APIs to your application is very simple. If you already have a good understanding of the Sencha framework, learning the Cordova API should not be a problem. In this demo we will look at a small code snippet to add native photo library support to your Sencha Touch application. 
 
 <div style="text-align:center">
 	<img src="/uploads/blog/2013-11/SenchaDemoApp.png"/>  <br />
@@ -133,12 +133,12 @@ Adding PhoneGap or Cordova APIs to your application is very simple. If you alrea
 	                        var img = Ext.ComponentQuery.query("image")[0];
 	                        img.setSrc(image_uri);
 	                    }
-
+	
 	                    function fail(message) {
 	                        alert("Failed: " + message);
 	                    }
-
-	                    navigator.camera.getPicture(success, fail,
+	
+	                    navigator.camera.getPicture(success, fail, 
 	                        {
 	                            quality: 50,
 	                            destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -160,11 +160,11 @@ We then add a button handler and call the Cordova Camera API. If you are a curre
 Lastly before you build this application you will need to add the camera plugin to our PhoneGap application. As of PhoneGap 3.0 all extra libraries are added as plugins (Geolocation, Camera, File, etc). This is done by running the following command from your **'{application}/phonegap'** folder.
 
 	phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
-
+	
 Finally you can build and run your application in the simulator by running:
 
 	sencha app build -run native
-
+	
 For those that like to see a while project I have prepared this [ready to go demo](/uploads/2013/11/SenchaPhoneGapCameraDemo.zip), simply download and extract on your system. Then from inside the folder you will run
 
 	sencha app build -run native

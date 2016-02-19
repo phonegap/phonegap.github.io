@@ -1,0 +1,12 @@
+--- 
+permalink: /admin/blog/2013-02-15-what-s-new-in-phonegap-android-2-4-0
+link: http://simonmacdonald.blogspot.com/2013/02/whats-new-in-phonegap-android-240.html
+date: 2013-02-15 00:00:00 Z
+status: publish
+title: What's New in PhoneGap Android 2.4.0
+type: post
+format: html
+external: true
+author: Simon MacDonald
+---
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-cs_a2ro_P0Y/TkA8D-vPCVI/AAAAAAAABwE/gHJwh4m8Jkw/s1600/pg.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-cs_a2ro_P0Y/TkA8D-vPCVI/AAAAAAAABwE/gHJwh4m8Jkw/s200/pg.png" height="200" width="159" /></a></div>Well PhoneGap 2.4.0 has been released. So here are couple of the new things you can look forward to:   <br /><br /><b>1. Support Reading Slices of Text Files.</b><br /><br />The File object now has a slice method. Suppose the file we're reading contains the text:<br /><br /><i>"All that is gold does not glitter, not all those who wander are lost."&nbsp;</i><br /><br />Then...<br /><br /><ul><li>f.slice(4, 8) would result in <i>"that"</i>&nbsp;</li><li>f.slice(9) would be <i>"is gold does not glitter, not all those who wander are lost."</i>&nbsp;</li><li>f.slice(-5, -1) would be <i>"lost"</i></li></ul><br /><br /><b>2. Added input type=file support</b><br /><br />Now if you specify an input field of type file you will get a "Choose File" button:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-zhJK6cjiyz0/UR1fCtvCN_I/AAAAAAAACOc/rdP38Q4fAdo/s1600/Screen+Shot+2013-02-14+at+5.01.40+PM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-zhJK6cjiyz0/UR1fCtvCN_I/AAAAAAAACOc/rdP38Q4fAdo/s1600/Screen+Shot+2013-02-14+at+5.01.40+PM.png" /></a></div><br />Then when you click the button you will launch an intent that can handle file picking:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-4Liisc93HIA/UR1fC-SZ5HI/AAAAAAAACOk/WCrD7encmCk/s1600/Screen+Shot+2013-02-14+at+5.01.55+PM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-4Liisc93HIA/UR1fC-SZ5HI/AAAAAAAACOk/WCrD7encmCk/s1600/Screen+Shot+2013-02-14+at+5.01.55+PM.png" height="271" width="320" /></a></div><br />Now the value of your input tag will be the file you selected.
