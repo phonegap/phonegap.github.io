@@ -60,28 +60,31 @@
   padding: 50px 0 75px 0
   justify-content: center
   span, a
-    display: block
-    box-sizing: border-box
-    height: 35px
-    background: #f5f5f5
-    min-width: 50px
-    text-align: center
-    padding-top: 3px
     &:nth-last-child(n+2)
       border-right: 1px solid #cdcdcd
-    path
-      fill: currentColor
-  a
-    color: #003351
-    &:hover
-      color: white
-      text-decoration: none
-      background: #27a1c5
-    &:active
-      background: #eb3854
-  .pagination__page--current
-    background: #003351
-    color: #FFF
+.pagination__page--current, .pagination__page, .pagination__previous, .pagination__next
+  box-sizing: border-box
+  height: 35px
+  background: #f5f5f5
+  min-width: 50px
+  text-align: center
+  padding-top: 3px
+  path
+    fill: currentColor
+.pagination__page--current
+  background: #003351
+  color: #FFF
+.pagination__page
+  display: none
+  color: #003351
+  &:hover
+    color: white
+    text-decoration: none
+    background: #27a1c5
+  &:active
+    background: #eb3854
+.pagination__previous, .pagination__next, .pagination__page--current
+  display: block
 .pagination__previous
   border-top-left-radius: 17px
   border-bottom-left-radius: 17px
@@ -150,3 +153,5 @@
   .blog-post__title
     font-size: 3.0625rem
     line-height: 3rem
+  .pagination__page
+    display: block
