@@ -18,7 +18,7 @@ Q: WHAT IS THE DIFFERENCE BETWEEN PHONEGAP AND CORDOVA?
 A: In October 2011, PhoneGap was donated to the Apache Software Foundation (ASF) under the name [Apache Cordova](http://cordova.apache.org/). Through the ASF, future PhoneGap development will ensure open stewardship of the project. It will remain free and open source under the Apache License, Version 2.0.
 PhoneGap is an open source distribution of Cordova. Think about Cordova’s relationship to PhoneGap like WebKit’s relationship to Safari or Chrome.
 
-For more details, read the blog post [PhoneGap, Cordova, and what’s in a name?](/blog/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/)
+For more details, read the blog post [PhoneGap, Cordova, and what’s in a name?](/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/)
 
 
 Q: WHAT PHONEGAP APPS ARE ALREADY IN APP STORES?
