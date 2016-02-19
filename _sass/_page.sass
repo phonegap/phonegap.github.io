@@ -3,21 +3,6 @@
   margin-bottom: 60px
   p
     max-width: 750px
-.artwork-blocks
-  display: -webkit-flex
-  display: flex
-  -webkit-flex-wrap: wrap
-  flex-wrap: wrap
-  -webkit-justify-content: space-around
-  -ms-flex-pack: distribute
-  justify-content: space-around
-.artwork-block
-  max-width: 500px
-  min-width: 300px
-  box-sizing: border-box
-  padding: 20px
-  margin-bottom: 40px
-  text-align: center
 .videoWrapper
   position: relative
   padding-bottom: 56.25%
@@ -39,3 +24,71 @@
   -webkit-justify-content: space-between
   -ms-flex-pack: justify
   justify-content: space-between
+
+.artwork__blocks
+  display: block
+.artwork__block--horizontal, .artwork__block--stacked, .artwork__block--symbol
+  border-top: 1px solid #c4c4c4
+  padding-top: 40px
+  margin-bottom: 35px
+.artwork__block__title
+  text-align: left
+  margin-bottom: 20px
+.artwork__items
+  display: -webkit-flex
+  display: flex
+  -webkit-box-align: end
+  -webkit-align-items: flex-end
+  -ms-flex-align: end
+  align-items: flex-end
+.artwork__items--horizontal
+  display: block
+  .artwork__image, .artwork__image--white
+    padding: 8px
+.artwork__image, .artwork__image--white
+  margin-bottom: 15px
+  img
+    width: 100%
+    height: auto
+.artwork__item--horizontal
+  &:first-child
+    margin-bottom: 30px
+.artwork__image--white
+  background: #c4c4c4
+.artwork__block--horizontal
+  width: 100%
+.artwork__download-set
+  text-align: center
+  padding-bottom: 45px
+@media (min-width: 820px)
+  .artwork__blocks
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: justify
+    -webkit-justify-content: space-between
+    -ms-flex-pack: justify
+    justify-content: space-between
+  .artwork__items--horizontal
+    display: -webkit-flex
+    display: flex
+    -webkit-box-align: end
+    -webkit-align-items: flex-end
+    -ms-flex-align: end
+    align-items: flex-end
+  .artwork__item, .artwork__item--horizontal
+    -webkit-box-flex: 1
+    -webkit-flex: 1 0
+    -ms-flex: 1 0
+    flex: 1 0
+    &:first-child
+      margin-right: 80px
+  .artwork__item--horizontal
+    &:first-child
+      margin-bottom: 0
+  .artwork__block--stacked
+    max-width: calc(44% - 40px)
+  .artwork__block--symbol
+    max-width: calc(56% - 40px)
