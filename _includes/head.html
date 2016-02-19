@@ -14,13 +14,13 @@
   {% for js_name in page.extra_js %}
     <script src="/scripts/{{ js_name }}"></script>
   {% endfor %}
-  {% if site.production %}
+  {% if jekyll.environment == "production" %}
     <style type="text/css">
       {% capture include_to_sassify %}{% include main.sass %}{% endcapture %}
       {{ include_to_sassify | sassify }}
     </style>
   {% else %}
-    <link rel="stylesheet" type="text/css" href="{{ "/styles/main.css" | prepend: site.baseurl | prepend: site.url }}"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css"/>
   {% endif %}
   <link rel="canonical" data-proofer-ignore href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />

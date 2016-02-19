@@ -10,22 +10,25 @@
   justify-content: space-between
 .blog-post__preview-list, .blog-post
   max-width: 750px
+.blog-post__preview-list
+  position: relative
+  margin: 0 auto
 .blog-post__preview, .blog-post
   border-bottom: 1px solid #c4c4c4
   padding: 44px 0 25px
   header
     color: #999
     font-size: 1.25rem
-  h1
-    font-size: 3.0625rem
-    font-weight: $light-weight
-    line-height: 3rem
-    margin: 0
   h2
     font-size: 1.875rem
     font-weight: bold
     text-transform: none
     margin: 2.5rem 0 1.5rem
+.blog-post__title
+  font-size: 2rem
+  font-weight: $light-weight
+  line-height: 2rem
+  margin: 0
 .blog-post__content
   margin: 20px 0
 .button--pill--blog-post
@@ -43,6 +46,8 @@
     text-transform: uppercase
     &:nth-last-child(n+2)::after
       content: ','
+.blog-post__title
+  font-size: 2rem
 .pagination
   color: #999
   font-size: 1.125rem
@@ -52,6 +57,8 @@
   display: -webkit-flex
   display: -ms-flexbox
   display: flex
+  padding: 50px 0 75px 0
+  justify-content: center
   span, a
     display: block
     box-sizing: border-box
@@ -94,12 +101,11 @@
     top: 1px
 .pagination--center
   @extend .pagination
-  padding: 50px 0 75px 0
-  justify-content: center
 .blog-aside
   width: 100%
   max-width: 300px
   padding-top: 44px
+  display: none
   h2
     font-size: 1.25rem
     text-align: left
@@ -136,3 +142,11 @@
     text-transform: uppercase
     font-size: 0.875rem
     line-height: 1.3rem
+@media (min-width: 920px)
+  .blog-post__preview-list
+    margin: 0 10px 0 0
+  .blog-aside
+    display: block
+  .blog-post__title
+    font-size: 3.0625rem
+    line-height: 3rem
