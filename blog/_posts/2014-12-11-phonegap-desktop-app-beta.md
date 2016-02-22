@@ -9,7 +9,7 @@ tags:
 
 Today, we're announcing the release of the __PhoneGap Desktop App__ beta!
 
-<img src="/uploads/blog/2014-12/promo.png" width="500px" height="auto" style="display:block;margin:0 auto;" />
+<img src="/uploads/blog/2014-12/promo.png" height="auto" style="display:block;margin:0 auto;max-width:500px;" />
 
 ## Easy to Use
 
@@ -39,7 +39,7 @@ We also continue to promote cross-platform love. The PhoneGap Desktop App works 
 
 Double-click the application from where you installed it.
 
-<img src="/uploads/blog/2014-12/phonegap-app-desktop-open.png" width="300px" height="auto" />
+<img src="/uploads/blog/2014-12/phonegap-app-desktop-open.png" style="max-width:300px;" />
 
 ### 2. Create Your First App
 
@@ -49,13 +49,13 @@ Double-click the application from where you installed it.
   -  Choose a name for your project, such as "Hello World"
 3. Select _Create project_.
 
-<img src="/uploads/blog/2014-12/phonegap-app-desktop-create.png"  width="600px" height="auto" />
+<img src="/uploads/blog/2014-12/phonegap-app-desktop-create.png" style="max-width:600px;" height="auto" />
 
 ### 3. Start the Server
 
 The server should start by default. You'll know because the bottom of the app has a green banner with your IP address.
 
-<img src="/uploads/blog/2014-12/phonegap-app-desktop-start.png" width="300px" height="auto" />
+<img src="/uploads/blog/2014-12/phonegap-app-desktop-start.png" style="max-width:300px;" height="auto" />
 
 If the server has not started, click the arrow (`>`) to the right of your app's name.
 
@@ -65,7 +65,7 @@ If the server has not started, click the arrow (`>`) to the right of your app's 
 - Open the [PhoneGap Developer App](http://phonegap.com/blog/2014/11/26/phonegap-developer-app-1-4-0/).
 - Type the IP address displayed by the Desktop app.
 
-<img width="450px" height="auto" alt="Pairing the PhoneGap Desktop App" src="/uploads/blog/2014-12/phonegap-app-desktop-pair.png">
+<img style="max-width:450px;" alt="Pairing the PhoneGap Desktop App" src="/uploads/blog/2014-12/phonegap-app-desktop-pair.png">
 
 Don't have the _PhoneGap Developer App_? [Learn how to get here](http://phonegap.com/blog/2014/11/26/phonegap-developer-app-1-4-0/).
 
@@ -78,7 +78,7 @@ It's now business as usual. You can now edit and immediately preview your projec
 - Save the file.
 - See the updates appear on your device.
 
-<img width="500px" height="auto" alt="PhoneGap Desktop App Workflow" src="/uploads/blog/2014-12/phonegap-app-desktop-workflow.gif">
+<img style="max-width:500px;" alt="PhoneGap Desktop App Workflow" src="/uploads/blog/2014-12/phonegap-app-desktop-workflow.gif">
 
 ## Get Involved
 
