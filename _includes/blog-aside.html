@@ -11,7 +11,7 @@
     <ul>
       {% assign counter = 0 %}
       {% for post in site.posts %}
-        {% if post.featured == true %}
+        {% if post.featured == 'true' %}
           {% assign counter=counter | plus:1 %}
           {% if counter <= 3 %}
             <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
