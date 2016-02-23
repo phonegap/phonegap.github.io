@@ -23,6 +23,9 @@ layout: default
     <div class="blog-post__content">
       {{ content }}
     </div>
+    <footer>
+      {% include disqus.html %}
+    </footer>
   </article>
   {% include blog-aside.html %}
 </div>
