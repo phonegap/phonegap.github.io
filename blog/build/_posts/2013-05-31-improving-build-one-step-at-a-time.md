@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 author: Hardeep Shoker
 title: Improving Build One Step at a Time
 date: Fri May 31 10:01:47 -0700 2013
 permalink: /blog/build/improving-build-one-step-at-a-time/
 ---
+tags:
+- PhoneGap Build
 
 Hey friends,
 

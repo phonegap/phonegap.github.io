@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2015-06-16 15:00:02
 author: Ryan Willoughby
 title: "Cordova 5.1.1 Now on PhoneGap Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 We're happy to let you know that we've updated PhoneGap for iOS, Android, and Windows Phone on PhoneGap Build. The latest version can be used by setting the following in your config.xml:
 

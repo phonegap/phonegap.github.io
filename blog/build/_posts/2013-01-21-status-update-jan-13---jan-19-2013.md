@@ -1,9 +1,15 @@
 ---
+tags:
+- PhoneGap Build
 author: Hardeep Shoker
 title: Status Update Jan 13 - Jan 19 2013
 date: Mon Jan 21 13:53:18 -0800 2013
-permalink: /blog/build/status-update-jan-13---jan-19-2013/
+permalink: /blog/build/status-update-jan-13---
+tags:
+- PhoneGap Buildjan-19-2013/
 ---
+tags:
+- PhoneGap Build
 
 Hey Build users! We've got some exciting news. Some of you have
 expressed that we need to be more transparent in our progress towards

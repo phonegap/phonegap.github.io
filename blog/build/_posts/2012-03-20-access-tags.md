@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 author: Andrew Lunny
 title: Access Tags
 date: Tue Mar 20 16:12:16 -0700 2012
 permalink: /blog/build/introducing-windows-phone-7-builds/
 ---
+tags:
+- PhoneGap Build
 There's been some confusion over the behavior of external links in PhoneGap™ (and Adobe® PhoneGap™ Build) apps lately - when you click on a link, should it take over your entire app? Or should it open in the device's browser?
 
 This is a bit of a tricky issue due to PhoneGap's use of a whitelist for allowed domains - developers need to explicitly allow any domains from which resources can be loaded. In theory, this is a good idea; however, the PhoneGap/Apache Cordova implementations have to deal with the webviews provided by native SDKs, and the control the open source project has over these webviews varies greatly from platform to platform.

@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 author: Colene Chow
 title: Introducing GenericPush Plugin
 date: Thu Jan 24 14:17:30 -0800 2013
 permalink: /blog/build/introducing-genericpush-plugin/
 ---
+tags:
+- PhoneGap Build
 
 We're happy to announce the support of a new plugin! The
 [GenericPush plugin](https://github.com/phonegap-build/PushPlugin) is

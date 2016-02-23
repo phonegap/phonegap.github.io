@@ -1,9 +1,15 @@
 ---
+tags:
+- PhoneGap Build
 author: Hardeep Shoker
 title: "Status Update: March 4 - March 18, 2013"
 date: Mon Mar 18 17:00:00 -0800 2013
-permalink: /blog/build/tatus-update-mar-04---mar-18-2013/
+permalink: /blog/build/tatus-update-mar-04---
+tags:
+- PhoneGap Buildmar-18-2013/
 ---
+tags:
+- PhoneGap Build
 
 Hey Build users! We've been working hard on Build over the last couple
 weeks. The progress we've made should help us provide a better user

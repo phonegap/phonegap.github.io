@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 author: Hardeep Shoker
 title: Introducing Windows Phone 7 Builds
 date: Thu Apr 19 13:13:57 -0700 2012
 permalink: /blog/build/introducing-windows-phone-7-builds/
 ---
+tags:
+- PhoneGap Build
 The Adobe® PhoneGap™ Build team is proud to introduce Windows® Phone 7 as our latest addition to our platform lineup.
 
 With the addition of Windows Phone 7, developers are now able to reach a new and rapidly growing market.

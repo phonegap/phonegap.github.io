@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2015-01-20 10:00:02
 author: brettrudd
 title: "iOS 64-bit Support Now Available on PhoneGap Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 Starting today iOS builds using **PhoneGap 3.5.0** and above will now include the
 arm64 (64-bit) architecture as required by all new apps on the Apple App Store

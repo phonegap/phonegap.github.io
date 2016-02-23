@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2014-08-12 23:20:03
 author: Brett Rudd
 title: "Adobe ID now required for PhoneGap Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 As part of our continued integration with the expanding ecosystem of Adobe's
 Creative Cloud we now require all PhoneGap Build users to link their accounts

@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 author: Colene Chow
 title: Congrats to our PhoneGap Build Champions
 date: Fri May 31 10:10:26 -0700 2013
 permalink: /blog/build/congrats-to-our-phonegap-build-champions/
 ---
+tags:
+- PhoneGap Build
 
 PhoneGap Build users looking for support head to our free forum hosted over on [Get Satisfaction](http://getsatisfaction.com/nitobi/products/nitobi_phonegap_build). If you've ever been on the forum, you've probably seen some people who go above and beyond by helping others. They're not PhoneGap Build staff, but fellow Build users who are passionate about the service and like to help the community.
 

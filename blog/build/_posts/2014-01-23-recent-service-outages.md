@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2014-01-23 21:00:05
 author: hardeep
 title: "Recent Service Outages"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 What a week for PhoneGap Build! We've been having issues with our servers and experienced two days of extremely sluggish performance on our iOS servers, as well as on Hydration and Android servers. In the last couple days, we suffered a set of DB locks during out of office hours and even more sluggish performance on iOS.
 
