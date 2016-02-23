@@ -8,8 +8,6 @@ permalink: /blog/build/status-update-jan-20---
 tags:
 - PhoneGap Buildjan-26-2013/
 ---
-tags:
-- PhoneGap Build
 Hey Build users! It's time for our weekly update again. Here is what we've been up to.
 
 **Progress for Jan 20 - Jan 26**

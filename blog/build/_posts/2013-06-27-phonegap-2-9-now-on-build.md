@@ -7,8 +7,6 @@ title: PhoneGap 2.9.0 Now on Build
 date: Thu Jun 27 13:33:35 -0700 2013
 permalink: /blog/build/phonegap-2-9-now-on-build/
 ---
-tags:
-- PhoneGap Build
 
 We've just added support for [PhoneGap 2.9.0](http://phonegap.com/blog/2013/06/26/pg-290-released/) to PhoneGap Build! 
 

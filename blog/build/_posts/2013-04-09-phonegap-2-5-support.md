@@ -10,8 +10,6 @@ tags:
 - News
 - Release
 ---
-tags:
-- PhoneGap Build
 
 Great news, the PhoneGap Build team has been working hard and we now support PhoneGap 2.5.0. Happy building!
 

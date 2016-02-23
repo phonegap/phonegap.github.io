@@ -6,8 +6,6 @@ author: Colene Chow
 title: "Bigger Apps have Arrived"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 The PhoneGap Build team is happy to announce the **increase of file sizes to 40MB for paid users of PhoneGap Build**.
 

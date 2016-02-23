@@ -6,8 +6,6 @@ author: Mike Harris
 title: "Using Plugins with PhoneGap Build"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 In the near future, we will be releasing a new feature that allows users to submit online their own plugins to PhoneGap Build. These submitted plugins will be available for the whole community to use. 
 

@@ -6,8 +6,6 @@ author: brettrudd
 title: "Android Builds Now Using Gradle By Default"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 All android builds using any PhoneGap version above 4.0.0 will now use [Gradle](http://www.gradle.org) by default. For **most** users this change will not have an effect. Users who know what this change means and realise the flexibility it provides to plugin authors and users will most likely dance.
 

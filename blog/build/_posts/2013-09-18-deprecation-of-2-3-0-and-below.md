@@ -6,8 +6,6 @@ author: Ryan Willoughby
 title: "Upcoming Deprecation of Cordova 2.3.0 and Below on Build"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 We're hard at work finishing up support for Cordova 3.0.0 on PhoneGap Build, and with new life, comes death, or something. We'll be deprecating **Cordova 2.3.0 and below** with our upcoming release of 3.0.0. This is our heads up!
 

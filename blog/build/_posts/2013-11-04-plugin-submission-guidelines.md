@@ -9,8 +9,6 @@ tags:
 - PhoneGap Build
 - Plugin
 ---
-tags:
-- PhoneGap Build
 
 One of the new features that's been added to PhoneGap Build in the past couple of months is the ability to submit custom [PhoneGap plugins](https://build.phonegap.com/plugins/) that you and others can use within PhoneGap Build projects. Once a plugin is submitted and approved, it becomes available to everyone using PhoneGap Build. For security and legal reasons, every plugin must adhere to specific standards and is hand-tested by the engineering team before it's approved and available to use in PhoneGap Build projects. We currently have over 30 user-submitted plugins available in PhoneGap Build.
 

@@ -8,8 +8,6 @@ permalink: /blog/build/status-update-feb-5---
 tags:
 - PhoneGap Buildfeb-12-2013/
 ---
-tags:
-- PhoneGap Build
 
 We made some great progress last week! Here's what we were busy with last
 week, and what's going to keep us busy in the coming weeks.

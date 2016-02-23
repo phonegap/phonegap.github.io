@@ -6,8 +6,6 @@ category: build
 tags:
 - PhoneGap Build
 ---
-tags:
-- PhoneGap Build
 
 Hey folks, we are happy to announce you can now use git-backed **public** plugins on PhoneGap Build.
 
