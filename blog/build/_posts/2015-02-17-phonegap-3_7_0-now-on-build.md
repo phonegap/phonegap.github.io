@@ -6,8 +6,6 @@ author: Ryan Willoughby
 title: "PhoneGap 3.7.0 Now Available on PhoneGap Build"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 PhoneGap 3.7.0 is now available on PhoneGap Build! For more details on the update:
 

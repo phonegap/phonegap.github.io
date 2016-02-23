@@ -6,8 +6,6 @@ title: Introducing Hydration
 date: Thu Aug 23 10:38:56 -0700 2012
 permalink: /blog/build/introducing-hydration/
 ---
-tags:
-- PhoneGap Build
 
 The PhoneGap Build team would like to introduce our latest feature -
 Hydration.

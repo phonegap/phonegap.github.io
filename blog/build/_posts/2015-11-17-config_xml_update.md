@@ -6,8 +6,6 @@ author: brettrudd
 title: "config.xml gets an update"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 Hey folks, starting today some of you found out config.xml on PhoneGap Build got an update. For most users this will have no change. But for some users who use the Cordova cli you will find your workflow just got easier.
 

@@ -6,8 +6,6 @@ author: Brett Rudd
 title: "How You Sign into PhoneGap Build is Changing."
 category: build
 ---
-tags:
-- PhoneGap Build
 
 On May 15th we will be removing the ability to sign into our service without
 either a GitHub or Adobe ID. This is to simplify authentication and

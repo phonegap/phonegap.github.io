@@ -6,8 +6,6 @@ author: Mike Harris
 title: "Build June Summary"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 #Highlights for June
 + Alignment with Cordova using Plugman for plugin registration

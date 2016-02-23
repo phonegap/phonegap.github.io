@@ -6,8 +6,6 @@ title: Hot Multi-User Action!
 date: Thu Jul 14 13:55:45 -0700 2011
 permalink: /blog/build/multi-user-action/
 ---
-tags:
-- PhoneGap Build
 
 Admin Dev Tester etc
 

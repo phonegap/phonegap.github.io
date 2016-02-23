@@ -6,8 +6,6 @@ title: Enhanced Icon and Splash Support
 date: Mon Apr 30 16:11:31 -0700 2012
 permalink: /blog/build/enhanced-icon-and-splash-support/
 ---
-tags:
-- PhoneGap Build
 We've recently had a lot of discussion with users about icons and splash screens
 and how they make their way into apps. After some feeback we've revamped our
 icon and splash screen handling to provide a more consistent and expressive

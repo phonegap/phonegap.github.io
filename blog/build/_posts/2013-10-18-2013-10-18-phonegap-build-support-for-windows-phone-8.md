@@ -6,8 +6,6 @@ author: Mike Harris
 title: "PhoneGap Build beta support for Windows Phone 8"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 We are very pleased to announce a beta release of PhoneGap Build that supports Windows Phone 8 and Cordova 3.0. We welcome you to try building Windows Phone 8 applications with this new version of PhoneGap Build and deploy to you devices.
 

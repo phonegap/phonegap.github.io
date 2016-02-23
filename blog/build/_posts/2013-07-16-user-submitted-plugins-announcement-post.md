@@ -6,8 +6,6 @@ author: Don Woodward
 title: "PhoneGap Build now supports User Submitted Plugins!"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 We are pleased to announce the availability of a new PhoneGap Build feature called **User Submitted Plugins**.  This new feature allows you to submit plugins for public use on PhoneGap Build.  Any plugin may be submitted, and once approved, becomes available for the entire PhoneGap Build community to enjoy.
 

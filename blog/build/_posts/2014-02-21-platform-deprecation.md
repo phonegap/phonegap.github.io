@@ -6,8 +6,6 @@ author: Dave Johnson
 title: "Platform Deprecation"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 It’s been almost a year since PhoneGap announced they would be [dropping support](http://phonegap.com/blog/2013/05/16/cordova-will-no-longer-support-bb/) for some platforms in versions of PhoneGap over 3.0. PhoneGap Build has [done the same](http://community.phonegap.com/nitobi/topics/blackberry_symbian_and_webos_will_not_be_supported_by_phonegap_3_0) and is not supporting webOS, Symbian or Blackberry (<= BB7) for apps using PhoneGap versions over 3.0.
 

@@ -6,8 +6,6 @@ title: New Apple App Store Submittal Rules
 date: Fri Apr 26 15:11:22 -0700 2013
 permalink: /blog/build/new-apple-app-store-submittal-rules/
 ---
-tags:
-- PhoneGap Build
 
 Beginning on May 1, all PhoneGap Build iOS apps submitted to the Apple App store must be built with PhoneGap __2.5.0 or above__.
 

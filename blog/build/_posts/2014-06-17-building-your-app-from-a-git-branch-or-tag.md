@@ -6,8 +6,6 @@ author: Ryan Willoughby
 title: "Building Your App from a Git Branch or Tag"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 After numerous requests, handwritten letters, two faxes, and a telegraph asking for support for building from app tags and branches, we listened -- its now supported on PhoneGap Build. You'll find the new field in the New App form -- simply enter the branch or tag name in the field next to _repo_. If you're using the [Developer API](http://docs.build.phonegap.com/en_US/developer_api_api.md.html), add a _tag_ field in addition to the _repo url_:
 

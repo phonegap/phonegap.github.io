@@ -6,8 +6,6 @@ author: brettrudd
 title: "config.xml gets an update - part 2 !!!!!! "
 category: build
 ---
-tags:
-- PhoneGap Build
 
 ## PLEASE NOTE NEW INFO BELOW ABOUT THE PLUGIN AND CONFIG-FILE ELEMENTS !!!
 

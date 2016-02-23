@@ -6,8 +6,6 @@ title: Upcoming Security Changes
 date: Wed Nov 07 11:49:46 -0700 2012
 permalink: /blog/build/upcoming-security-changes/
 ---
-tags:
-- PhoneGap Build
 Hi everyone,
 
 We're making some small changes to how we handle signing keys on PhoneGap Build,

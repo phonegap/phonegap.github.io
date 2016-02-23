@@ -8,8 +8,6 @@ permalink: /blog/build/tatus-update-mar-04---
 tags:
 - PhoneGap Buildmar-18-2013/
 ---
-tags:
-- PhoneGap Build
 
 Hey Build users! We've been working hard on Build over the last couple
 weeks. The progress we've made should help us provide a better user

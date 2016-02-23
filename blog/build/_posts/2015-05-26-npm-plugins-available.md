@@ -7,8 +7,6 @@ author: brettrudd
 title: "npm Plugins Are Now on PhoneGap Build!"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 As announced in this [blog post](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html),
 cordova has moved it's official plugin source to the [npmjs.com](https://www.npmjs.com) repository. As part of this move [plugins.cordova.io](http://plugins.cordova.io)

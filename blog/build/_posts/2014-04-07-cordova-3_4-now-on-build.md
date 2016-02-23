@@ -6,8 +6,6 @@ author: Ryan Willoughby
 title: "Cordova 3.4.0 Now on PhoneGap Build"
 category: build
 ---
-tags:
-- PhoneGap Build
 
 [PhoneGap Build](http://build.phonegap.com) has added Cordova 3.4.0! Here's more info on what's included:
 

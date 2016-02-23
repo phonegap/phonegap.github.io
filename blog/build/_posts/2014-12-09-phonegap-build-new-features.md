@@ -8,8 +8,6 @@ category: build
 tags:
 - PhoneGap Build Blog
 ---
-tags:
-- PhoneGap Build
 
 The PhoneGap Build team is excited to announce some big changes all designed to make your dev life easier. Say goodbye to plugin restrictions and no more waiting for reviews and approvals. 
 
