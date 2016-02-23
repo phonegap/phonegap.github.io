@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2016-02-09 13:00:04
 author: Ryan Willoughby 
 title: "PhoneGap 6.0.0 Now Available on Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 PhoneGap 6.0.0 is now available on PhoneGap Build! To use it, add the following to your config.xml:
 

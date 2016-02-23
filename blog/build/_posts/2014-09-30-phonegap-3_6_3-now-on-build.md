@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2014-09-30 15:00:02
 author: Ryan Willoughby
 title: "Phonegap 3.6.3 is Now Available on Phonegap Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 We've made Phonegap / Cordova 3.6.3 available on Phonegap Build - upgrade now! For more details on what's changed, check out the [Apache Cordova 3.6 release blog post](http://cordova.apache.org/announcements/2014/09/22/cordova-361.html). In addition, we've recently updated to the latest versions of all core plugins on Phonegap Build -- [more details here](http://community.phonegap.com/nitobi/topics/core-plugins-have-been-updated-on-phonegap-build).
 

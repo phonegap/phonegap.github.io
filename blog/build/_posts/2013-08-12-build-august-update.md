@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2013-08-12 15:40:02
 author: Mike Harris
 title: "August Build Update"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 In July we had two major updates - [user submitted plugins](http://phonegap.com/blog/2013/07/16/user-submitted-plugins-announcement-post/) and support for Japanese. We also had an incredibly successful PhoneGap Day in July - more details [here](http://phonegap.com/blog/2013/08/02/a-look-back-at-pgday-us/). Coming up next is [PhoneGap Day EU](http://pgday.phonegap.com/eu2013/) on September 24th in Amsterdam and PhoneGap Day BR on November 26 in Rio de Janeiro.
 

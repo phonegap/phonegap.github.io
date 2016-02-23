@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2013-07-03 07:40:02
 author: Mike Harris
 title: "Build June Summary"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 #Highlights for June
 + Alignment with Cordova using Plugman for plugin registration

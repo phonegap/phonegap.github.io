@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2015-01-27 01:00:03
 author: Ryan Willoughby
 title: "Hydration Now Available for Windows Phone 8 on Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 Good news, you can finally hydrate your Windows Phone 8 apps on PhoneGap build!
 

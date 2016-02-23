@@ -1,4 +1,6 @@
 ---
+tags:
+- PhoneGap Build
 date: 2013-09-20 16:40:02
 author: Colene Chow
 title: "PhoneGap and Tripcase: Be Brilliant on Every Trip"
@@ -8,6 +10,8 @@ tags:
 - Community
 - PhoneGap Build
 ---
+tags:
+- PhoneGap Build
 
 If you travel a lot, you need to check out [TripCase](http://travel.tripcase.com/), a free web and mobile app for travelers built for Apple and Android platforms using several developer tools, with PhoneGap playing a leading role. Created by travel technology giant Sabre, TripCase integrates with Sabre’s global distribution system so your itinerary—including flights, hotels, ground transport, activities, restaurants, meetings, and more—is automatically populated the app.
  

@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 author: Bob Easterday
 title: Adobe® PhoneGap™ Build™ plugin for Google Analytics
 date: Wed Oct 31 13:08:40 -0700 2012
 permalink: /blog/build/analytics-plugin/
 ---
+tags:
+- PhoneGap Build
 We've added support for another plugin to Adobe® PhoneGap™ Build™ for iOS and Android --  Adobe® PhoneGap™ Build™ plugin for Google Analytics. And more are coming!
 
 You can log events, variables and page hits to your Google Analytics account and evaluate them in your dashboard.

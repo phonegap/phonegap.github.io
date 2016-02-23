@@ -1,9 +1,13 @@
 ---
+tags:
+- PhoneGap Build
 date: 2014-01-30 09:40:03
 author: Ryan Willoughby
 title: "Customizing your Android Manifest and iOS Property List on PhoneGap Build"
 category: build
 ---
+tags:
+- PhoneGap Build
 
 PhoneGap Build aims to take away the pains of configuring SDKs and compiling native applications so you can focus on writing great code. As part of this, we obfuscate management of the platform configuration files -- namely your [Android Manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html) and your [iOS Property List](https://developer.apple.com/library/iOS/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html). We configure these files based on the preferences you specify in your app's config.xml file. However, the specifications of these xml files are constantly changing, and it would be impossible for us to expose all of the possible configurations through the use of simple preferences. So for those cases that we haven't covered, we're now enabling you to contribute xml directly to your Android Manifest and iOS Propertly List files, via the `gap:config-file` element (beta feature).
 
