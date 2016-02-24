@@ -37,15 +37,17 @@ For advanced users moving forward with the `plugin` element the following rules 
 
 To summarise the changes here's some examples:
 
-    // install plugin from the PhoneGap Build repo (all lines result in identical functionality)
-    <gap:plugin name="com.phonegap.plugin.statusbar" version="~1.1.0" />
-    <plugin name="com.phonegap.plugin.statusbar" source="pgb" version="~1.1.0" />
-    <plugin name="com.phonegap.plugin.statusbar" source="pgb" spec="~1.1.0" />
+{% highlight XML %}
+// install plugin from the PhoneGap Build repo (all lines result in identical functionality)
+<gap:plugin name="com.phonegap.plugin.statusbar" version="~1.1.0" />
+<plugin name="com.phonegap.plugin.statusbar" source="pgb" version="~1.1.0" />
+<plugin name="com.phonegap.plugin.statusbar" source="pgb" spec="~1.1.0" />
 
-    // install plugin from npm (all lines result in identical functionality)
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" version="~1" />
-    <plugin name="cordova-plugin-whitelist" version="~1" />
-    <plugin name="cordova-plugin-whitelist" spec="~1" />
+// install plugin from npm (all lines result in identical functionality)
+<gap:plugin name="cordova-plugin-whitelist" source="npm" version="~1" />
+<plugin name="cordova-plugin-whitelist" version="~1" />
+<plugin name="cordova-plugin-whitelist" spec="~1" />
+{% endhighlight %}
 
 ### Config-file tag
 
@@ -56,7 +58,9 @@ without the namespace. There is no other change in the functionality or usage of
 
 The platform tag, note the missing xml **optional** namespace, is now obeyed on Build.  This tag is **identical** to `gap:platform` and they can be used interchangeably.
 
-    <platform name="ios|winphone|wp8|android" />
+{% highlight XML %}
+<platform name="ios|winphone|wp8|android" />
+{% endhighlight %}
 
 The `platform` tag has the same powers as `gap:platform` in that if a platform is missing **it will not be built**. If your config has no `gap:platform` or `platform` tags then all platforms will be built.
 
@@ -66,28 +70,32 @@ Also `winphone` and `wp8` can be used interchangeably so as to be consistent wit
 
 Some people will be rejoicing.  You can now use platform-specific preferences.  eg.
 
-    <platform name="ios">
-      <preference name="phonegap-version" value="3.9.1" />
-      <preference name="orientation" value="portrait" />
-    </platform>
+{% highlight XML %}
+<platform name="ios">
+  <preference name="phonegap-version" value="3.9.1" />
+  <preference name="orientation" value="portrait" />
+</platform>
 
-    <platform name="android">
-      <preference name="phonegap-version" value="4.0.2" />
-      <preference name="orientation" value="landscape" />
-    </platform>
+<platform name="android">
+  <preference name="phonegap-version" value="4.0.2" />
+  <preference name="orientation" value="landscape" />
+</platform>
+{% endhighlight %}
 
 ### Splashscreens and Icons
 
 Splashscreen and icons can now be used without the `gap` namespace as well. This is in addition to the fact that they can now be placed within a `platform` tag. Placing them inside a platform tag is the same as adding a `platform="XXXX"` attribute to the element outside a `platform` tag.
 
-    <platform name="ios">
-      <icon src="ios/icons/100.png" width="100" height="100" />
-      <splash src="ios/splash/default.png" width="320" height="480" />
-    </platform>
+{% highlight XML %}
+<platform name="ios">
+  <icon src="ios/icons/100.png" width="100" height="100" />
+  <splash src="ios/splash/default.png" width="320" height="480" />
+</platform>
 
-    <platform name="android">
-      <icon src="android/ldpi.png" gap:platform="android" gap:density="ldpi" />
-      <splash src="android/ldpi.png" gap:platform="android" gap:qualifier="lhdpi" />
-    </platform>
+<platform name="android">
+  <icon src="android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+  <splash src="android/ldpi.png" gap:platform="android" gap:qualifier="lhdpi" />
+</platform>
+{% endhighlight %}
 
 As usual, if you have any questions, <a href="https://community.phonegap.com">don't hesitate to post to the community forum</a> or yell at me on twitter at @brettrudd.
