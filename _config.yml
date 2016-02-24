@@ -7,7 +7,9 @@ url: "http://phonegap.com" # the base hostname & protocol for your site
 twitter_username: phonegap
 github_username:  phonegap
 
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
+  - jekyll-coffeescript
 
 paginate: 10
 paginate_list_count: 7
