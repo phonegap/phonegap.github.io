@@ -4,6 +4,15 @@ PhoneGap's future website.
 
 This is a fairly vanilla [Jekyll](http://jekyllrb.com)/[GitHub Pages](https://pages.github.com/) site. It has been optimized for improved page loading speed; see [this article](http://garthdb.com/writings/i-am-a-jekyll-god/) for a full description.
 
+## Setup
+
+```bash
+$ brew install ruby
+$ bundle install
+```
+
+_Ensure that you are using Ruby 2.x._
+
 ## Build and Serve Locally
 
 Run this command:
