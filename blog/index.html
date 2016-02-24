@@ -49,7 +49,11 @@ extra_js:
         {% if i == paginator.page %}
           <span class="pagination__page--current">{{ i }}</span>
         {% else %}
-          <a href="/blog/page{{ i }}/" class="pagination__page">{{ i }}</a>
+          {% if i == 1 %}
+            <a href="/blog/" class="pagination__page">{{ i }}</a>
+          {% else %}
+            <a href="/blog/page{{ i }}/" class="pagination__page">{{ i }}</a>
+          {% endif %}
         {% endif %}
       {% endfor %}
 
