@@ -49,26 +49,6 @@ To summarise the changes here's some examples:
 <plugin name="cordova-plugin-whitelist" spec="~1" />
 {% endhighlight %}
 
-
-{% highlight javascript %}
-{
-  onDeviceReady: function() {
-      app.receivedEvent('deviceready');
-  },
-  // Update DOM on a Received Event
-  receivedEvent: function(id) {
-      var parentElement = document.getElementById(id);
-      var listeningElement = parentElement.querySelector('.listening');
-      var receivedElement = parentElement.querySelector('.received');
-
-      listeningElement.setAttribute('style', 'display:none;');
-      receivedElement.setAttribute('style', 'display:block;');
-
-      console.log('Received Event: ' + id);
-  }
-}
-{% endhighlight %}
-
 ### Config-file tag
 
 In making the `gap` namespace optional it means the `config-file` element can also be used with or
