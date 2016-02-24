@@ -109,7 +109,7 @@ task :tags do
 end
 
 # rake post["Title"]
-desc "Create a post in articles/_posts/"
+desc "Create a post in blog/_posts/"
 task :post, :title do |t, args|
   title = args[:title]
   template = CONFIG["post"]["template"]
@@ -153,25 +153,6 @@ task :publish do
   end
 end
 
-# rake page["Title"]
-# rake page["Title","Path/to/folder"]
-desc "Create a page (optional filepath)"
-task :page, :title, :path do |t, args|
-  title = args[:title]
-  template = CONFIG["page"]["template"]
-  extension = CONFIG["page"]["extension"]
-  editor = CONFIG["editor"]
-  directory = args[:path]
-  if directory.nil? or directory.empty?
-    directory = "./"
-  else
-    FileUtils.mkdir_p("#{directory}")
-  end
-  check_title(title)
-  filename = transform_to_slug(title, extension)
-  content = read_file(template)
-  create_file(directory, filename, content, title, editor)
-end
 
 # rake build
 desc "Build the site"
