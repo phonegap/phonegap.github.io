@@ -2,8 +2,33 @@
 author: The PhoneGap Team
 title:
 tags:
-- News
-- Community
+- Announcement
 ---
 
 Use markdown here.
+
+Available tags:
+
+- Android
+- Announcement
+- App
+- Blackberry
+- Community
+- Desktop
+- Documentation
+- Event
+- Framework
+- Guest Post
+- Guide
+- Insight
+- iOS
+- News
+- PhoneGap Blog
+- PhoneGap Build
+- PhoneGap Day
+- PhoneGap Enterprise
+- Plugin
+- Release
+- Tutorial
+- Video
+- Windows Phone
