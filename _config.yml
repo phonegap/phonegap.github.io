@@ -22,6 +22,9 @@ post:
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+
 permalink: /blog/:year/:month/:day/:title/
 highlighter: rouge
 excerpt_separator: <!--more-->

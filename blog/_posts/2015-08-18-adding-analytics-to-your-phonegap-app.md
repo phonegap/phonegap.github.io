@@ -35,17 +35,17 @@ I'll walk you through the steps I took to track button clicks and display the re
 
 2. Include the Keen IO library as part of the project. Open up `www/index.html` and add the following line just after the `index.js` file gets loaded:
 
-{% highlight javascript %}
+```xml
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/keen.min.js"></script>
-{% endhighlight %}
+```
 
 ## Tracking your events
 
 **1. Create an instance of the Keen Client object within your HTML file by adding the following:**
 
-{% highlight javascript %}
+```javascript
 initialize: function() {
   this.bindEvents();
   this.client = new Keen({
@@ -55,7 +55,7 @@ initialize: function() {
   });
   self = this;
 }
-{% endhighlight %}
+```
 
 You can grab your Keen API keys from your Keen IO project page after you create an account. After adding in your keys, you should have a fancy new client object ready to send and read data from Keen IO.
 
@@ -65,7 +65,7 @@ You'll also notice that we’ve set a `self` variable to the current `this` cont
 
 For my example Hello World application, I wanted to track the number of button clicks. Here’s how I did it:
 
-{% highlight javascript %}
+```javascript
 onButtonClick: function() {
   document.getElementById("button").setAttribute("style", "display:none");
   document.getElementById("pushed-text").setAttribute("style", "display:block");
@@ -86,13 +86,13 @@ onButtonClick: function() {
     document.getElementById("pushed-text").setAttribute("style", "display:none");
   });
 },
-{% endhighlight %}
+```
 
 Now I am collecting all the clicks on my PhoneGap button. Whenever I click the button, I will see the new event appear in the "button clicks" collection inside my Keen IO project along with it's associated properties.
 
 Right now, we are just logging the button color and the device information on every click event. The event data looks something like this:
 
-{% highlight javascript %}
+```javascript
 {
   "color": "red",
   "device": {
@@ -109,7 +109,7 @@ Right now, we are just logging the button color and the device information on ev
     "id": "55c3f8af6f31a205660b5172"
   }
 }
-{% endhighlight %}
+```
 
 With Keen, we can track any property on any event. Let's say we want to know information on our signup events. We can add properties to every signup event to collect information on the [referral source](https://keen.io/docs/api/#referrer-parser), user id, [device information](https://keen.io/docs/api/#user-agent-parser), [IP address and geo information](https://keen.io/docs/api/#ip-to-geo-parser), or any other information we might want to know.
 
@@ -123,7 +123,7 @@ I wanted to display a chart within my Hello World app that shows the number of b
 
 The HTML for the charts is [here](https://github.com/hex337/phonegap-keen/blob/master/www/index.html#L56), but what we really care about is the JavaScript to fetch our desired data:
 
-{% highlight javascript %}
+```javascript
 onStatsLinkClick: function() {
    document.getElementById("button-page").setAttribute("style", "display:none");
    document.getElementById("stats-page").setAttribute("style", "display:block");
@@ -153,7 +153,7 @@ onStatsLinkClick: function() {
        }
    });
 },
-{% endhighlight %}
+```
 
 ![](https://github.com/hex337/phonegap-keen/blob/master/imgs/stats_screen.PNG?raw=true)
 
