@@ -7,6 +7,8 @@ link: http://www.raymondcamden.com/index.cfm/2012/10/4/Building-a-Parsecom-Enabl
 type: post
 title: Building a Parse.com Enabled PhoneGap App - Part 4
 status: publish
+tags:
+- PhoneGap Network
 format: html
 ---
 Welcome to the fourth part of my blog series on building a <a href="http://www.parse.com">Parse.com</a> enabled <a href="http://www.phonegap.com">PhoneGap</a> application. If you haven't yet read the earlier entries in this series, please see the links at the bottom for background and the story so far. In today's entry we're going to add geolocation to the application. This will be supported both in the tip reporting mechanism as well as in the page that fetches tips.Luckily, Parse.com makes building location-aware applications very easy. In fact, the code for these features are so simple you can add them within five minutes. Unfortunately, what isn't so easy is deciding <i>how</i> to use these features. I'm finding that more and more it isn't so much a problem of "How do I do X" but more "How do I X in a way that best works for my users." Consider the simple fact that geolocation can - and does - fail. What do I do? Do I let users enter an address? Do I display a small map so they can touch to select their location? What if they lie? Or what if they are just wrong. 

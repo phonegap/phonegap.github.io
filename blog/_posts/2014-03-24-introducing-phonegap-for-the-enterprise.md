@@ -3,7 +3,7 @@ date: 2014-03-24 19:00:05
 author: Andre Charland
 title: "Introducing PhoneGap for the Enterprise"
 tags:
-- news
+- News
 - Release
 ---
 

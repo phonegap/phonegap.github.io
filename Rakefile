@@ -20,6 +20,7 @@ DATE = Time.now.strftime("%Y-%m-%d")
 # Directories
 POSTS = "blog/_posts/"
 DRAFTS = "_drafts"
+BLOG = "blog/"
 
 # == Helpers ===================================================================
 
@@ -83,17 +84,19 @@ end
 # rake generate-tags
 desc "Generate a page for each tag"
 task :tags do
-  Dir.chdir POSTS
+  Dir.chdir BLOG
   files = Rake::FileList["**/*.md", "**/*.markdown", "**/*.html"]
   files.exclude("README.md")
   tags = []
   for file in files
-    content = File.read("#{File.dirname(__FILE__)}/#{POSTS}#{file}")
-    yaml_data = content.split('---')[1]
-    yaml_data = YAML.load(yaml_data)
-    tags_temp = yaml_data["tags"]
-    if tags_temp.respond_to?('each')
-      tags.push(*tags_temp)
+    content = File.read("#{File.dirname(__FILE__)}/#{BLOG}#{file}")
+    if content.include? "---"
+      yaml_data = content.split('---')[1]
+      yaml_data = YAML.load(yaml_data)
+      tags_temp = yaml_data["tags"]
+      if tags_temp.respond_to?('each')
+        tags.push(*tags_temp)
+      end
     end
   end
   tags = tags.uniq - ["", nil]
