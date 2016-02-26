@@ -1,4 +1,4 @@
 ---
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<tags>{% for tag in site.pages %}{% if tag.category contains 'tag_page' %}<tag><title>{{ tag.title }}</title>{% assign counter = 0 %}{% for post in site.posts %}{% if post.tags contains tag.title %}{% assign counter=counter | plus:1 %}{% endif %}{% endfor %}<count>{{ counter }}</count><url>{{ tag.permalink }}</url></tag>{% endif %}{% endfor %}</tags>
+<tags>{% for tag in site.pages %}{% if tag.category contains 'tag_page' and tag.title != 'PhoneGap Network' %}<tag><title>{{ tag.title }}</title>{% assign counter = 0 %}{% for post in site.posts %}{% if post.tags contains tag.title %}{% assign counter=counter | plus:1 %}{% endif %}{% endfor %}<count>{{ counter }}</count><url>{{ tag.permalink }}</url></tag>{% endif %}{% endfor %}</tags>
