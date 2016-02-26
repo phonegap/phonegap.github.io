@@ -35,7 +35,7 @@ Open a browser to `http://localhost:4000`
 * To keep videos and images responsive please don't add the `width` property. If images are too large you can add the `max-width` style: `<img src="/uploads/blog/2016-02/Browser.jpg" alt="Browser" style="max-width: 400px;"/>`
 * To include images, add them to `/uploads/blog/[4 digit year]-[2 digit month]`. If the directory you need for the month isn't there, feel free to add it. To include the image in the post just use the same directory structure: `![Browser](/uploads/blog/2016-02/Browser.jpg)`.
 * Kramdown is using [GitHub Flavored Markdown](https://help.github.com/articles/working-with-advanced-formatting/). The easiest way to add code snippets is to using [triple backticks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#fenced-code-blocks); you can also define the language for better [syntax highlighting](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting). For a full list of languages [here](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
-* You can preview the post locally using the setup and commands mentioned above in the **Setup** section.
+* You can preview the post locally using the setup and commands mentioned above in the [Setup](https://github.com/phonegap/phonegap.github.io/#setup) section.
 * If you have write access to this repo and you feel comfortable with the blog post, feel free to commit to master.
 * If you **don't** have write access to this repo, or you would like a review, please make a [pull-request](https://help.github.com/articles/using-pull-requests/).
 
