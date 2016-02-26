@@ -27,7 +27,7 @@ Install the Ruby Bundler:
 $ gem install bundler
 ```
 
-Install the Ruby dependencies for phonegap.co:
+Install the Ruby dependencies for phonegap.com:
 
 ```bash
 $ bundle install
