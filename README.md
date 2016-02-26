@@ -6,22 +6,50 @@ This is a fairly vanilla [Jekyll](http://jekyllrb.com)/[GitHub Pages](https://pa
 
 ## Setup
 
+Install [`rvm`](https://rvm.io/) to manage Ruby versions:
+
 ```bash
-$ brew install ruby
+$ \curl -sSL https://get.rvm.io | bash -s stable
+```
+
+Install Ruby:
+
+```bash
+$ rvm install 2.1.5
+$ rvm use 2.1.5 --default
+$ ruby -v
+ruby 2.1.5
+```
+
+Install the Ruby Bundler:
+
+```bash
+$ gem install bundler
+```
+
+Install the Ruby dependencies for phonegap.co:
+
+```bash
 $ bundle install
 ```
 
-_Ensure that you are using Ruby 2.x._
+## Running Locally
 
-## Build and Serve Locally
+**Build and watch everything _except the blog_:**
 
-Run this command:
+```bash
+$ rake watch
+```
+
+Then open a browser to `http://localhost:4000`.
+
+**Build and watch everything _including the blog_:**
 
 ```bash
 $ jekyll serve --incremental
 ```
 
-Open a browser to `http://localhost:4000`
+Then open a browser to `http://localhost:4000`.
 
 ## Writing Blog Posts
 
