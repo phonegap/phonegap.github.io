@@ -67,6 +67,9 @@ h2
     background: #f2a700
   &:active
     background: #eb3854
+.button--pill--gray
+  @extend .button--pill
+  background: #f2f2f2
 .button--pill--next
   @extend .button--pill
   position: relative
@@ -91,6 +94,9 @@ h2
     background-image: url('/images/chevron-left.svg')
     right: auto
     left: 15px
+.button--pill--prev--gray
+  @extend .button--pill--prev
+  background: #f2f2f2
 @media (min-width: 820px)
   body
     padding-top: 160px
