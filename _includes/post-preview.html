@@ -1,6 +1,8 @@
 <article class="blog-post__preview">
   <header>
-    <time class="blog-post__date" datetime="{{ post.date | date: '%Y-%m-%dT%H:%M:%SZ'}}">{{ post.date | date: '%B %d, %Y' }}</time> &bull; <span class="blog-post__author">{{ post.author }}</span>
+    <div class="blog__dateline">
+      <time class="blog-post__date" datetime="{{ post.date | date: '%Y-%m-%dT%H:%M:%SZ'}}">{{ post.date | date: '%B %d, %Y' }}</time> &bull; <span class="blog-post__author">{{ post.author }}</span>
+    </div>
     <h1 class="blog-post__title"><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></h1>
     {% include tag-list.html %}
   </header>
