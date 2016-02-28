@@ -6,7 +6,11 @@ layout: compress
 
   {% include head.html %}
 
-  <body>
+  {% if page.body-class %}
+    <body class="{{page.body-class}}">
+  {% else %}
+    <body>
+  {% endif %}
 
     {% include header.html %}
 
