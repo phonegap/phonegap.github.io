@@ -47,7 +47,9 @@ Additionally, if you're using the <a href="http://docs.build.phonegap.com/en_US/
  - description (description)
  - phonegap_version (preference: phonegap-version)
 ```
+
 So make sure you're declaring those fields in your config.xml file. These parameters will continue to be supported through API parameters:
+
 ```
 - create_method
 - tag
