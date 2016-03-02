@@ -1,4 +1,4 @@
-# PhoneGap.com Next [![Travis CI Build Status](https://api.travis-ci.org/phonegap/phonegap.github.io.svg)](https://travis-ci.org/phonegap/phonegap.github.io)
+# phonegap.com [![Travis CI Build Status](https://api.travis-ci.org/phonegap/phonegap.github.io.svg)](https://travis-ci.org/phonegap/phonegap.github.io)
 
 PhoneGap's future website.
 
@@ -25,6 +25,13 @@ Install the Ruby Bundler:
 
 ```bash
 $ gem install bundler
+```
+
+Clone this repository:
+
+```bash
+$ git clone https://github.com/phonegap/phonegap.github.io.git
+$ cd phonegap.github.io/
 ```
 
 Install the Ruby dependencies for phonegap.com:
