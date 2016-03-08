@@ -10,6 +10,7 @@ github_username:  phonegap
 gems:
   - jekyll-paginate
   - jekyll-coffeescript
+  - jekyll-redirect-from
 
 paginate: 10
 paginate_list_count: 7
