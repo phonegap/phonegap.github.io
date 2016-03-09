@@ -8,8 +8,10 @@ tags:
 ---
 
 We're introducing two changes to PhoneGap Build: 
+
 - config.xml files are now a required part of your application, and
 - deprecation of the already mostly obsolete `<feature>` tag. 
+
 Not the most exciting changes, we admit. Nonetheless, we'll be deploying these changes on March 7, 2016.
 
 ## Config.xml Files Now Required
