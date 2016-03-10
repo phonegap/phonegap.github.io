@@ -16,7 +16,7 @@ Weren't able to make it to Barcelona? Check out the slide decks from the present
 
 [Simon MacDonald](https://twitter.com/macdonst), Senior Software Engineer - Adobe PhoneGap, kicked off the presentations talking about push notifications, how and when to use them on mobile platforms, how to use them effectively and how not to annoy your users. Slides available [here](http://slides.com/simonmacdonald/push#/).
 
-[José Jesús](https://twitter.com/JoseJ_PR) gave some great tips for startups developing mobile apps. Slides available [here]().
+[José Jesús](https://twitter.com/JoseJ_PR) gave some great tips for startups developing mobile apps. Slides available [here](http://we.tl/JMaXlWOu4U).
 
 And we ended the night with [Claudio Cossio](https://twitter.com/ccossio) as he discussed UX trends for startups leveraging voice and text. Slides available [here](http://www.slideshare.net/ccossio/ux-trends-for-startups-leveraging-voice-text-phonegap-meetup-4yfn-mwc)
 
