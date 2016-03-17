@@ -64,7 +64,7 @@ We were also joined by experts from the Angular, React and Ember communities as 
 - [Cordova Plugin Roundup](https://www.tjvantoll.com/speaking/slides/Cordova-Plugin-Roundup/Lehi/cordova-plugin-roundup.pdf) - [TJ VanToll](https://twitter.com/tjvantoll) (Telerik)
 - PhoneGap and React.js - [Jed Watson](https://twitter.com/JedWatson)
 - [When the heck is 4/8/2016](http://static.raymondcamden.com/enclosures/pgday2016.pdf) - [Ray Camden](https://twitter.com/raymondcamden)
-- Fixing Continuous Delivery for Mobile - [Nick Van Weerdenburg](https://twitter.com/n1cholasv) (Rangle.io)
+- [Fixing Continuous Delivery for Mobile](http://www.slideshare.net/rangle_io/fixing-continuous-delivery-for-mobile) - [Nick Van Weerdenburg](https://twitter.com/n1cholasv) (Rangle.io)
 - [Making Enterprise Sh_t](http://brucelefebvre.com/slides/pgday-lehi-2016-enterprise/content/phonegap/pgday-talk/en/home.html#/) - [Bruce Lefebvre](https://twitter.com/brucelefebvre)
 - Crosswalk: A powerful runtime for your Cordova Apps - Bob Spencer (Crosswalk)
 - [Build and Market Your App: Small Team Success](https://www.dropbox.com/s/nt3yvfivno9z502/SWORKIT-PGDAY-US-2016.pdf) - [Ryan Hanna](https://twitter.com/heryandotus) and [David Frahm](https://twitter.com/davidfrahm)
