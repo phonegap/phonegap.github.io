@@ -46,7 +46,7 @@
 				<section>
 					<h2>About Me</h2>
 					<div class="fragment">
-					<img src="img/fabio1.jpg" style="float:right">
+					<img src="img/fabio1.jpg" style="float:right" alt="Fabio">
 					<ul>
 						<li>Invented the Internet</li>
 						<li>Poop Kittens</li>
@@ -69,9 +69,9 @@
 					Only exist on the device!
 					</p>
 				</section>
-				
+
 				<section>
-					<img src="img/Parse_Logo.jpg" class="transparent">
+					<img src="img/Parse_Logo.jpg" class="transparent" alt="Parse logo">
 					<ul>
 					<li>Cloud-based service (with free + paid tiers)</li>
 					<li>Data storage</li>
@@ -80,7 +80,7 @@
 					<li>REST-based API (integration with other servers)</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h2>Basics</h2>
 					<ul>
@@ -91,21 +91,21 @@
 						<li class="fragment">Write code</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h2>What You Can Code</h2>
 					<ul>
 					<li class="fragment">CRUD for simple data</li>
 					<li class="fragment">Query + Collections</li>
 					<li class="fragment">File storage</li>
-					<li class="fragment">Geopoints</li>	
+					<li class="fragment">Geopoints</li>
 					<li class="fragment">Users</li>
 					<li class="fragment">Cloud Functions (think server-side JS)</li>
 					<li class="fragment">Push notifications</li>
 					</ul>
-					
+
 				</section>
-				
+
 				<section>
 					<h2>Initialize Parse</h2>
 					<pre><code data-trim contenteditable>
@@ -118,7 +118,7 @@ Parse.initialize("app ID", "js ID");
 					<pre><code data-trim contenteditable>
 
 Parse.initialize("app ID", "js ID");
-var BeerObject = Parse.Object.extend("BeerObject");	
+var BeerObject = Parse.Object.extend("BeerObject");
 
 var beer = new BeerObject();
 beer.set("name","FooBeer");
@@ -127,12 +127,12 @@ beer.set("abv",9.2);
 					</code></pre>
 
 				</section>
-			
+
 				<section>
 					<h2>Save Something</h2>
 					<pre><code data-trim contenteditable>
 Parse.initialize("app ID", "js ID");
-var BeerObject = Parse.Object.extend("BeerObject");	
+var BeerObject = Parse.Object.extend("BeerObject");
 
 var beer = new BeerObject();
 beer.set("name","FooBeer");
@@ -142,7 +142,7 @@ beer.set("abv",9.2);
 beer.save(null, {
 	success:function(ob) {
 		//do something
-	}, 
+	},
 	error:function(ob, err) {
 		//oh no! woe is me!
 	}
@@ -150,26 +150,26 @@ beer.save(null, {
 </code></pre>
 
 				</section>
-				
+
 				<section>
 					<h2>Get Something</h2>
 					<pre><code data-trim contenteditable>
 Parse.initialize("app ID", "js ID");
-var BeerObject = Parse.Object.extend("BeerObject");	
+var BeerObject = Parse.Object.extend("BeerObject");
 
 var q = new Parse.Query(BeerObject);
 q.get("someid", {
 	success:function(ob) {
 		console.log("I got beer "+ ob.get("name"));
-	}, 
+	},
 	error:function(ob, err) {
 		//oh no! woe is me!
 	}
 });
 </code></pre>
-				
+
 				</section>
-				
+
 				<section>
 					<h2>Deleting Something</h2>
 					<pre><code data-trim contenteditable>
@@ -180,14 +180,14 @@ q.get("someid", {
 b.destroy({
 	success:function(ob) {
 
-	}, 
+	},
 	error:function(ob, err) {
 
 	}
 });
 </code></pre>
 				</section>
-				
+
 				<section>
 					<h2>Relations (One to One, One to Many)</h2>
 					<pre><code data-trim contenteditable>
@@ -202,7 +202,7 @@ brewery.set("name","Uncle Joe");
 
 b.set("brewer", brewery);
 </code></pre>
-					
+
 				</section>
 
 				<section>
@@ -224,9 +224,9 @@ releation.add([t, t2]);
 
 b.save();
 </code></pre>
-					
+
 				</section>
-				
+
 				<section>
 					<h2>Queries</h2>
 					<ul>
@@ -237,7 +237,7 @@ b.save();
 						<li>Multiple queries at once (OR)</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h2>Query Example</h2>
 					<pre><code data-trim contenteditable>
@@ -252,14 +252,14 @@ query.greaterThan("abv", 10);
 query.find({
 	success:function(results) {
 		//array of beer - that sounds awesome
-	}, 
+	},
 	error:function(err) {
 	}
 });
 
 					</code></pre>
 				</section>
-				
+
 				<section>
 					<h2>Admin Console</h2>
 					<ul>
@@ -268,24 +268,24 @@ query.find({
 					<li>Settings (including good lockdown stuff)</li>
 					</ul>
 				</section>
-				
+
 				<section>
-					<img src="img/dash1.png" class="transparent">
+					<img src="img/dash1.png" alt="dash" class="transparent">
 				</section>
 
 				<section>
-					<img src="img/dash2.png" class="transparent">
+					<img src="img/dash2.png" alt="dash" class="transparent">
 				</section>
 
 				<section>
 					<h2>Parse &amp; PhoneGap</h2>
 					<p>
-					<img src="img/chocolate.png" style="float:left;max-width:333px">
-					<img src="img/peanut-butter.jpeg"  style="float:right;max-width:333px">
-					<img src="img/mower-race.gif" class="fragment" style="position:absolute;top:0px;left:200px;height:500px;z-index:100">
+					<img src="img/chocolate.png" alt="Chocolate" style="float:left;max-width:333px">
+					<img src="img/peanut-butter.jpeg" alt="peanut butter"  style="float:right;max-width:333px">
+					<img src="img/mower-race.gif" alt="mower" class="fragment" style="position:absolute;top:0px;left:200px;height:500px;z-index:100">
 					</p>
 				</section>
-				
+
 				<section>
 					<h1>Demo!</h1>
 				</section>
@@ -297,35 +297,35 @@ query.find({
 					<li>Demos (raymondcamden.com, search for parse)</li>
 					</ul>
 				</section>
-				
+
 				<section data-background="img/bobapony.jpg" data-background-size="400px">
 				</section>
-				
+
 			</div>
 
 		</div>
 
 <style>
 	.adobe {
-	padding-left: 10px; 
-	padding-top: 40px; 
-	padding-bottom: 10px; 
-	position: absolute; 
-	right: 80px; 
-	top: 0px; 
-	background-color: #F00; 
-	width: 40px; 
+	padding-left: 10px;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	position: absolute;
+	right: 80px;
+	top: 0px;
+	background-color: #F00;
+	width: 40px;
 	height: 40px;
 	}
-		
+
 	.transparent {
 		border: none !important;
 	}
 </style>
 <div class="adobe">
-	<img src="img/adobe_logo.png" width="30" height="40">
+	<img src="img/adobe_logo.png" width="30" height="40" alt="Adobe logo">
 </div>
-		
+
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 

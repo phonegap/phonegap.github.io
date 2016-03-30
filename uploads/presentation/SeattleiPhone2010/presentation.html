@@ -10,30 +10,30 @@
    <link rel="stylesheet" href="slides.css" type="text/css" media="screen, projection" />
 
    <script type="application/javascript" src="jq-min.js"></script>
-   
+
    <script type="text/javascript" charset="utf-8">
     $(function(){
 
     	/**
     	 * mostly good enough presentation software
-    	 * 
+    	 *
     	 */
     	var Crooner = function() {
 
 
     		/**
     		 * keyboard navigation
-    		 * 
+    		 *
     		 * - up, left, right and down keys
     		 * - c create, d delete, e edit
-    		 * 
+    		 *
     		 */
     		var keyboardNavigation = function() {
     			var index = 0;
     			var offset = 0;
 
     			$(document).keydown(function(e) {
-    			  
+
     				var go = function(direction) {
               e.preventDefault();
     					var slides = $('.slide');
@@ -48,7 +48,7 @@
     					this.down = function() {
     						if (index < max) index++;
     						if (index == max) index = min;
-    						return index;		
+    						return index;
     					};
 
     					index = this[direction]();
@@ -60,7 +60,7 @@
     				var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
 
     				var keys = {
-    					0:function(){}, 
+    					0:function(){},
     					37:function(){go('up')}, // left
     					38:function(){go('up')},
     					39:function(){go('down')}, // right
@@ -85,13 +85,13 @@
 
     	Crooner.init();
 
-    /// ---	
+    /// ---
     });
    </script>
 </head>
 <body>
   <div id="slides">
-	
+
 <div class="slide">
 	<h1 style="margin-top:130px;">PhoneGap</h1>
 	<br/>
@@ -134,7 +134,7 @@
 
 <div class="slide bg-green">
 	<h5 style="margin-top:40px;">The <u>Apple</u> Path to iPhone Development</h5>
-	
+
 	<ul style="font-size:14px;line-height:40px;color:#cdcdcd;padding-top:20px;">
 		<li>Get an iPhone + a Mac</li>
 		<li>Sign up with Apple</li>
@@ -143,15 +143,15 @@
 		<li>Provision your phone</li>
 		<li>Build Your App</li>
 		<li>Submit to Apple, and wait ...</li>
-	</ul>	
+	</ul>
 </div>
 
 <div class="slide">
-	<img style="height:100%;width=auto;" src="images/fail_6.jpg"/>
+	<img style="height:100%;width=auto;" src="images/fail_6.jpg" alt="Fail"/>
 </div>
 
 <div class="slide">
-	<img style="height:100%;width=auto;" src="images/dont-worry-guys.png"/>
+	<img style="height:100%;width=auto;" src="images/dont-worry-guys.png" alt="Don't worry guys"/>
 </div>
 
 <div class="slide bg-blue">
@@ -165,7 +165,7 @@
 			<tr><td>Provision your phone</td> <td>uh-huh</td></tr>
 			<tr><td>Build Your App</td><td>Yeah</td></tr>
 			<tr><td>Submit to Apple, and wait ...</td><td>of course ...</td></tr>
-		</table>		
+		</table>
 </div>
 
 
@@ -200,11 +200,11 @@
 </div>
 
 <div class="slide bg-white" style="padding-top:200px;">
-	
+
 	<code style="font-size:24px;">
 	document.location = "gap://Location.start/null";
 	</code>
-	
+
 	<ul style="font-size:18px;">
 		<li>a) the gap protocol</li>
 		<li>b) the command handler</li>
@@ -212,8 +212,8 @@
 		<li>d) any arguments</li>
 	</ul>
 
-	Note: the calls from JS->ObjC are Asynchronous, there is NO return value	
-	
+	Note: the calls from JS->ObjC are Asynchronous, there is NO return value
+
 </div>
 
 <div class="slide bg-white" style="padding-top:200px;">
@@ -225,8 +225,8 @@
 	<li>navigator.accelerometer : defines device position functionality</li>
 	<li>navigator.notification : defines Alert + Prompt popup functionality + activityStart + vibrate</li>
 	</ul>
-	
-	
+
+
 </div>
 
 <div class="slide bg-white" style="padding-top:200px;">
@@ -260,7 +260,7 @@
 </div>
 
 <div class="slide bg-white orange" style="padding-top:200px;">
-	
+
 	<p style="font-size:28px;" class="green">Things to keep in mind:</p>
 	<br/>
 	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="black">
@@ -268,9 +268,9 @@
 	</p>
 	<br/>
 	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="black">
-		Don't depend on timeouts firing on time! Use callbacks.	
+		Don't depend on timeouts firing on time! Use callbacks.
 	</p>
-	
+
 </div>
 
 <div class="slide bg-white orange" style="padding-top:200px;">
@@ -286,7 +286,7 @@
 	<br/>
 	<p style="font-size:24px;padding-left:100px;padding-right:100px;" class="blue">Let's see the code!</p>
 	</div>
-	
+
 	<div class="slide">
 		<h4 class="blue" style="margin-top:80px;">Bonus</h4>
 		<br/>
@@ -297,6 +297,6 @@
 			<li>PhoneGap plug-ins</li>
 		</ul>
 	</div>
-	
+
 </body>
 </html>

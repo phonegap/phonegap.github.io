@@ -5,7 +5,7 @@ subtitle: PhoneGap is an open source framework for quickly building cross-platfo
 permalink: /about/
 subtitle: A high-level summary of what PhoneGap is all about.
 ---
-Building applications for each platform–iPhone, Android, Windows and more–requires different frameworks and languages. PhoneGap solves this by using standards-based web technologies to bridge web applications and mobile devices. Since PhoneGap apps are standards compliant, they’re future-proofed to work with browsers as they evolve. Read an in-depth post [explaining PhoneGap visually](/2012/05/02/phonegap-explained-visually/).
+Building applications for each platform–iPhone, Android, Windows and more–requires different frameworks and languages. PhoneGap solves this by using standards-based web technologies to bridge web applications and mobile devices. Since PhoneGap apps are standards compliant, they’re future-proofed to work with browsers as they evolve. Read an in-depth post [explaining PhoneGap visually](http://phonegap.com/blog/2012/05/02/phonegap-explained-visually/).
 
 PhoneGap has been downloaded millions of times and is being used by hundreds of thousands of developers. Thousands of apps built using PhoneGap are available in mobile app stores and directories. Check out some of them [here](/apps).
 
@@ -13,9 +13,9 @@ The PhoneGap code was contributed to the Apache Software Foundation (ASF) under 
 
 Read more about:
 
-* [PhoneGap’s beliefs, goals, and philosophy](/2012/05/09/phonegap-beliefs-goals-and-philosophy)
-* [Rolling Releases: How Apache Cordova becomes PhoneGap](/2012/04/12/rolling-releases-how-apache-cordova-becomes-phonegap-and-why/)
-* [PhoneGap, Cordova, and what’s in a name?](/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/)
+* [PhoneGap’s beliefs, goals, and philosophy](http://phonegap.com/blog/2012/05/09/phonegap-beliefs-goals-and-philosophy/)
+* [Rolling Releases: How Apache Cordova becomes PhoneGap](http://phonegap.com/bloghttp://phonegap.com/blog/2012/04/12/rolling-releases-how-apache-cordova-becomes-phonegap-and-why/)
+* [PhoneGap, Cordova, and what’s in a name?](http://phonegap.com/blog/2012/03/19/phonegap-cordova-and-whate28099s-in-a-name/)
 
 Nitobi was the original creator and is one of the primary contributors to the PhoneGap framework. In October 2011, Adobe acquired Nitobi enabling the team to focus solely on the PhoneGap project and continue its work on efficient development across mobile platforms.
 

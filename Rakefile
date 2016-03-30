@@ -4,7 +4,7 @@ require 'rake'
 require 'yaml'
 require 'fileutils'
 require 'rbconfig'
-require 'html/proofer'
+require 'html-proofer'
 
 # == Configuration =============================================================
 
@@ -198,7 +198,27 @@ end
 # rake test
 desc "build and test website"
 task :test do
-  sh "bundle exec jekyll build"
-  # This can be re-enabled when it doesn't fail 100% of the time
-  #HTML::Proofer.new("./_site", {:href_ignore=> ['http://localhost:4000', "#", "http://phonegap.com", "http://phonegap.com/feed.xml"], :typhoeus => { :followlocation => true, :headers => { 'User-Agent' => 'html-proofer' } }}).run
+  if !File.exists? "./_site"
+    sh "bundle exec jekyll build --config _config.yml"
+  end
+  HTMLProofer.check_directory("./_site", {
+    :empty_alt_ignore => true,
+    :url_ignore => [
+      /\/app\/?/,
+      /\/blog\/?/,
+      '/book/',
+      '/event/',
+      '/getstarted/',
+      '/products/',
+      '/tool/',
+    ],
+    :cache => {
+      :timeframe => '1d'
+    },
+    :typhoeus => {
+      :followlocation => true,
+      :ssl_verifypeer => false,
+      :headers => { 'User-Agent' => 'html-proofer' }
+    }
+  }).run
 end
