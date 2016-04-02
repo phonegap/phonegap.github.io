@@ -11,6 +11,7 @@ gems:
   - jekyll-paginate
   - jekyll-coffeescript
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 paginate: 10
 paginate_list_count: 7
