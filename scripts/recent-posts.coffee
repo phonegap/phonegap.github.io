@@ -38,7 +38,6 @@ document.addEventListener "DOMContentLoaded", (event) ->
     timeElement.appendChild(yearElement)
     liElement.appendChild(timeElement)
     liElement.appendChild(divElement)
-    console.log(liElement)
     return liElement
 
   writeData = (posts) ->
@@ -51,7 +50,6 @@ document.addEventListener "DOMContentLoaded", (event) ->
     blogListElement.appendChild ulElement
 
   parseData = (xmlChildNodes) ->
-    console.log xmlChildNodes
     for post in xmlChildNodes
       post =
         datetimeString: post.childNodes[0].innerHTML
