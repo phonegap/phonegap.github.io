@@ -2,6 +2,8 @@
 layout: default
 title: Get Started
 permalink: /getstarted/
+extra_js:
+  - products.js
 ---
 <div class="subheader">
   <div class="bounds">
@@ -20,9 +22,9 @@ permalink: /getstarted/
         <div class="gs-step__note">If you’d like to <a href="http://docs.phonegap.com/getting-started/1-install-phonegap/cli/">use the CLI to install PhoneGap</a>, check out our docs.</div>
       </div>
       <div class="download">
-        <h3 class="download__version">Version 0.2.3 (Beta)</h3>
+        <h3 id="desktop_app_version" class="download__version">Latest Version</h3>
         <div class="download__label">Download for:</div>
-        <ul>
+        <ul id="download__platform__list">
           <li>
             <div class="download__platform"><a href="http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/#mac">Mac</a></div>
             <div class="download__platform__version">OS X 10.9 or later</div>
@@ -31,7 +33,8 @@ permalink: /getstarted/
             <div class="download__platform"><a href="http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/#win">Windows</a></div>
             <div class="download__platform__version">Windows 8.1</div>
           </li>
-          <div class="download__image">{% include images/pg-desktop.svg %}</div>
+        </ul>
+        <div class="download__image">{% include images/pg-desktop.svg %}</div>
       </div>
     </li>
     <li class="gs-step">
