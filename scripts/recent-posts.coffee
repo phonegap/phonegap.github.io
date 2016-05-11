@@ -44,7 +44,8 @@ document.addEventListener "DOMContentLoaded", (event) ->
     ulElement = document.createElement('ul')
     for post in posts
       ulElement.appendChild createBlogElement post
-    titleElement = document.createElement 'h2'
+    titleElement = document.createElement 'h3'
+    titleElement.setAttribute('class', 'latest-blog__section-title')
     titleElement.innerHTML = 'The latest from our blog'
     blogListElement.appendChild titleElement
     blogListElement.appendChild ulElement

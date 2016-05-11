@@ -8,13 +8,17 @@
   .bounds
     padding-top: 50px
     padding-bottom: 30px
-  h2
-    color: #c4c4c4
   hr
     border: 0
     height: 1px
     background: #001835
     margin: 43px 0
+  h4
+    margin-top: 0
+  h2
+    margin-top: 0
+.site-footer__title
+  color: #c4c4c4
 .site-footer__lists
   display: -webkit-box
   display: -webkit-flex
@@ -59,29 +63,31 @@
   -ms-flex-order: 0
   order: 0
   color: #94b7cb
-  h2
-    font-weight: normal
-    font-size: 1.5rem
-    margin-bottom: 1.25rem
-    a
-      display: block
-      position: relative
-      color: #27a1c5
-      &:before
-        content: url('/images/arrow-right.svg')
-        position: relative
-        left: 0
-        top: 0
-        width: 1.5rem
-        height: 1.125rem
-        margin-right: .5rem
-        -webkit-transition: left .2s ease
-        transition: left .2s ease
-      &:hover
-        color: #27a1c5
-        text-decoration: none
-        &:before
-          left: .3rem
+  a
+    color: #27a1c5
+.site-footer__message__title
+  font-weight: normal
+  font-size: 1.5rem
+  margin-bottom: 1.25rem
+.site-footer__message__link
+  display: block
+  position: relative
+  color: #27a1c5
+  &:before
+    content: url('/images/arrow-right.svg')
+    position: relative
+    left: 0
+    top: 0
+    width: 1.5rem
+    height: 1.125rem
+    margin-right: .5rem
+    -webkit-transition: left .2s ease
+    transition: left .2s ease
+  &:hover
+    color: #27a1c5
+    text-decoration: none
+    &:before
+      left: .3rem
 .site-footer__message
   margin-bottom: 2.375rem
 .subscribe
@@ -158,16 +164,15 @@
     max-width: 930px
     padding: 25px 10px 40px
     box-sizing: border-box
-    h2
-      font-size: 1.875rem
-      text-transform: none
-      margin-bottom: 0.6rem
+.sub-footer__title
+  margin-top: 0
 @media (min-width: 820px)
   .site-footer
     .bounds
       padding-top: 67px
       padding-bottom: 30px
     h2
+      margin-top: 0
       margin-bottom: 0.625rem
   .site-footer__list
     margin: 0 0 2.5rem

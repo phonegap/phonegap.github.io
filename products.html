@@ -9,54 +9,54 @@ extra_js:
 ---
 <div class="subheader">
   <div class="bounds">
-    <h1>{{ page.title }}</h1>
+    <h2 class="subheader__title">{{ page.title }}</h2>
     <div class="subheader__description">{{page.subtitle}}</div>
   </div>
 </div>
 <article class="page-content">
   <div class="bounds">
-    <section class="products--opening-section">
-      <h2>PhoneGap is the open source framework that gets you building amazing mobile apps using web technology</h2>
+    <section class="products__opening-section">
+      <h3 class="products__section-title">PhoneGap is the open source framework that gets you building amazing mobile apps using web technology</h3>
       <p>We created this approach to authoring apps because we’re web developers at &#10084;, and wanted to remove the complexity of writing an app in multiple languages (like Objective C and Java) for all of the relevant mobile platforms. With PhoneGap you build beautiful cross-platform apps using HTML, CSS and Javascript.</p>
     </section>
   </div>
   <div class="bounds">
-    <section class="products--grid-descriptions">
+    <section class="products__grid-descriptions">
       <article>
-        <h3>Rapid development = better apps</h3>
+        <h4>Rapid development = better apps</h4>
         <p>For web developers with a history of creating outstanding user experiences and products, PhoneGap is the tool to use to quickly transfer web development skills into making awesome mobile apps. Leverage the web technologies that you know and love to make more time for rapid iterations and releases. By releasing your mobile app early and often, and gathering metrics for quick iterations, your customers get what they want and need.</p>
       </article>
       <article>
-        <h3>Cross platform = greater reach</h3>
+        <h4>Cross platform = greater reach</h4>
         <p>There is nothing worse than making your hugely anticipated/successful/helpful mobile app only available for a single platform. It means missing out on a huge part of your potential customer base. By using PhoneGap you can create an app for each of the platforms that you choose, using a single code base. Focus on creating a great experience for all of your potential customers instead of authoring complex platform compatibility layers — it just makes sense.</p>
       </article>
       <article>
-        <h3>Native APIs = native functionality</h3>
+        <h4>Native APIs = native functionality</h4>
         <p>Developing your mobile app using HTML, CSS and Javascript doesn’t mean that you have to give up on native functionality that makes mobile devices so extraordinary. PhoneGap gives you access to all of the native device APIs (like camera, GPS, accelerometer and more), so that the app you build with web tech behaves just like a native app. It’s pretty cool.</p>
       </article>
       <article>
-        <h3>Open source = great community</h3>
+        <h4>Open source = great community</h4>
         <p>By remaining free and open source, PhoneGap makes mobile app development accessible to thousands of web developers. We have great community support, which means that there are more people available to help you out and to keep the software current and robust. The Adobe PhoneGap team remains highly active in the stewardship and development of the Apache Cordova project.</p>
       </article>
     </section>
   </div>
   <div class="bounds">
-    <section class="products--comparison-section">
-      <h2>PhoneGap vs. Apache Cordova</h2>
+    <section class="products__comparison-section">
+      <h3 class="products__section-title">PhoneGap vs. Apache Cordova</h3>
       <p>We’re often asked “<a href="http://phonegap.com/blog/2012/03/19/phonegap-cordova-and-whate28099s-in-a-name//">What is difference is between PhoneGap and Cordova?</a>”. Apache Cordova was born from PhoneGap. In 2011, the PhoneGap codebase was donated to Apache for incubation, and the project has continued to thrive ever since. Apache Cordova is still the engine that powers PhoneGap, much like WebKit is the engine that powers many modern web browsers.</p>
       <p>It’s the robust tools that sets PhoneGap apart, including:<br>
       <a href="#phonegap-cli-section">our command line interface</a>, the <a href="#desktop-app-section">PhoneGap Desktop app</a>, the <a href="#mobile-app-section">PhoneGap Developer app</a>, and <a href="#phonegap-build">PhoneGap Build</a>.</p>
     </section>
   </div>
   <a class="anchor" id="phonegap-cli-section"></a>
-  <section class="products--phonegap-cli-section">
-    <h2>PhoneGap CLI</h2>
+  <section class="products__phonegap-cli-section">
+    <h2 class="products__section-title">PhoneGap CLI</h2>
     <p>The PhoneGap CLI is the <strong>most powerful and flexible way to use PhoneGap</strong>. Built on top of Apache Cordova, you can <strong>create</strong>, <strong>serve</strong>, <strong>compile</strong>, and <strong>run</strong> apps from the comfort of your command-line terminal. Written in Node.js and distributed on npm, you can use the CLI on any platform and integrate it into any web development workflow. Whether developing locally or running a continuous integration server, the PhoneGap CLI will meet your needs.</p>
     <p>If you're a power-user who wants control over your environment, then the PhoneGap CLI is for you.</p>
     <a href="http://docs.phonegap.com/references/phonegap-cli/" class="button--pill--next">Read the Docs</a>
   </section>
   <a class="anchor" id="desktop-app-section"></a>
-  <section class="products--desktop-app-section">
+  <section class="products__desktop-app-section">
     <div class="gs-step__content">
       <h2 class="gs-step__title">Desktop App</h2>
       <div class="gs-step__description">
@@ -84,7 +84,7 @@ extra_js:
     </div>
   </section>
   <a class="anchor" id="mobile-app-section"></a>
-  <section class="products--mobile-app-section">
+  <section class="products__mobile-app-section">
     <div class="gs-step__content">
       <h2 class="gs-step__title">Developer Mobile App</h2>
       <div class="gs-step__description">
@@ -114,8 +114,8 @@ extra_js:
     </div>
   </section>
   <a class="anchor" id="phonegap-build"></a>
-  <section class="products--phonegap-build">
-    <h2>PhoneGap Build</h2>
+  <section class="products__phonegap-build">
+    <h2 class="products__section-title">PhoneGap Build</h2>
     <p>Take the pain of compiling out of mobile app development - simply upload your HTML, CSS and Javascript assets to PhoneGap Build and we’ll package them for you. <strong>Get app-store ready apps without the headache of maintaining native SDKs</strong>. We do the work for you in the cloud and your app will always be built with the most up-to-date SDK for the platform you are targeting.</p>
     <p>Package your mobile apps in the cloud with PhoneGap Build.</p>
     <footer>
@@ -126,7 +126,7 @@ extra_js:
 {% if page.subfooter %}
   <div class="sub-footer">
     <div class="bounds">
-      <h2>Dig into documentation</h2>
+      <h3 class="sub-footer__title">Dig into documentation</h3>
       <div class="sub-footer__description">
         Whether you’re looking for <a href="http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/">in-depth guides</a> on how to get started creating PhoneGap apps or <a href="http://docs.phonegap.com/references/desktop-app/">helpful references</a> for using the PhoneGap tools, this is the place to go. How could you go wrong?
       </div>
