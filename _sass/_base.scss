@@ -1,0 +1,197 @@
+// Mobile first and default mediaquery
+//Base Styles
+:root {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: $light-weight;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: $semibold-weight;
+  margin-bottom: 1.25rem;
+  margin-top: 1.875rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: $light-weight;
+  margin-bottom: 1.25rem;
+  margin-top: 1.875rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: normal;
+  letter-spacing: .03125rem;
+  margin-bottom: .75rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: .75rem;
+  margin-top: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+body {
+  color: $primary-text-color;
+  font-family: "adobe-clean", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.75rem;
+  padding-top: 60px;
+
+  &::before {
+    background: #1c93b2;
+    content: "";
+    height: 160px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &.no-subheader::before {
+    display: none;
+  }
+}
+
+%bounds {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 966px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.bounds {
+  @extend %bounds;
+}
+
+a {
+  color: $header-bg;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button--cta {
+  border-radius: 4px;
+  background: #f4b504;
+  color: $header-text-color;
+  text-transform: uppercase;
+  border: none;
+  font-size: 1.0625rem;
+  font-weight: normal;
+  padding: 8px 27px 10px;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+    background: #f2a700;
+  }
+
+  &:active {
+    background: #eb3854;
+  }
+}
+
+.button--pill {
+  color: $primary-text-color;
+  border-radius: 18px;
+  background: $header-text-color;
+  text-transform: uppercase;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  height: 36px;
+  box-sizing: border-box;
+  padding-top: 4px;
+  padding-right: 15px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  font-size: 1.125rem;
+
+  &:hover {
+    text-decoration: none;
+    background: #f2a700;
+  }
+
+  &:active {
+    background: #eb3854;
+  }
+}
+
+.button--pill--gray {
+  @extend .button--pill;
+
+  background: #f2f2f2;
+}
+
+.button--pill--next {
+  @extend .button--pill;
+
+  position: relative;
+  padding-right: 31px;
+
+  &:after {
+    background-image: url("/images/chevron-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 0;
+    height: 100%;
+    width: 7px;
+  }
+}
+
+.button--pill--next--gray {
+  @extend .button--pill--next;
+
+  background: #f2f2f2;
+}
+
+.button--pill--prev {
+  @extend .button--pill--next;
+
+  padding-left: 31px;
+
+  &:after {
+    background-image: url("/images/chevron-left.svg");
+    right: auto;
+    left: 15px;
+  }
+}
+
+.button--pill--prev--gray {
+  @extend .button--pill--prev;
+
+  background: #f2f2f2;
+}
+
+@media (min-width: 820px) {
+  body {
+    padding-top: 160px;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}

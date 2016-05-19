@@ -5,6 +5,7 @@ require 'yaml'
 require 'fileutils'
 require 'rbconfig'
 require 'html-proofer'
+require 'scss_lint/rake_task'
 
 # == Configuration =============================================================
 
@@ -221,4 +222,9 @@ task :test do
       :headers => { 'User-Agent' => 'html-proofer' }
     }
   }).run
+end
+
+# rake scss_lint
+desc "Lint SCSS"
+SCSSLint::RakeTask.new do |t|
 end
