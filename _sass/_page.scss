@@ -1,26 +1,10 @@
 .page-bounds {
-  @extend .bounds;
-
+  @extend %bounds;
   margin-bottom: 60px;
 
   p {
     max-width: 750px;
   }
-}
-
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 25px;
-  height: 0;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .full-width {
@@ -31,10 +15,10 @@
 .diagram-container {
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
 }
 
 .artwork__blocks {
@@ -42,23 +26,23 @@
 }
 
 .artwork__block--horizontal, .artwork__block--stacked, .artwork__block--symbol {
-  border-top: 1px solid #c4c4c4;
-  padding-top: 40px;
   margin-bottom: 35px;
+  padding-top: 40px;
+  border-top: 1px solid #c4c4c4;
 }
 
 .artwork__block__title {
-  text-align: left;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .artwork__items {
   display: -webkit-flex;
   display: flex;
-  -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: end;
   align-items: flex-end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
 }
 
 .artwork__items--horizontal {
@@ -93,37 +77,37 @@
 }
 
 .artwork__download-set {
-  text-align: center;
   padding-bottom: 45px;
+  text-align: center;
 }
 
 @media (min-width: 820px) {
   .artwork__blocks {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
   }
 
   .artwork__items--horizontal {
     display: -webkit-flex;
     display: flex;
-    -webkit-box-align: end;
     -webkit-align-items: flex-end;
-    -ms-flex-align: end;
     align-items: flex-end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
   }
 
   .artwork__item, .artwork__item--horizontal {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0;
     -ms-flex: 1 0;
+    -webkit-flex: 1 0;
     flex: 1 0;
+    -webkit-box-flex: 1;
 
     &:first-child {
       margin-right: 80px;

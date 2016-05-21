@@ -1,11 +1,9 @@
 ---
 ---
 document.addEventListener "DOMContentLoaded", (event) ->
-  console.log('mobile-nav')
   expandHandler = (e)->
-    console.log('tapped')
-    header.classList.toggle('expand')
-    body.classList.toggle('expand')
+    header.classList.toggle('header--expand')
+    body.classList.toggle('body--expand')
     e.preventDefault()
     return false
   expandButton = document.getElementById('site-header__expand-button')
