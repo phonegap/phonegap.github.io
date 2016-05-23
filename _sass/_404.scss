@@ -1,0 +1,28 @@
+.four-oh-four {
+  padding-bottom: 128px;
+  background: $header-bg;
+  color: $header-text-color;
+  text-align: center;
+}
+
+.four-oh-four-title {
+  margin: 0;
+  font-size: 12.6875rem;
+  font-weight: 300;
+  line-height: 11.5rem;
+}
+
+.four-oh-four-description {
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 300;
+}
+
+.four-oh-four-image {
+  padding: 60px 0;
+
+  img {
+    width: 270px;
+    height: auto;
+  }
+}

@@ -1,0 +1,130 @@
+.page-bounds {
+  @extend %bounds;
+  margin-bottom: 60px;
+
+  p {
+    max-width: 750px;
+  }
+}
+
+.full-width {
+  width: 100%;
+  height: auto;
+}
+
+.diagram-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+}
+
+.artwork__blocks {
+  display: block;
+}
+
+.artwork__block--horizontal, .artwork__block--stacked, .artwork__block--symbol {
+  margin-bottom: 35px;
+  padding-top: 40px;
+  border-top: 1px solid #c4c4c4;
+}
+
+.artwork__block__title {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.artwork__items {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+}
+
+.artwork__items--horizontal {
+  display: block;
+
+  .artwork__image, .artwork__image--white {
+    padding: 8px;
+  }
+}
+
+.artwork__image, .artwork__image--white {
+  margin-bottom: 15px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.artwork__item--horizontal {
+  &:first-child {
+    margin-bottom: 30px;
+  }
+}
+
+.artwork__image--white {
+  background: #c4c4c4;
+}
+
+.artwork__block--horizontal {
+  width: 100%;
+}
+
+.artwork__download-set {
+  padding-bottom: 45px;
+  text-align: center;
+}
+
+@media (min-width: 820px) {
+  .artwork__blocks {
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  }
+
+  .artwork__items--horizontal {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  }
+
+  .artwork__item, .artwork__item--horizontal {
+    -ms-flex: 1 0;
+    -webkit-flex: 1 0;
+    flex: 1 0;
+    -webkit-box-flex: 1;
+
+    &:first-child {
+      margin-right: 80px;
+    }
+  }
+
+  .artwork__item--horizontal {
+    &:first-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .artwork__block--stacked {
+    max-width: calc(44% - 40px);
+  }
+
+  .artwork__block--symbol {
+    max-width: calc(56% - 40px);
+  }
+}

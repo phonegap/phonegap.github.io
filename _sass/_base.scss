@@ -1,0 +1,206 @@
+// Mobile first and default mediaquery
+//Base Styles
+:root {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: $light-weight;
+}
+
+h2 {
+  margin-top: 1.875rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.875rem;
+  font-weight: $semibold-weight;
+}
+
+h3 {
+  margin-top: 1.875rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.875rem;
+  font-weight: $light-weight;
+}
+
+h4 {
+  margin-top: 1rem;
+  margin-bottom: .75rem;
+  font-size: 1.125rem;
+  font-weight: normal;
+  letter-spacing: .03125rem;
+  text-transform: uppercase;
+}
+
+h5 {
+  margin-top: 1rem;
+  margin-bottom: .75rem;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+h6 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+body {
+  padding-top: 60px;
+  color: $primary-text-color;
+  font-family: 'adobe-clean', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.75rem;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 160px;
+    background: #1c93b2;
+    content: '';
+  }
+
+  &.no-subheader::before {
+    display: none;
+  }
+}
+
+%bounds {
+  position: relative;
+  max-width: 966px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.bounds {
+  @extend %bounds;
+}
+
+a {
+  color: $header-bg;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button--cta {
+  display: inline-block;
+  padding: 8px 27px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #f4b504;
+  color: $header-text-color;
+  font-size: 1.0625rem;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #f2a700;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: #eb3854;
+  }
+}
+
+
+%button--pill {
+  display: inline-block;
+  height: 36px;
+  padding-top: 4px;
+  padding-right: 15px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  border: 0;
+  border-radius: 18px;
+  background: $header-text-color;
+  color: $primary-text-color;
+  font-size: 1.125rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-sizing: border-box;
+
+  &:hover {
+    background: #f2a700;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: #eb3854;
+  }
+}
+
+.button--pill {
+  @extend %button--pill;
+}
+
+.button--pill--gray {
+  @extend %button--pill;
+
+  background: #f2f2f2;
+}
+
+%button--pill--next {
+  @extend %button--pill;
+  position: relative;
+  padding-right: 31px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 7px;
+    height: 100%;
+    background-image: url('/images/chevron-right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    content: '';
+  }
+}
+
+.button--pill--next {
+  @extend %button--pill--next;
+}
+
+.button--pill--next--gray {
+  @extend %button--pill--next;
+  background: #f2f2f2;
+}
+
+%button--pill--prev {
+  @extend %button--pill--next;
+  padding-left: 31px;
+
+  &::after {
+    right: auto;
+    left: 15px;
+    background-image: url('/images/chevron-left.svg');
+  }
+}
+
+.button--pill--prev {
+  @extend %button--pill--prev;
+}
+
+.button--pill--prev--gray {
+  @extend %button--pill--prev;
+  background: #f2f2f2;
+}
+
+@media (min-width: 820px) {
+  body {
+    padding-top: 160px;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}

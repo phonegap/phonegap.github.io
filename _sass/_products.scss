@@ -1,0 +1,262 @@
+.anchor {
+  display: block;
+  position: relative;
+  top: -63px;
+  visibility: hidden;
+}
+
+.products__opening-section {
+  @extend %benefits;
+
+  position: relative;
+  max-width: 930px;
+  margin: 0 auto;
+
+  p {
+    max-width: none;
+  }
+}
+
+.products__section-title {
+  position: relative;
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.products__grid-descriptions {
+  display: block;
+  padding: 80px 0 50px;
+  font-size: 1rem;
+
+  p {
+    margin: 0;
+    line-height: 1.5rem;
+  }
+
+  article {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+    margin-bottom: 50px;
+    -ms-flex-preferred-size: 100%;
+  }
+}
+
+.products__comparison-section, .products__phonegap-cli-section {
+  @extend %benefits;
+
+  max-width: 1190px;
+  margin-bottom: 0;
+  padding: 50px 0 75px;
+  border-top: 1px solid #c4c4c4;
+
+  p {
+    max-width: 920px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+
+    &:last-of-type {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+%products__section {
+  max-width: none;
+  padding: 45px 10px 75px;
+  border-top: 0;
+  background: #f5f5f5;
+
+  p {
+    max-width: 750px;
+  }
+}
+
+.products__phonegap-cli-section {
+  @extend %products__section;
+}
+
+.products__desktop-app-section {
+  @extend %gs-step;
+
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: 30px 0;
+  background: #1692b2;
+  color: $header-text-color;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+
+  &::before {
+    content: none;
+  }
+
+  .gs-step__content {
+    position: relative;
+    -webkit-order: 0;
+    order: 0;
+    max-width: 470px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    box-sizing: border-box;
+  }
+
+  .gs-step__title {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .gs-step__description {
+    p:last-of-type {
+      font-size: 1.2rem;
+    }
+  }
+
+  .download__platform a {
+    color: $header-text-color;
+    text-decoration: underline;
+  }
+
+  .download__platform__version {
+    color: $header-text-color;
+  }
+
+  .download {
+    position: relative;
+    margin: 40px auto 0;
+    border-color: $header-text-color;
+    box-sizing: border-box;
+  }
+  // scss-lint:disable ImportantRule
+  .download__image path {
+    fill: #1692b2 !important;
+  }
+  // scss-lint:enable ImportantRule
+}
+
+.products__mobile-app-section {
+  @extend %gs-step;
+
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 30px 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+
+  &::before {
+    content: none;
+  }
+
+  .gs-step__content {
+    position: relative;
+    max-width: 470px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+
+  .gs-step__title {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .gs-step__description {
+    p:last-of-type {
+      font-size: 1.2rem;
+    }
+  }
+
+  .download {
+    position: relative;
+    margin: 40px auto 0;
+    box-sizing: border-box;
+  }
+}
+
+.products__phonegap-build {
+  @extend %products__section;
+
+  background: #2ba94d;
+  color: $header-text-color;
+}
+
+@media (min-width: 566px) {
+  .products__desktop-app-section, .products__mobile-app-section {
+    .download {
+      box-sizing: content-box;
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .anchor {
+    top: -90px;
+  }
+}
+
+@media (min-width: 940px) {
+  .products__grid-descriptions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+
+    article {
+      -webkit-flex-basis: calc(50% - 30px);
+      flex-basis: calc(50% - 30px);
+      margin-bottom: 50px;
+      -ms-flex-preferred-size: calc(50% - 30px);
+    }
+  }
+}
+
+@media (min-width: 980px) {
+  .products__desktop-app-section {
+    padding: 70px 10px 80px;
+
+    .gs-step__content {
+      -webkit-order: 1;
+      order: 1;
+      margin-right: 0;
+      margin-left: 70px;
+      -ms-flex-order: 1;
+      -webkit-box-ordinal-group: 2;
+    }
+
+    .download {
+      margin: 40px 0 0;
+    }
+  }
+
+  .products__mobile-app-section {
+    padding: 70px 10px 80px;
+
+    .gs-step__content {
+      margin-right: 70px;
+      margin-left: 0;
+    }
+
+    .download {
+      margin: 40px 0 0;
+    }
+  }
+}
