@@ -17,6 +17,13 @@ paginate: 10
 paginate_list_count: 7
 paginate_path: "/blog/page:num/"
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - Rakefile
+  - README.md
+
 # Build settings
 markdown: kramdown
 
