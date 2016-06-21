@@ -1,0 +1,61 @@
+---
+layout: page
+title: Contact Us
+subtitle: Let us know if you need something.
+permalink: /contact/
+subfooter: true
+---
+<div class="contact">
+  <section class="contact-section">
+    {% include images/icon-help.svg %}
+    <h3>Need help with your code?</h3>
+    <h4><a href="https://forums.adobe.com/community/phonegap">Ask us on the PhoneGap Forums</a>.</h4>
+    <p>Our team and community moderators actively monitor and answer questions.</p>
+    <h4><a href="http://stackoverflow.com/questions/tagged/cordova">Ask on Stack Overflow</a>.</h4>
+    <p>The Stack Overflow community is active with answering questions.</p>
+  </section>
+
+  <section class="contact-section">
+    {% include images/icon-bug.svg %}
+    <h3>Have a Bug to report?</h3>
+    <p>Open an issue on the project having the issue:</p>
+    <ul>
+      <li><a href="https://github.com/phonegap/build/issues">Issue track for the PhoneGap Build</a></li>
+      <li><a href="https://github.com/phonegap/phonegap-cli/issues">Issue track for the PhoneGap CLI</a></li>
+      <li><a href="https://github.com/phonegap/phonegap-app-desktop/issues">Issue track for the PhoneGap Desktop App</a></li>
+      <li><a href="https://github.com/phonegap/phonegap-app-developer">Issue track for the PhoneGap Mobile App</a></li>
+      <li><a href="https://github.com/phonegap">...or one of the other repositories</a></li>
+    </ul>
+    <p>Please don't stress about finding the right repository for the issue. We can help move your issue afterwards.</p>
+  </section>
+
+  <section class="contact-section">
+    {% include images/icon-marketing.svg %}
+    <h3>Looking for partnership or marketing information?</h3>
+    <p>Drop us a line. We'd love to chat!
+      <form action="https://formspree.io/jgray@adobe.com"
+          method="POST">
+        <input type="hidden" name="_subject" value="Phonegap.com Partnership/Marketing request" />
+        <div class="form__container">
+          <label class="form__label" for="contact-form__name">Name</label>
+          <input class="form__text" id="contact-form__name" type="text" name="name">
+        </div>
+        <div class="form__container">
+          <label class="form__label" for="contact-form__email">Email</label>
+          <input class="form__email" id="contact-form__email" type="email" name="_replyto">
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <div class="form__submit-container">
+          <input class="form__submit" type="submit" value="Send">
+        </div>
+      </form>
+    </p>
+  </section>
+
+  <section class="contact-section">
+    {% include images/icon-tweet.svg %}
+    <h3>Just want to say hi?</h3>
+    <p>Send us a <a href="http://twitter.com/phonegap">Tweet on Twitter</a> and we'll say hi back!</p>
+  </section>
+
+</div>
