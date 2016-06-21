@@ -6,6 +6,7 @@ permalink: /contact/
 subfooter: true
 ---
 <div class="contact">
+  
   <section class="contact-section">
     {% include images/icon-help.svg %}
     <h3>Need help with your code?</h3>
@@ -17,14 +18,14 @@ subfooter: true
 
   <section class="contact-section">
     {% include images/icon-bug.svg %}
-    <h3>Have a Bug to report?</h3>
-    <p>Open an issue on the project having the issue:</p>
+    <h3>Have a bug to report?</h3>
+    <p>Please open an issue in the GitHub repo for the project you're having trouble with:</p>
     <ul>
-      <li><a href="https://github.com/phonegap/build/issues">Issue track for the PhoneGap Build</a></li>
-      <li><a href="https://github.com/phonegap/phonegap-cli/issues">Issue track for the PhoneGap CLI</a></li>
-      <li><a href="https://github.com/phonegap/phonegap-app-desktop/issues">Issue track for the PhoneGap Desktop App</a></li>
-      <li><a href="https://github.com/phonegap/phonegap-app-developer">Issue track for the PhoneGap Mobile App</a></li>
-      <li><a href="https://github.com/phonegap">...or one of the other repositories</a></li>
+      <li><a href="https://github.com/phonegap/build/issues">PhoneGap Build</a></li>
+      <li><a href="https://github.com/phonegap/phonegap-cli/issues">PhoneGap CLI</a></li>
+      <li><a href="https://github.com/phonegap/phonegap-app-desktop/issues">PhoneGap Desktop App</a></li>
+      <li><a href="https://github.com/phonegap/phonegap-app-developer">PhoneGap Mobile App</a></li>
+      <li><a href="https://github.com/phonegap">...or other repositories</a></li>
     </ul>
     <p>Please don't stress about finding the right repository for the issue. We can help move your issue afterwards.</p>
   </section>
@@ -42,7 +43,11 @@ subfooter: true
         </div>
         <div class="form__container">
           <label class="form__label" for="contact-form__email">Email</label>
-          <input class="form__email" id="contact-form__email" type="email" name="_replyto">
+          <input class="form__text" id="contact-form__email" type="email" name="_replyto">
+        </div>
+        <div class="form__container">
+          <label class="form__label" for="contact-form__message">Message</label>
+          <textarea class="form__textarea" name="message" id="contact-form__message" required=""></textarea>
         </div>
         <input type="text" name="_gotcha" style="display:none" />
         <div class="form__submit-container">
