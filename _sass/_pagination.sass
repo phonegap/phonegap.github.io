@@ -1,0 +1,84 @@
+.pagination
+  color: #999
+  font-size: 1.125rem
+  text-transform: uppercase
+  padding: 50px 0 75px 87px
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  padding: 50px 0 75px 0
+  justify-content: center
+  span, a
+    &:nth-last-child(n+2)
+      border-right: 1px solid #cdcdcd
+.pagination__page--current, .pagination__page, .pagination__previous, .pagination__next, .pagination__page--mobile
+  box-sizing: border-box
+  height: 35px
+  background: #f5f5f5
+  min-width: 35px
+  text-align: center
+  padding-top: 3px
+  path
+    fill: currentColor
+.pagination__page--current
+  background: #003351
+  color: #FFF
+%pagination__page
+  color: #003351
+  &:hover
+    color: white
+    text-decoration: none
+    background: #27a1c5
+  &:active
+    background: #eb3854
+.pagination__page
+  @extend %pagination__page
+.pagination__page--mobile
+  @extend %pagination__page
+.pagination__page
+  display: none
+.pagination__previous, .pagination__next, .pagination__page--current
+  display: block
+.pagination__previous
+  overflow: hidden
+  width: 0
+  border-top-left-radius: 17px
+  border-bottom-left-radius: 17px
+  padding-right: 20px
+  svg
+    transform: rotate(180deg)
+    padding: 0 18px 0 15px
+    position: relative
+    top: 1px
+.pagination__next
+  border-top-right-radius: 17px
+  border-bottom-right-radius: 17px
+  padding-left: 22px
+  color: transparent
+  overflow: hidden
+  width: 0
+  text-indent: -79px
+  path
+    fill: #27a1c5
+  svg
+    padding: 0 18px 0 15px
+    position: relative
+    top: 1px
+.pagination--center
+  @extend .pagination
+@media (min-width: 620px)
+  .pagination__page--current, .pagination__page, .pagination__previous, .pagination__next, .pagination__page--mobile
+    min-width: 50px
+  .pagination__page
+    display: block
+  .pagination__previous
+    overflow: auto
+    width: auto
+  .pagination__next
+    overflow: auto
+    width: auto
+    text-indent: 0
+    color: #27a1c5
+    path
+      fill: currentColor
