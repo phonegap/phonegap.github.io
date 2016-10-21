@@ -29,7 +29,7 @@ document.addEventListener "DOMContentLoaded", (event) ->
             liAsset.appendChild(downloadPlatform)
             downloadLink = createSuperElement('a', {'href': asset.browser_download_url}, 'Mac')
             downloadPlatform.appendChild(downloadLink)
-            downloadPlatformVersion = createSuperElement('div', {'class':'download__platform__version'}, 'OS X 10.9 or later')
+            downloadPlatformVersion = createSuperElement('div', {'class':'download__platform__version'}, 'macOS 10.9 or later')
             liAsset.appendChild(downloadPlatformVersion)
             downloadPlatformList.appendChild(liAsset)
           when 'exe'
