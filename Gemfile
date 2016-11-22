@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'github-pages'
+gem 'github-pages', '104'
 
 # Test the build
 group :test do
