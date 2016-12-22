@@ -20,7 +20,12 @@ extra_js:
       <footer>
         <!-- {% include banner.html %}  -->
         <div class="bounds">
-          <section class="hero-footer__section">
+          <section class="hero-footer__section" itemscope itemtype="http://schema.org/SoftwareApplication" >
+            <meta itemprop="ApplicationCategory"  content="hybrid mobile applications, web development"/>
+            <meta itemprop="OperatingSystem" content="iOS, Android, Windows, Blackberry"/>
+            <meta itemprop="name" content ="Phonegap"/>
+            <meta itemprop="isBasedOn" content ="Apache Cordova" />
+            <meta itemprop="License" content="https://github.com/phonegap/phonegap.github.io/blob/master/LICENSE"/>
             <h2>Create your app with PhoneGap</h2>
             <p>Reuse existing web development skills to quickly make hybrid applications built with HTML, CSS and JavaScript. Create experiences for multiple platforms with a single codebase so you can reach your audience no matter their device.</p>
             <a href="http://docs.phonegap.com" class="button--pill--next">Guides &amp; Docs</a>
@@ -82,7 +87,11 @@ extra_js:
               </a>
             </li>
 
-            <li class="home-gid__item">
+            <li class="home-gid__item" itemscope itemtype="http://schema.org/SoftwareApplication">
+              <meta itemprop="ApplicationCategory" content ="hybrid mobile applications"/>
+              <meta itemprop="OperatingSystem" content= "iOS, Android, windows, Blackberry" />
+              <meta itemprop="name" content ="PhoneGap Plugins"/>
+              <meta itemprop="ApplicationSuite" content="PhoneGap"/>
               <a href="http://cordova.apache.org/plugins/">
                 <header>
                   <div class="home-gid__item__icon">{% include images/icon-puzzle.svg %}</div>
@@ -95,7 +104,11 @@ extra_js:
               </a>
             </li>
 
-            <li class="home-gid__item">
+            <li class="home-gid__item" itemscope itemtype="http://schema.org/SoftwareApplication">
+              <meta itemprop="ApplicationCategory" content ="hybrid mobile applications"/>
+              <meta itemprop="OperatingSystem" content=" iOS, Android, windows, Blackberry"/>
+              <meta itemprop="name" content="Third Party Tools"/>
+              <meta itemprop="ApplicationSuite" content = "PhoneGap"/>
               <a href="/tool/">
                 <header>
                   <div class="home-gid__item__icon">{% include images/icon-chest.svg %}</div>
@@ -128,16 +141,22 @@ extra_js:
           <div class="app-showcase__box">
             <div>Featured apps from our <a href="/app">App Showcase</a></div>
             <ul>
-              <li><a href="/app/tripcase/">
+              <li itemscope itemtype="http://schema.org/MobileApplication"><a href="/app/tripcase/">
+                <meta itemprop="ApplicationCategory" content ="travel"/>
+                <meta itemprop="OperatingSystem" content="iOS, Android"/>
+                <meta itemprop="isBasedOn" content ="Phonegap"/>
                 <div class="app-showcase__img" style="background-image: url('/images/tripcase-icon.jpg')"></div>
-                <div class="app-showcase__title">Tripcase</div>
+                <div class="app-showcase__title" itemprop="name">Tripcase</div>
                 <div class="app-showcase__developer">by Sabre Inc.</div>
                 <div class="app-showcase__platforms"><span class="detritus">Available for </span>iOS and Android</div>
               </a></li>
-              <li><a href="/app/sworkit/">
+              <li itemscope itemtype="http://schema.org/MobileApplication"><a href="/app/sworkit/">
+                <meta itemprop="ApplicationCategory" content ="work"/>
+                <meta itemprop="OperatingSystem" content="iOS, Android"/>
+                <meta itemprop="isBasedOn" content ="Phonegap"/>
                 <div class="app-showcase__img" style="background-image: url('/images/sworkit-icon.jpg')"></div>
-                <div class="app-showcase__title">Sworkit</div>
-                <div class="app-showcase__developer">by Nexercise</div>
+                <div class="app-showcase__title" itemprop="name">Sworkit</div>
+                <div class="app-showcase__developer" itemprop="author">by Nexercise</div>
                 <div class="app-showcase__platforms"><span class="detritus">Available for </span>iOS and Android</div>
               </a></li>
             </ul>
@@ -150,7 +169,7 @@ extra_js:
     </div>
     <div class="sub-footer">
       <div class="bounds">
-        <h3 class="sub-footer__title">Dig into documentation</h2>
+        <h3 class="sub-footer__title">Dig into documentation</h3>
         <div class="sub-footer__description">
             Whether you’re looking for <a href="http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/">in-depth guides</a> on how to get started creating PhoneGap apps or <a href="http://docs.phonegap.com/references/desktop-app/">helpful references</a> for using the PhoneGap tools, this is the place to go. How could you go wrong?
         </div>
