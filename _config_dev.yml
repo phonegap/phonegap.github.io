@@ -23,6 +23,8 @@ exclude:
   - LICENSE
   - Rakefile
   - README.md
+  - vendor
+  - blog
 
 # Build settings
 markdown: kramdown
@@ -33,9 +35,6 @@ kramdown:
 permalink: /blog/:year/:month/:day/:title/
 highlighter: rouge
 excerpt_separator: <!--more-->
-exclude:
-  - vendor
-  - blog
 sass:
   sass_dir: _sass
 

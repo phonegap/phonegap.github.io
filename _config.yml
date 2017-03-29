@@ -23,6 +23,9 @@ exclude:
   - LICENSE
   - Rakefile
   - README.md
+  - vendor
+  - blog
+  - Guardfile
 
 post:
   template: _post.txt
@@ -37,7 +40,6 @@ kramdown:
 permalink: /blog/:year/:month/:day/:title/
 highlighter: rouge
 excerpt_separator: <!--more-->
-exclude: [vendor]
 sass:
   sass_dir: _sass
   style: compressed
