@@ -3,7 +3,7 @@
 document.addEventListener "DOMContentLoaded", (event) ->
   blogListElement = document.getElementById('latest-blog')
   x = new XMLHttpRequest()
-  x.open("GET", "http://phonegap.com/blog/recent-posts.xml", true)
+  x.open("GET", "/blog/recent-posts.xml", true)
 
   posts = []
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
