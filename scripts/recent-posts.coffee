@@ -3,7 +3,7 @@
 document.addEventListener "DOMContentLoaded", (event) ->
   blogListElement = document.getElementById('latest-blog')
   x = new XMLHttpRequest()
-  x.open("GET", "/blog/recent-posts.xml", true)
+  x.open("GET", "https://push.superfeedr.com/?hub.mode=retrieve&hub.topic=https%3A%2F%2Fblog.phonegap.com%2Ffeed&count=2&format=json&authorization=Z2FydGhkYjo0NGFkY2FjMzY5ZDg2NDY5ODhiMDBhY2ZkZDkyZmVkMg%3D%3D&", true)
 
   posts = []
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -50,19 +50,24 @@ document.addEventListener "DOMContentLoaded", (event) ->
     blogListElement.appendChild titleElement
     blogListElement.appendChild ulElement
 
-  parseData = (xmlChildNodes) ->
-    for post in xmlChildNodes
+  parseData = (items) ->
+    for post in items
+      div = document.createElement("div")
+      div.innerHTML = post.content
+      postContent = div.textContent || div.innerText || ""
       post =
-        datetimeString: post.childNodes[0].innerHTML
-        datetimeObj: new Date(post.childNodes[0].innerHTML)
-        title: post.childNodes[1].innerHTML
-        url: post.childNodes[2].innerHTML
-        description: post.childNodes[3].innerHTML
+        datetimeString: post.updated
+        datetimeObj: new Date(post.updated*1000)
+        title: post.title
+        url: post.permalinkUrl
+        description: postContent.split(" ").splice(0,20).join(" ")
       posts.push(post)
     writeData posts
 
   x.onreadystatechange = () ->
     if (x.readyState == 4 && x.status == 200)
-      parseData x.responseXML.documentElement.childNodes
+      jsondata = JSON.parse(x.responseText)
+      parseData(jsondata.items)
+      # parseData x.responseXML.documentElement.childNodes
 
   x.send(null)
