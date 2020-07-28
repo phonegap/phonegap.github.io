@@ -1,4 +1,10 @@
+
 <header id="site-header" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="announcement-banner">
+    Adobe has discontinued PhoneGap Build and ended investment in PhoneGap and Apache Cordova. <br>
+    This website is no longer being updated. Find out more details <a href="#">here</a>
+  </div>
+
   <div class="bounds">
     <div class="site-header__logo">
       <h1>
@@ -8,6 +14,7 @@
         </a>
       </h1>
     </div>
+
     <nav class="site-header__nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
       {% assign current = page.url | downcase | split: '/' %}
       <ul>
